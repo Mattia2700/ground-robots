@@ -252,7 +252,7 @@ int main (int argc, char *argv[])
   ZMQCommon::RequesterSimple::status_t status;
   string response;
 
-  ifstream ifs("/Users/placido/catkin_ws/src/ros_layer_walker/listaQR.json");
+  ifstream ifs("/home/mattiafranzin/Desktop/tirocinio/src/ros_layer_walker/ros_layer_walker/listaQR.json");
   json jobj_aruco = json::parse(ifs);
   cout << sendRequest(arucolist,jobj_aruco) << endl;
   arucolist.close();
