@@ -1,6 +1,0 @@
-free_thresh: 0.196
-image: mapICTDays.pgm
-negate: 0
-occupied_thresh: 0.65
-origin: [-2.3999999999999915, -57.699999999999996, 0.0]
-resolution: 0.05
