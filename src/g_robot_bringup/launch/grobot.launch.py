@@ -13,7 +13,7 @@ def generate_launch_description():
 
     pkg_gazebo_ros = get_package_share_directory("gazebo_ros")
     pkg_povo_world = get_package_share_directory("povo_world")
-    pkg_grobot_description = get_package_share_directory("grobot_description")
+    pkg_grobot_description = get_package_share_directory("g_robot_description")
 
     # Gazebo launch
     gazebo = IncludeLaunchDescription(
@@ -28,7 +28,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         output='screen',
         arguments=[
-            '-file', os.path.join(pkg_grobot_description, 'sdf', 'model.sdf'),
+            '-file', os.path.join(pkg_grobot_description, 'urdf', 'g_robot.xacro'),
             '-entity', 'GRobot'
         ]
     )

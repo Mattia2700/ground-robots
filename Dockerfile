@@ -2,11 +2,10 @@ FROM osrf/ros:foxy-desktop
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y \
-  python3-colcon-common-extensions \
-  ros-foxy-test-msgs \
-  ros-foxy-gazebo-ros-pkgs \
-  
+RUN apt-get install -y python3-colcon-common-extensions
+RUN apt-get install -y ros-foxy-test-msgs 
+RUN apt-get install -y ros-foxy-gazebo-ros-pkgs 
+RUN apt-get install -y ros-foxy-xacro
 
 RUN sed -i 's/(ALL:ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers # Enable sudo without password
 

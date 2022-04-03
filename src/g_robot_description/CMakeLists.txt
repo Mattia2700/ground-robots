@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(grobot_description)
+project(g_robot_description)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -22,7 +22,7 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(DIRECTORY
-  sdf
+  urdf
   DESTINATION ${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}
 )
 
