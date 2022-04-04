@@ -21,8 +21,8 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 find_package(xacro REQUIRED)
 
-install(DIRECTORY
-  launch
+install(
+  DIRECTORY launch
   DESTINATION ${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}
 )
 

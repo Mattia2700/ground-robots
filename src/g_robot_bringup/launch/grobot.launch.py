@@ -1,3 +1,4 @@
+from ast import arguments
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -28,8 +29,20 @@ def generate_launch_description():
         executable='spawn_entity.py',
         output='screen',
         arguments=[
-            '-file', os.path.join(pkg_grobot_description, 'urdf', 'g_robot.xacro'),
+            '-file', os.path.join(pkg_grobot_description, 'config', 'g_robot.urdf'),
             '-entity', 'GRobot'
+        ]
+    )
+
+    # Controller
+    controller = Node(
+        package='controller_manager',
+        executable='spawner.py',
+        output='screen',
+        respawn=False,
+        arguments=[
+            '-p', os.path.join(pkg_grobot_description, 'config', 'diff_drive.yaml'), 'g_robot_controller',
+            '--controller-manager-timeout', '20' 
         ]
     )
 
@@ -43,6 +56,7 @@ def generate_launch_description():
                 description="SDF world file"
             ),
             gazebo,
-            robot
+            robot,
+            controller
         ]
     )
