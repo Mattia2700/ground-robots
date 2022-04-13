@@ -54,16 +54,6 @@ def generate_launch_description():
         arguments=["-entity", "g_robot", "-topic", "robot_description"],
         output="screen",
     )
-    robot_localization_node = launch_ros.actions.Node(
-        package="robot_localization",
-        executable="ekf_node",
-        name="ekf_filter_node",
-        output="screen",
-        parameters=[
-            os.path.join(pkg_share_bringup, "config/ekf.yaml"),
-            {"use_sim_time": LaunchConfiguration("use_sim_time")},
-        ],
-    )
 
     world_path = (os.path.join(pkg_share_world, "worlds/empty_world.world"),)
 
@@ -101,7 +91,6 @@ def generate_launch_description():
                 default_value="True",
                 description="Flag to enable use_sim_time",
             ),
-            robot_localization_node,
             joint_state_publisher_node,
             robot_state_publisher_node,
             spawn_entity,

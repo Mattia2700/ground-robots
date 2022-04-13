@@ -5,3 +5,5 @@ logs
 install
 log
 *.blend1
+*.pdf
+*.gv
