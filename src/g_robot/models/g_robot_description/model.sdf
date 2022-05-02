@@ -194,7 +194,7 @@
       <ray>
         <scan>
           <horizontal>
-            <samples>120</samples>
+            <samples>360</samples>
             <resolution>1.000000</resolution>
             <min_angle>-3.14159</min_angle>
             <max_angle>3.14159</max_angle>
