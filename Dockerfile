@@ -10,6 +10,7 @@ RUN apt-get install -y ros-foxy-joint-state-publisher-gui
 RUN apt-get update && apt-get install -y ros-foxy-rqt-robot-steering
 RUN apt-get install -y ros-foxy-nav2-bringup
 RUN apt-get install -y ros-foxy-robot-localization
+RUN apt-get install -y ros-foxy-lifecycle-msgs
 
 RUN sed -i 's/(ALL:ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers # Enable sudo without password
 
