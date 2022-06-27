@@ -4,6 +4,8 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp/publisher.hpp"
 
+#include "GroundRobotService.hpp"
+
 #include "std_msgs/msg/string.hpp"
 
 using namespace std::chrono_literals;
@@ -13,11 +15,15 @@ using callback_return = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterfac
 class GroundRobotManager : public rclcpp_lifecycle::LifecycleNode {
     public:
         explicit GroundRobotManager(const std::string &node_name, bool intra_process_comms = false) : rclcpp_lifecycle::LifecycleNode(node_name, rclcpp::NodeOptions().use_intra_process_comms(intra_process_comms)) {
-            // Create a publisher for the ground robot state
         }
 
         virtual ~GroundRobotManager() {
             this->_pub_ground_robot_state.reset();
+        }
+
+        bool callback_prova(){
+            RCLCPP_INFO(this->get_logger(), "Callback prova");
+            return true;
         }
 
         callback_return on_configure(const rclcpp_lifecycle::State &) {
@@ -25,7 +31,7 @@ class GroundRobotManager : public rclcpp_lifecycle::LifecycleNode {
 
             // initialize robot state publisher
             this->_pub_ground_robot_state = this->create_publisher<std_msgs::msg::String>("ground_robot_state", 10);
-
+            
             // TODO: setup robot devices
 
             return callback_return::SUCCESS;
@@ -35,6 +41,8 @@ class GroundRobotManager : public rclcpp_lifecycle::LifecycleNode {
             this->_pub_ground_robot_state->on_activate();
             RCLCPP_INFO(this->get_logger(), "Robot is activating");
             
+            // Ask launch service to start the navigation stack
+
             // TODO: launch navigation stack
             
             std_msgs::msg::String msg;
@@ -60,5 +68,5 @@ class GroundRobotManager : public rclcpp_lifecycle::LifecycleNode {
 
     private:
         std::shared_ptr<rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::String>> _pub_ground_robot_state;
-
+        std::shared_ptr<GroundRobotService> _lifecycle_transition_service;
 };
