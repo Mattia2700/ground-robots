@@ -5,6 +5,8 @@
 
 #include "../include/g_robot_lifecycle/GroundRobotService.hpp"
 
+#include "lifecycle_msgs/msg/transition.hpp"
+
 int main(int argc, char **argv) {
     // force flush of the stdout buffer.
     // this ensures a correct sync of all prints
@@ -14,17 +16,14 @@ int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
 
     auto grobot_service = std::make_shared<GroundRobotService>("ground_robot_service");
+
+    lifecycle_msgs::msg::Transition transition;
     
     grobot_service->init();
-    grobot_service->get_state();
-    grobot_service->change_state(1,false);
-    grobot_service->get_state();
-    grobot_service->change_state(3);
-    grobot_service->get_state();
-    grobot_service->change_state(4,false);
-    grobot_service->get_state();
-    grobot_service->change_state(6);
-    grobot_service->get_state();
+    grobot_service->change_state(transition.TRANSITION_CONFIGURE);
+    if(grobot_service->get_state() == lifecycle_msgs::msg::State::PRIMARY_STATE_INACTIVE) {
+        grobot_service->change_state(transition.TRANSITION_ACTIVATE);
+    }
 
     rclcpp::executors::SingleThreadedExecutor exe;
     exe.add_node(grobot_service);

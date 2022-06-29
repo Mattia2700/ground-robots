@@ -51,7 +51,7 @@ class GroundRobotService : public rclcpp::Node {
             }
         }
 
-        bool change_state(std::uint8_t transition, bool wait_before_change = true) {
+        bool change_state(std::uint8_t transition, bool wait_before_change = false) {
 
             if(wait_before_change) wait(5000ms);
 

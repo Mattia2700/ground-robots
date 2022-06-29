@@ -26,7 +26,7 @@ def generate_launch_description():
   world_path = os.path.join(pkg_share, 'worlds', world_file_name)
   nav2_dir = FindPackageShare(package='nav2_bringup').find('nav2_bringup') 
   nav2_launch_dir = os.path.join(nav2_dir, 'launch') 
-  static_map_path = os.path.join(pkg_share, 'maps', 'povo1.yaml')
+  static_map_path = os.path.join(pkg_share, 'maps', 'currentMap.yaml')
   nav2_params_path = os.path.join(pkg_share, 'params', 'nav2_params.yaml')
   nav2_bt_path = FindPackageShare(package='nav2_bt_navigator').find('nav2_bt_navigator')
   behavior_tree_xml_path = os.path.join(nav2_bt_path, 'behavior_trees', 'navigate_w_replanning_and_recovery.xml')
@@ -139,12 +139,13 @@ def generate_launch_description():
   start_gazebo_server_cmd = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')),
     condition=IfCondition(use_simulator),
-    launch_arguments={'world': world}.items())
+    launch_arguments={'world': world, 'verbose': 'true'}.items())
  
   # Start Gazebo client    
   start_gazebo_client_cmd = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')),
-    condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless])))
+    condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless])),
+    launch_arguments={'verbose': 'true'}.items())
  
   # Start robot localization using an Extended Kalman filter
   start_robot_localization_cmd = Node(
