@@ -59,7 +59,11 @@ RUN echo 'alias rosinstall="rosdep install -y -r -q --from-paths src --ignore-sr
 RUN echo 'source /opt/ros/foxy/setup.bash' >> ~/.bashrc
 RUN echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
 RUN echo "export _colcon_cd_root=~/workspace" >> ~/.bashrc
-RUN echo "export GAZEBO_MODEL_PATH=~/workspace/models/gazebo:~/workspace/models/povo:~/workspace/src/g_robot/models" >> ~/.bashrc
+RUN echo "export GAZEBO_MODEL_PATH=~/workspace2/src/g_robot/models" >> ~/.bashrc
 #export GAZEBO_MODEL_DATABASE_URI=""
+
+RUN sudo apt-get install -y file ros-foxy-rviz2
+
+# RUN sudo apt-get update && sudo apt-get upgrade
 
 ENTRYPOINT ["bash"]
