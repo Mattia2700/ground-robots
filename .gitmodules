@@ -1,3 +1,0 @@
-[submodule "src/ros1_bridge"]
-	path = src/ros1_bridge
-	url = git@github.com:Mattia2700/ros1_bridge.git

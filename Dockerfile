@@ -64,6 +64,6 @@ RUN echo "export GAZEBO_MODEL_PATH=~/workspace2/src/g_robot/models" >> ~/.bashrc
 
 RUN sudo apt-get install -y file ros-foxy-rviz2
 
-# RUN sudo apt-get update && sudo apt-get upgrade
+RUN sudo apt-get update && sudo apt-get upgrade -y
 
 ENTRYPOINT ["bash"]
