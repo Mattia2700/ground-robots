@@ -110,22 +110,22 @@ def generate_launch_description():
      
   declare_use_robot_state_pub_cmd = DeclareLaunchArgument(
     name='use_robot_state_pub',
-    default_value='True',
+    default_value='False',
     description='Whether to start the robot state publisher')
  
   declare_use_rviz_cmd = DeclareLaunchArgument(
     name='use_rviz',
-    default_value='True',
+    default_value='False',
     description='Whether to start RVIZ')
      
   declare_use_sim_time_cmd = DeclareLaunchArgument(
     name='use_sim_time',
-    default_value='True',
+    default_value='False',
     description='Use simulation (Gazebo) clock if true')
  
   declare_use_simulator_cmd = DeclareLaunchArgument(
     name='use_simulator',
-    default_value='True',
+    default_value='False',
     description='Whether to start the simulator')
  
   declare_world_cmd = DeclareLaunchArgument(
@@ -149,6 +149,7 @@ def generate_launch_description():
  
   # Start robot localization using an Extended Kalman filter
   start_robot_localization_cmd = Node(
+    condition=IfCondition(use_simulator),
     package='robot_localization',
     executable='ekf_node',
     name='ekf_filter_node',
@@ -218,11 +219,11 @@ def generate_launch_description():
   ld.add_action(declare_world_cmd)
  
   # Add any actions
-  ld.add_action(start_gazebo_server_cmd)
-  ld.add_action(start_gazebo_client_cmd)
-  ld.add_action(start_robot_localization_cmd)
-  ld.add_action(start_robot_state_publisher_cmd)
-  ld.add_action(start_rviz_cmd)
+  # ld.add_action(start_gazebo_server_cmd)
+  # ld.add_action(start_gazebo_client_cmd)
+  # ld.add_action(start_robot_localization_cmd)
+  # ld.add_action(start_robot_state_publisher_cmd)
+  # ld.add_action(start_rviz_cmd)
   ld.add_action(start_ros2_navigation_cmd)
   # ld.add_action(start_static_transform_publisher_cmd)
  

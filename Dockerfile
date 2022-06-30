@@ -66,4 +66,7 @@ RUN sudo apt-get install -y file ros-foxy-rviz2
 
 RUN sudo apt-get update && sudo apt-get upgrade -y
 
+RUN sudo apt-get install iputils-ping
+RUN sudo apt-get install iperf
+
 ENTRYPOINT ["bash"]
