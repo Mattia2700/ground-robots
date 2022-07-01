@@ -115,7 +115,7 @@ def generate_launch_description():
  
   declare_use_rviz_cmd = DeclareLaunchArgument(
     name='use_rviz',
-    default_value='False',
+    default_value='True',
     description='Whether to start RVIZ')
      
   declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -223,7 +223,7 @@ def generate_launch_description():
   # ld.add_action(start_gazebo_client_cmd)
   # ld.add_action(start_robot_localization_cmd)
   # ld.add_action(start_robot_state_publisher_cmd)
-  # ld.add_action(start_rviz_cmd)
+  ld.add_action(start_rviz_cmd)
   ld.add_action(start_ros2_navigation_cmd)
   # ld.add_action(start_static_transform_publisher_cmd)
  
