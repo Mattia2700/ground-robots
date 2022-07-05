@@ -15,6 +15,7 @@ clean:
 
 build:
 	@echo "Building ROS2 packages"
+	@clear
 	@source /opt/ros/foxy/setup.bash
 	@colcon build
 
