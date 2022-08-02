@@ -33,4 +33,8 @@ sim:
 	@echo "Running simulation"
 	@source $(current_dir)/install/setup.bash && ros2 launch g_robot navigation.launch.py use_simulator:=True use_robot_state_pub:=True rviz_config_file:='$(current_dir)/install/g_robot/share/g_robot/rviz/nav2_config_sim.rviz'
 
+bridge:
+	@echo "Running bridge"
+	@source /opt/ros/noetic/setup.bash && source /opt/ros/foxy/setup.bash && ros2 run ros1_bridge dynamic_bridge --bridge-all-1to2-topics
+
 .PHONY: clean build models run sim

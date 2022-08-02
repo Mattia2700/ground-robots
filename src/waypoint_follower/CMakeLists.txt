@@ -28,6 +28,8 @@ find_package(geometry_msgs REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(waypoint_msgs REQUIRED)
+find_package(tf2_msgs REQUIRED)
 
 
 # add_executable(main src/main.cpp)
@@ -62,10 +64,11 @@ ament_target_dependencies(waypoint_client
   "rclcpp_components"
   "nav2_msgs"
   "geometry_msgs"
+  "waypoint_msgs"
 )
 
 
-rclcpp_components_register_node(waypoint_client PLUGIN "waypoint_follower_cpp::FollowWaypoints" EXECUTABLE waypoint_follower)
+rclcpp_components_register_node(waypoint_client PLUGIN "waypoint_follower_cpp::FollowWaypoints" EXECUTABLE waypoint_follower_cpp)
 
 install(TARGETS
   waypoint_client
