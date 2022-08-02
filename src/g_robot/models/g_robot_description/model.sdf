@@ -36,115 +36,6 @@
     </visual>
   </link>
 
-  <!-- *********************** IMU SENSOR SETUP **************************  -->
-  <link name="imu_link">
-    <gravity>true</gravity>
-    <sensor name="bmb_imu" type="imu">
-      <always_on>true</always_on>
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <imu>
-        <orientation>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-3</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-3</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-3</stddev>
-            </noise>
-          </z>
-        </orientation>
-        <angular_velocity>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </z>
-        </angular_velocity>
-        <linear_acceleration>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </z>
-        </linear_acceleration>
-      </imu>
-      <plugin name="g_robot_imu" filename="libgazebo_ros_imu_sensor.so">
-        <initial_orientation_as_reference>false</initial_orientation_as_reference>
-        <frame_name>imu_link</frame_name>
-        <ros>
-          <namespace>/imu</namespace>
-          <remapping>~/out:=data</remapping>
-        </ros>
-      </plugin>
-    </sensor>
-  </link>
-
-  <!-- *********************** GPS SETUP *********************************  -->
-  <link name="gps_link">
-    <sensor name="bmb_gps" type="gps">
-      <always_on>true</always_on>
-      <update_rate>10.0</update_rate>
-      <gps>
-        <position_sensing>
-          <horizontal>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1e-2</stddev>
-            </noise>
-          </horizontal>
-          <vertical>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1</stddev>
-            </noise>
-          </vertical>
-        </position_sensing>
-      </gps>
-      <plugin name="g_robot_gps" filename="libgazebo_ros_gps_sensor.so">
-        <ros>
-          <remapping>~/out:=gps/fix</remapping>
-        </ros>
-      </plugin>
-    </sensor>
-  </link>
-
   <!-- ****************************** LIDAR *****************************    -->
   <link name="lidar_link">    
     <inertial>
@@ -339,18 +230,6 @@
     <child>front_caster</child>
     <pose>0 0 0 0 0 0</pose>
   </joint>
-
-  <joint name="imu_joint" type="fixed">
-    <parent>base_link</parent>
-    <child>imu_link</child>
-    <pose>0 0 0 0 0 0</pose>
-  </joint>  
-
-  <joint name="gps_joint" type="fixed">
-    <parent>base_link</parent>
-    <child>gps_link</child>
-    <pose>0 0 0 0 0 0</pose>
-  </joint>  
   
   <joint name="lidar_joint" type="fixed">
     <parent>base_link</parent>
@@ -368,8 +247,8 @@
     <right_joint>drivewhl_r_joint</right_joint>
 
     <!-- kinematics -->
-    <wheel_separation>0.52</wheel_separation>
-    <wheel_diameter>0.28</wheel_diameter>
+    <wheel_separation>0.4</wheel_separation>
+    <wheel_diameter>0.25</wheel_diameter>
 
     <!-- limits -->
     <max_wheel_torque>20</max_wheel_torque>
