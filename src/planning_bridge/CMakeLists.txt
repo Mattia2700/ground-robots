@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
-project(waypoint_msgs)
+project(planning_bridge)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
 endif()
 
-# Default to C++14
+# Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -17,21 +17,43 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
-
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
+# find_package(rclcpp_lifecycle REQUIRED)
+find_package(plansys2_msgs REQUIRED)
+find_package(plansys2_executor REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
+find_package(tf2_msgs REQUIRED)
+find_package(nav2_msgs REQUIRED)
+find_package(waypoint_msgs REQUIRED)
 
+add_executable(ugv_move src/ugv_move_action.cpp)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/PointArray.msg"
-  "srv/CurrentPose.srv"
-  "srv/StartNavigation.srv"
-  DEPENDENCIES geometry_msgs
- )
+target_include_directories(ugv_move PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
+  $<INSTALL_INTERFACE:include>
+)
+
+ament_target_dependencies(ugv_move
+  rclcpp
+  rclcpp_action
+  rclcpp_lifecycle
+  geometry_msgs
+  tf2_msgs
+  nav2_msgs
+  plansys2_msgs
+  plansys2_executor
+  waypoint_msgs
+)
+
+# install(
+#   DIRECTORY config
+#   DESTINATION share/${PROJECT_NAME}
+# )
+
+install(TARGETS
+  ugv_move
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
