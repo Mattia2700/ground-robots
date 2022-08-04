@@ -47,6 +47,14 @@ RUN apt-get install -y ros-foxy-nav2-bringup
 RUN apt-get install -y ros-foxy-robot-localization
 RUN apt-get install -y ros-foxy-lifecycle-msgs
 
+RUN apt-get install -y \
+  python3-colcon-common-extensions \
+  ros-foxy-test-msgs \
+  ros-foxy-rosbridge-server \
+  ros-foxy-plansys2-*
+
+RUN apt-get install -y gdb
+
 RUN sed -i 's/(ALL:ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers # Enable sudo without password
 
 # Add user with home folder
