@@ -384,11 +384,11 @@
 
     <!-- When true, publish coordinate transform from odom to base_footprint -->
     <!-- I usually use the robot_localization package to publish this transform -->   
-    <publish_odom_tf>false</publish_odom_tf>
+    <publish_odom_tf>true</publish_odom_tf>
     
     <!-- When true, publish coordinate transform from base_link to the wheels -->
     <!-- The robot_state_publisher package is often used to publish this transform -->   
-    <publish_wheel_tf>false</publish_wheel_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
 
     <odometry_topic>odom</odometry_topic>
     <odometry_frame>odom</odometry_frame>

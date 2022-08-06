@@ -31,7 +31,7 @@ run:
 
 sim:
 	@echo "Running simulation"
-	@source $(current_dir)/install/setup.bash && ros2 launch g_robot navigation.launch.py use_simulator:=True use_robot_state_pub:=True headless:=True rviz_config_file:='$(current_dir)/install/g_robot/share/g_robot/rviz/nav2_config_sim.rviz'
+	@source $(current_dir)/install/setup.bash && ros2 launch g_robot navigation.launch.py use_simulator:=True use_robot_state_pub:=True headless:=True rviz_config_file:='$(current_dir)/install/g_robot/share/g_robot/rviz/nav2_config_sim.rviz'  # use_namespace:=True namespace:=$(NAME)
 
 bridge:
 	@echo "Running bridge"
