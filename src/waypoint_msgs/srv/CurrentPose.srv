@@ -1,2 +1,2 @@
 ---
-geometry_msgs/Pose current_pose
+geometry_msgs/Point current_pose

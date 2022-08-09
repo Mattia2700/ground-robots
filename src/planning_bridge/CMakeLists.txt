@@ -19,7 +19,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
-# find_package(rclcpp_lifecycle REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(plansys2_msgs REQUIRED)
 find_package(plansys2_executor REQUIRED)
 find_package(geometry_msgs REQUIRED)
@@ -44,6 +44,7 @@ ament_target_dependencies(ugv_move
   plansys2_msgs
   plansys2_executor
   waypoint_msgs
+  std_msgs
 )
 
 # install(

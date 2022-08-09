@@ -18,6 +18,7 @@
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 
 #include "waypoint_msgs/srv/start_navigation.hpp"
+#include "waypoint_msgs/srv/current_pose.hpp"
 
 // utils
 #include "json.hpp"
@@ -32,6 +33,10 @@ class MoveAction : public plansys2::ActionExecutorClient {
 public:
   MoveAction() : plansys2::ActionExecutorClient("ugv_move", 250ms) {
     progress_ = 0.0;
+
+    start_navigation_client_ = this->create_client<waypoint_msgs::srv::StartNavigation>("start_navigation");
+
+    current_pose_client_ptr_ = create_client<waypoint_msgs::srv::CurrentPose>("get_current_pose");
 
     waypoints_file_path_ = current_file_path_.substr(0,
     current_file_path_.find_last_of("/")); waypoints_file_path_ =
@@ -48,58 +53,30 @@ public:
       labels_ = json::parse(waypoints_file_);
       waypoints_file_.close();
     }
-
-    // tf_sub_ = this->create_subscription<tf2_msgs::msg::TFMessage>(
-    //     "tf", 10, [this](const tf2_msgs::msg::TFMessage::SharedPtr msg) {
-    //       // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Reading tf topic");
-    //       if (msg->transforms[0].header.frame_id == "map") {
-    //         this->last_pose_->position.x =
-    //             msg->transforms[0].transform.translation.x;
-    //         this->last_pose_->position.y =
-    //             msg->transforms[0].transform.translation.y;
-    //         this->last_pose_->position.z =
-    //             msg->transforms[0].transform.translation.z;
-    //         this->last_pose_->orientation.x =
-    //             msg->transforms[0].transform.rotation.x;
-    //         this->last_pose_->orientation.y =
-    //             msg->transforms[0].transform.rotation.y;
-    //         this->last_pose_->orientation.z =
-    //             msg->transforms[0].transform.rotation.z;
-    //         this->last_pose_->orientation.w =
-    //             msg->transforms[0].transform.rotation.w;
-    //       }
-    //     });
   }
 
 private:
   void do_work() {
-
-    room_goal_ = current_arguments_[GOAL_INDEX];
-    goal_position_ = labels_.at(room_goal_).at("center").get<std::vector<double>>();
-
     if(!is_initial_distance_set_){
+      room_goal_ = current_arguments_[GOAL_INDEX];
+      goal_position_ = labels_.at(room_goal_).at("center").get<std::vector<double>>();
+      
       auto request = std::make_shared<waypoint_msgs::srv::StartNavigation::Request>();
       request->x = goal_position_[0];
       request->y = goal_position_[1];
       request->z = goal_position_[2];
-      auto future_pose = this->start_navigation_client_->async_send_request(
-        request,
-        [this](rclcpp::Client<waypoint_msgs::srv::StartNavigation>::SharedFuture future) {
-          auto result = future.get();
-          initial_distance_ = result->initial_distance;
-          this->is_initial_distance_set_ = true;
-          RCLCPP_INFO(this->get_logger(), "Setting initial distnace to %f", initial_distance_);
-          continue_work();
-        });
+      auto future_pose = this->start_navigation_client_->async_send_request(request);
+      
     }
+    get_pose();
   }
 
   void continue_work(){
-    current_distance_ = std::sqrt(std::pow(goal_position_[0] -
-    last_pose_->position.x, 2) + std::pow(goal_position_[1] -
-    last_pose_->position.y, 2)); progress_ = 1.0 - (current_distance_ /
+    progress_ = 1.0 - (current_distance_ /
     initial_distance_);
 
+    // RCLCPP_INFO(get_logger(), "progress: %f", progress_);
+    
     if (progress_ < 0.99) {
       send_feedback(progress_, "Move running");
     } else {
@@ -114,6 +91,30 @@ private:
     std::cout << "Moving ... [" << std::min(100.0, progress_ * 100.0) << "%]" << std::flush;
   }
 
+  void get_pose() {
+    auto future_pose = this->current_pose_client_ptr_->async_send_request(
+        std::make_unique<waypoint_msgs::srv::CurrentPose::Request>(),
+        [this](rclcpp::Client<waypoint_msgs::srv::CurrentPose>::SharedFuture future) {
+          auto result = future.get();
+          RCLCPP_INFO(this->get_logger(), "%f, %f, %f", result->current_pose.x, result->current_pose.y, result->current_pose.z);
+          if(!is_initial_distance_set_){
+            this->initial_distance_ = std::sqrt(std::pow(result->current_pose.x - goal_position_[0], 2) +
+            std::pow(result->current_pose.y - goal_position_[1], 2));
+            is_initial_distance_set_ = true;
+            this->current_distance_ = this->initial_distance_;
+          } else {
+            this->current_distance_ = std::sqrt(std::pow(result->current_pose.x - goal_position_[0], 2) +
+            std::pow(result->current_pose.y - goal_position_[1], 2));
+            if(this->current_distance_ > this->initial_distance_){
+              float temp = this->current_distance_;
+              this->current_distance_ = this->initial_distance_;
+              this->initial_distance_ = temp;
+            }
+          }
+          this->continue_work();
+        });
+  }
+
   float progress_;
   geometry_msgs::msg::Pose::SharedPtr last_pose_ =
   std::make_shared<geometry_msgs::msg::Pose>();
@@ -121,14 +122,17 @@ private:
   json labels_;
   std::string room_goal_;
   std::vector<double> goal_position_;
-  double initial_distance_;
+  float initial_distance_;
   bool is_initial_distance_set_ = false;
-  double current_distance_;
+  float current_distance_;
   std::string current_file_path_ = __FILE__;
   std::string waypoints_file_path_;
   std::ifstream waypoints_file_;
-  rclcpp::Client<waypoint_msgs::srv::StartNavigation>::SharedPtr start_navigation_client_ = this->create_client<waypoint_msgs::srv::StartNavigation>("start_navigation");
-};
+  rclcpp::Client<waypoint_msgs::srv::StartNavigation>::SharedPtr start_navigation_client_;
+  rclcpp::Client<waypoint_msgs::srv::CurrentPose>::SharedPtr current_pose_client_ptr_;
+  struct pos { float x = -1; float y = -1; float z = -1; };
+  rclcpp::TimerBase::SharedPtr timer_;
+};  
 
 namespace nav_2_pose_cpp {
 class Nav2Pose : public rclcpp::Node {
@@ -139,7 +143,7 @@ public:
 
   explicit Nav2Pose(const rclcpp::NodeOptions &options = rclcpp::NodeOptions())
       : Node("nav_2_pose_client", options) {
-    this->action_nav_pose_ptr_ =
+    action_nav_pose_ptr_ =
         rclcpp_action::create_client<ActionNav2Pose>(this, "navigate_to_pose");
 
     this->start_navigation_service_ptr_ = this->create_service<
@@ -147,7 +151,7 @@ public:
         "start_navigation",
         [this](
             const std::shared_ptr<waypoint_msgs::srv::StartNavigation::Request>
-                request,
+                request,  
             std::shared_ptr<waypoint_msgs::srv::StartNavigation::Response>
                 response) {
           RCLCPP_INFO(this->get_logger(), "Received request");
@@ -159,9 +163,8 @@ public:
           goal_->pose.orientation.z = 0.0;
           goal_->pose.orientation.w = 1.0;
           goal_->header.frame_id = "map";
-          goal_->header.stamp = this->now();
-          response->initial_distance = 0;
-          this->send_goal();
+          goal_->header.stamp = now();
+          send_goal();
         });
   }
 
@@ -191,6 +194,7 @@ public:
   }
 
 private:
+
   rclcpp_action::Client<ActionNav2Pose>::SharedPtr action_nav_pose_ptr_;
   rclcpp::Service<waypoint_msgs::srv::StartNavigation>::SharedPtr
       start_navigation_service_ptr_;
@@ -208,13 +212,7 @@ private:
     }
   }
 
-  void feedback_callback(
-      GoalHandleNav2Pose::SharedPtr,
-      const std::shared_ptr<const ActionNav2Pose::Feedback> feedback) {
-    // if first time, set initial_distance_
-    // else return current_distance_
-    RCLCPP_INFO(this->get_logger(), "%f", feedback->distance_remaining);
-  }
+  void feedback_callback(GoalHandleNav2Pose::SharedPtr, const std::shared_ptr<const ActionNav2Pose::Feedback> feedback) {}
 
   void result_callback(const GoalHandleNav2Pose::WrappedResult &result) {
     switch (result.code) {

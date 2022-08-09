@@ -20,6 +20,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 find_package(waypoint_msgs REQUIRED)
 
 add_executable(server src/current_pose_server.cpp)
@@ -28,6 +30,8 @@ ament_target_dependencies(server
   rclcpp 
   geometry_msgs
   tf2_msgs
+  tf2
+  tf2_ros
   waypoint_msgs
 )
 

@@ -3,10 +3,6 @@
   <model name="g_robot">  
   <static>false</static>
 
-  <!-- ****************** ROBOT BASE FOOTPRINT ***************************  -->
-  <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
-  <link name="base_footprint"/>
-
   <!-- ********************** ROBOT BASE *********************************  -->
   <link name="base_link">
 
@@ -34,115 +30,6 @@
         <emissive>0.0 0.0 0.0 1.0</emissive>
       </material>
     </visual>
-  </link>
-
-  <!-- *********************** IMU SENSOR SETUP **************************  -->
-  <link name="imu_link">
-    <gravity>true</gravity>
-    <sensor name="bmb_imu" type="imu">
-      <always_on>true</always_on>
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <imu>
-        <orientation>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-3</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-3</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-3</stddev>
-            </noise>
-          </z>
-        </orientation>
-        <angular_velocity>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-            </noise>
-          </z>
-        </angular_velocity>
-        <linear_acceleration>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-            </noise>
-          </z>
-        </linear_acceleration>
-      </imu>
-      <plugin name="g_robot_imu" filename="libgazebo_ros_imu_sensor.so">
-        <initial_orientation_as_reference>false</initial_orientation_as_reference>
-        <frame_name>imu_link</frame_name>
-        <ros>
-          <namespace>/imu</namespace>
-          <remapping>~/out:=data</remapping>
-        </ros>
-      </plugin>
-    </sensor>
-  </link>
-
-  <!-- *********************** GPS SETUP *********************************  -->
-  <link name="gps_link">
-    <sensor name="bmb_gps" type="gps">
-      <always_on>true</always_on>
-      <update_rate>10.0</update_rate>
-      <gps>
-        <position_sensing>
-          <horizontal>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1e-2</stddev>
-            </noise>
-          </horizontal>
-          <vertical>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1</stddev>
-            </noise>
-          </vertical>
-        </position_sensing>
-      </gps>
-      <plugin name="g_robot_gps" filename="libgazebo_ros_gps_sensor.so">
-        <ros>
-          <remapping>~/out:=gps/fix</remapping>
-        </ros>
-      </plugin>
-    </sensor>
   </link>
 
   <!-- ****************************** LIDAR *****************************    -->
@@ -309,12 +196,7 @@
   <!-- ************************ JOINTS ***********************************  -->
   <!-- Pose of the joint is the same as the child link frame -->
   <!-- Axis is the axis of rotation relative to the child link frame -->
-  
-  <joint name="base_joint" type="fixed">
-    <parent>base_footprint</parent>
-    <child>base_link</child>
-    <pose>0 0 0 0 0 0</pose>
-  </joint>
+
 
   <joint name="drivewhl_l_joint" type="revolute">
     <parent>base_link</parent>
@@ -339,18 +221,6 @@
     <child>front_caster</child>
     <pose>0 0 0 0 0 0</pose>
   </joint>
-
-  <joint name="imu_joint" type="fixed">
-    <parent>base_link</parent>
-    <child>imu_link</child>
-    <pose>0 0 0 0 0 0</pose>
-  </joint>  
-
-  <joint name="gps_joint" type="fixed">
-    <parent>base_link</parent>
-    <child>gps_link</child>
-    <pose>0 0 0 0 0 0</pose>
-  </joint>  
   
   <joint name="lidar_joint" type="fixed">
     <parent>base_link</parent>
@@ -388,11 +258,11 @@
     
     <!-- When true, publish coordinate transform from base_link to the wheels -->
     <!-- The robot_state_publisher package is often used to publish this transform -->   
-    <publish_wheel_tf>true</publish_wheel_tf>
+    <publish_wheel_tf>false</publish_wheel_tf>
 
     <odometry_topic>odom</odometry_topic>
     <odometry_frame>odom</odometry_frame>
-    <robot_base_frame>base_footprint</robot_base_frame>
+    <robot_base_frame>base_link</robot_base_frame>
 
     <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
     <odometry_source>1</odometry_source>

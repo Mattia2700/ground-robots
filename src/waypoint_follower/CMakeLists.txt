@@ -49,33 +49,33 @@ find_package(tf2_msgs REQUIRED)
 #   "std_msgs"
 # )
 
-add_library(waypoint_client SHARED
-  src/waypoint_follower.cpp)
+# add_library(waypoint_client SHARED
+#   src/waypoint_follower.cpp)
 
 
-target_include_directories(waypoint_client PRIVATE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
+# target_include_directories(waypoint_client PRIVATE
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
 
 
-ament_target_dependencies(waypoint_client
-  "rclcpp"
-  "rclcpp_action"
-  "rclcpp_components"
-  "nav2_msgs"
-  "geometry_msgs"
-  "waypoint_msgs"
-)
+# ament_target_dependencies(waypoint_client
+#   "rclcpp"
+#   "rclcpp_action"
+#   "rclcpp_components"
+#   "nav2_msgs"
+#   "geometry_msgs"
+#   "waypoint_msgs"
+# )
 
 
-rclcpp_components_register_node(waypoint_client PLUGIN "waypoint_follower_cpp::FollowWaypoints" EXECUTABLE waypoint_follower_cpp)
+# rclcpp_components_register_node(waypoint_client PLUGIN "waypoint_follower_cpp::FollowWaypoints" EXECUTABLE waypoint_follower_cpp)
 
-install(TARGETS
-  waypoint_client
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
+# install(TARGETS
+#   waypoint_client
+#   ARCHIVE DESTINATION lib
+#   LIBRARY DESTINATION lib
+#   RUNTIME DESTINATION bin
+# )
 
 #   target_include_directories(test_lifecycle PUBLIC
 #   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
