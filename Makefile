@@ -6,7 +6,7 @@ current_dir = ${PWD}
 ifeq ($(SIM),)
 all: clean build run
 else
-all: clean build models sim
+all: clean build sim
 endif
 
 clean:
@@ -17,13 +17,8 @@ build:
 	@echo "Building ROS2 packages"
 	@clear
 	@source /opt/ros/foxy/setup.bash
-	@colcon build
-
-models:	
-	@echo "Creating symbolic link for model in $(home)/.gazebo/models"
-	@if [ -d $(home)/.gazebo/models ]; then if (file $(home)/.gazebo/models | grep -q symbolic; echo $? ); then rm -rf $(home)/.gazebo/models; fi; fi;
-	@if [ ! -d $(home)/.gazebo/ ]; then mkdir -p $(home)/.gazebo; fi;
-	@if [ ! -L $(home)/.gazebo/models ] || [ ! -d $(home)/.gazebo/models ]; then ln -s $(current_dir)/models $(home)/.gazebo/; fi;	
+	@make msgs
+	@colcon build --packages-ignore waypoint_msgs
 
 run: 
 	@echo "Running navigation"
@@ -31,7 +26,13 @@ run:
 
 sim:
 	@echo "Running simulation"
-	@source $(current_dir)/install/setup.bash && ros2 launch g_robot navigation.launch.py use_simulator:=True use_robot_state_pub:=True headless:=True rviz_config_file:='$(current_dir)/install/g_robot/share/g_robot/rviz/nav2_config_sim.rviz'
+	@source $(current_dir)/install/setup.bash && ros2 launch g_robot navigation.launch.py \
+		use_simulator:=True \
+		headless:=True \
+		rviz_config_file:='$(current_dir)/install/g_robot/share/g_robot/rviz/nav2_config_sim.rviz'
+
+msgs:
+	@if [ ! -d $(current_dir)/install ]; then echo "Building messages"; colcon build --packages-select waypoint_msgs; fi
 
 bridge:
 	@echo "Running bridge"
