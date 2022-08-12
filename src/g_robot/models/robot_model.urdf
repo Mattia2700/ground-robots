@@ -54,7 +54,7 @@
     <visual>
       <origin xyz="0 0 0.25" rpy="1.5707963267949 0 3.141592654"/>
       <geometry>
-        <mesh filename="package://g_robot/meshes/base.stl" />
+        <box size="${base_length} ${base_height} ${base_width}"/>
       </geometry>
       <material name="Gray">
         <color rgba="${200/255} ${200/255} ${200/255} 1.0"/>
@@ -63,11 +63,11 @@
 
     <collision>
       <geometry>
-        <box size="${base_length} ${base_width} ${base_height}"/>
+        <mesh filename="package://g_robot/meshes/base.stl" />
       </geometry>
     </collision>
 
-    <xacro:box_inertia m="40.0" w="${base_width}" d="${base_length}" h="${base_height}"/>
+    <xacro:box_inertia m="10.0" w="${base_width}" d="${base_length}" h="${base_height}"/>
     
   </link>
 
@@ -96,7 +96,7 @@
         </geometry>
       </collision>
       
-      <xacro:cylinder_inertia m="110.5" r="${wheel_radius}" h="${wheel_width}"/>
+      <xacro:cylinder_inertia m="2.0" r="${wheel_radius}" h="${wheel_width}"/>
       
     </link>
 
@@ -137,7 +137,7 @@
         <cylinder radius="0.05" length="0.025"/>
       </geometry>
     </collision>
-    <xacro:cylinder_inertia m="10.05" r="0.05" h="0.025"/>
+    <xacro:cylinder_inertia m="0.5" r="0.05" h="0.025"/>
   </link>
 
   <gazebo reference="front_caster">

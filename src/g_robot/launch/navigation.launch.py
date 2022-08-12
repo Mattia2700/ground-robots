@@ -18,7 +18,7 @@ def generate_launch_description():
   pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
   pkg_share = FindPackageShare(package='g_robot').find('g_robot')
   default_launch_dir = os.path.join(pkg_share, 'launch')
-  default_model_path = os.path.join(pkg_share, 'models/g_robot_v2.urdf')
+  default_model_path = os.path.join(pkg_share, 'models/robot_model.urdf')
   robot_localization_file_path = os.path.join(pkg_share, 'config/ekf.yaml')
   default_rviz_config_path = os.path.join(pkg_share, 'rviz/nav2_config.rviz')
   sim_rviz_config_path = os.path.join(pkg_share, 'rviz/nav2_config_sim.rviz')

@@ -279,7 +279,7 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: true
-      Description File: /home/ros2/workspace2/src/g_robot/models/g_robot_v2.urdf
+      Description File: /home/ros2/workspace2/src/g_robot/models/robot_model.urdf
       Description Source: Topic
       Description Topic:
         Depth: 5
