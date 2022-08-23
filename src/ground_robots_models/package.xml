@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>Ground Robots Models</description>
   <maintainer email="mattia2700franzin+dev@gmail.com">Mattia Franzin</maintainer>
-  <license>GPLv3</license>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
