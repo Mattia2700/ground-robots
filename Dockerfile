@@ -70,8 +70,6 @@ RUN echo 'alias rosplz2="source ./install/setup.bash"' >> ~/.bashrc
 RUN echo 'alias rosinstall="rosdep install -y -r -q --from-paths src --ignore-src --rosdistro foxy"' >> ~/.bashrc
 RUN echo 'source /opt/ros/foxy/setup.bash' >> ~/.bashrc
 RUN echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
-RUN echo "export _colcon_cd_root=~/workspace" >> ~/.bashrc
-RUN echo "export GAZEBO_MODEL_PATH=~/workspace2/src/g_robot/models" >> ~/.bashrc
 
 RUN sudo apt-get install -y file ros-foxy-rviz2
 

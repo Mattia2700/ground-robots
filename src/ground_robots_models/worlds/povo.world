@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+    <world name="default">
+        <include>
+            <uri>model://povo.model</uri>
+        </include>
+        <include>
+            <uri>model://sun</uri>
+        </include>
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+        <include>
+            <!-- <pose>17 -43.5 1 0 0 3.14</pose> -->
+            <pose>-10 -32 1 0 0 -1.57</pose>
+            <uri>model://ground_robot.model</uri>
+        </include>
+    </world>
+</sdf>

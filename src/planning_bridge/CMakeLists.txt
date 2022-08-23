@@ -19,40 +19,65 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(plansys2_msgs REQUIRED)
 find_package(plansys2_executor REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(tf2_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
-find_package(waypoint_msgs REQUIRED)
+find_package(planning_bridge_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
 
-add_executable(ugv_move src/ugv_move_action.cpp)
+add_executable(navigation_client src/navigation_client.cpp)
+add_executable(pose_server src/pose_server.cpp)
+add_executable(ugv_move src/ugv_move.cpp)
+add_executable(ugv_transporting_uav_move src/ugv_transporting_uav_move.cpp)
 
 target_include_directories(ugv_move PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
   $<INSTALL_INTERFACE:include>
 )
+target_include_directories(ugv_transporting_uav_move PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
+  $<INSTALL_INTERFACE:include>
+)
+
+ament_target_dependencies(navigation_client
+  rclcpp
+  rclcpp_action
+  geometry_msgs
+  planning_bridge_msgs
+  nav2_msgs
+)
+
+ament_target_dependencies(pose_server
+  rclcpp
+  tf2_ros
+  planning_bridge_msgs
+)
 
 ament_target_dependencies(ugv_move
   rclcpp
   rclcpp_action
-  rclcpp_lifecycle
   geometry_msgs
-  tf2_msgs
-  nav2_msgs
-  plansys2_msgs
   plansys2_executor
-  waypoint_msgs
-  std_msgs
+  planning_bridge_msgs
 )
 
-# install(
-#   DIRECTORY config
-#   DESTINATION share/${PROJECT_NAME}
-# )
+ament_target_dependencies(ugv_transporting_uav_move
+  rclcpp
+  rclcpp_action
+  geometry_msgs
+  plansys2_executor
+  planning_bridge_msgs
+)
+
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
 install(TARGETS
+  navigation_client
+  pose_server
+  ugv_transporting_uav_move
   ugv_move
   DESTINATION lib/${PROJECT_NAME})
 

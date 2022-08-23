@@ -5,14 +5,17 @@ import numpy as np
 rotation_z = 135 * np.pi / 180
 scale_y = 1.0925
 
-translation = np.array([6.82099667587, 8.7179839194, 0])
+translation = np.array([6.8210, 8.7180, 0])
 
 current_folder = os.path.dirname(os.path.abspath(__file__)) 
-original_name = current_folder + '/waypoints.json'
-dict_name = current_folder + '/waypoints_dict.json'
+original_name = current_folder + '/waypoints_original.json'
+dict_name = current_folder + '/waypoints.json'
 
 with open(original_name) as f:
     original_data = json.load(f) 
+
+with open(dict_name, 'w') as f:
+    json.dump(original_data, f, indent=4)
 
 dict_data = dict()
 
@@ -28,7 +31,7 @@ roto_scaling = np.dot(rotation_matrix, scale_matrix)
 
 for obj in original_data:
     # rotate, scale and then translate and convert to list
-    dict_data[obj['label']] = {k: ((np.dot(roto_scaling,np.array(v)*np.array([-1,-1,1])))*np.array([-1,-1,1])-translation).tolist() for k, v in obj.items() if k!='label'} 
+    dict_data[obj['label']] = {k: ((np.dot(roto_scaling,np.array(v)*np.array([-1,-1,1])))*np.array([-1,-1,1])-translation)[0:2].tolist() for k, v in obj.items() if k!='label'} 
 
 with open(dict_name, 'w') as f:
     json.dump(dict_data, f, indent=4)

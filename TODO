@@ -1,0 +1,2 @@
+- Aggiunger check se c'è già un goal in corso prima di crearne uno nuovo (true o false come risposta)?
+- Provare a usare stesso file rviz
