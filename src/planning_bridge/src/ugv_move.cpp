@@ -25,7 +25,7 @@ public:
   MoveAction() : plansys2::ActionExecutorClient("ugv_move", 250ms) {
     progress_ = 0.0;
 
-    start_navigation_client_ = this->create_client<planning_bridge_msgs::srv::StartNavigation>("start_navigation");
+    start_navigation_client_ = create_client<planning_bridge_msgs::srv::StartNavigation>("start_navigation");
 
     current_pose_client_ptr_ = create_client<planning_bridge_msgs::srv::CurrentPose>("get_current_pose");
 
@@ -55,10 +55,21 @@ private:
       auto request = std::make_shared<planning_bridge_msgs::srv::StartNavigation::Request>();
       request->x = goal_position_[0];
       request->y = goal_position_[1];
-      auto future_pose = this->start_navigation_client_->async_send_request(request);
       
+      start_navigation_client_->async_send_request(request,
+      [this](rclcpp::Client<planning_bridge_msgs::srv::StartNavigation>::SharedFuture future){
+        auto result = future.get();
+        if(result->success) {
+          RCLCPP_INFO(get_logger(), "Navigation started");
+          get_pose();
+        } else {
+          RCLCPP_ERROR(get_logger(), "Navigation failed");
+        }
+      });
+      
+    } else {
+      get_pose();
     }
-    get_pose();
   }
 
   void continue_work(){
@@ -80,25 +91,25 @@ private:
   }
 
   void get_pose() {
-    auto future_pose = this->current_pose_client_ptr_->async_send_request(
+    current_pose_client_ptr_->async_send_request(
         std::make_unique<planning_bridge_msgs::srv::CurrentPose::Request>(),
         [this](rclcpp::Client<planning_bridge_msgs::srv::CurrentPose>::SharedFuture future) {
           auto result = future.get();
           if(!is_initial_distance_set_){
-            this->initial_distance_ = std::sqrt(std::pow(result->current_pose.x - goal_position_[0], 2) +
-            std::pow(result->current_pose.y - goal_position_[1], 2));
+            initial_distance_ = std::sqrt(std::pow(result->x - goal_position_[0], 2) +
+            std::pow(result->y - goal_position_[1], 2));
             is_initial_distance_set_ = true;
-            this->current_distance_ = this->initial_distance_;
+            current_distance_ = initial_distance_;
           } else {
-            this->current_distance_ = std::sqrt(std::pow(result->current_pose.x - goal_position_[0], 2) +
-            std::pow(result->current_pose.y - goal_position_[1], 2));
-            if(this->current_distance_ > this->initial_distance_){
-              float temp = this->current_distance_;
-              this->current_distance_ = this->initial_distance_;
-              this->initial_distance_ = temp;
+            current_distance_ = std::sqrt(std::pow(result->x - goal_position_[0], 2) +
+            std::pow(result->y - goal_position_[1], 2));
+            if(current_distance_ > initial_distance_){
+              float temp = current_distance_;
+              current_distance_ = initial_distance_;
+              initial_distance_ = temp;
             }
           }
-          this->continue_work();
+          continue_work();
         });
   }
 

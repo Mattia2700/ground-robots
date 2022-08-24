@@ -22,7 +22,7 @@ public:
     action_nav_pose_ptr_ =
         rclcpp_action::create_client<ActionNav2Pose>(this, "navigate_to_pose");
 
-    this->start_navigation_service_ptr_ = this->create_service<
+    start_navigation_service_ptr_ = create_service<
         planning_bridge_msgs::srv::StartNavigation>(
         "start_navigation",
         [this](
@@ -48,12 +48,12 @@ public:
     using namespace std::placeholders;
 
     if (!action_nav_pose_ptr_->wait_for_action_server()) {
-      RCLCPP_ERROR(this->get_logger(),
+      RCLCPP_ERROR(get_logger(),
                    "Action server not available after waiting");
       rclcpp::shutdown();
     }
 
-    RCLCPP_INFO(this->get_logger(), "Sending goal");
+    RCLCPP_INFO(get_logger(), "Sending goal");
 
     auto goal_msg = std::make_unique<ActionNav2Pose::Goal>();
     goal_msg->pose = *goal_;
@@ -66,7 +66,7 @@ public:
         std::bind(&Nav2Pose::feedback_callback, this, _1, _2);
     send_goal_options.result_callback =
         std::bind(&Nav2Pose::result_callback, this, _1);
-    this->action_nav_pose_ptr_->async_send_goal(*goal_msg, send_goal_options);
+    action_nav_pose_ptr_->async_send_goal(*goal_msg, send_goal_options);
   }
 
 private:
@@ -81,9 +81,9 @@ private:
       std::shared_future<GoalHandleNav2Pose::SharedPtr> future) {
     auto goal_handle = future.get();
     if (!goal_handle) {
-      RCLCPP_ERROR(this->get_logger(), "Goal was rejected by server");
+      RCLCPP_ERROR(get_logger(), "Goal was rejected by server");
     } else {
-      RCLCPP_INFO(this->get_logger(),
+      RCLCPP_INFO(get_logger(),
                   "Goal accepted by server, waiting for result");
     }
   }
@@ -95,13 +95,13 @@ private:
     case rclcpp_action::ResultCode::SUCCEEDED:
       break;
     case rclcpp_action::ResultCode::ABORTED:
-      RCLCPP_ERROR(this->get_logger(), "Goal was aborted");
+      RCLCPP_ERROR(get_logger(), "Goal was aborted");
       return;
     case rclcpp_action::ResultCode::CANCELED:
-      RCLCPP_ERROR(this->get_logger(), "Goal was canceled");
+      RCLCPP_ERROR(get_logger(), "Goal was canceled");
       return;
     default:
-      RCLCPP_ERROR(this->get_logger(), "Unknown result code");
+      RCLCPP_ERROR(get_logger(), "Unknown result code");
       return;
     }
   }
