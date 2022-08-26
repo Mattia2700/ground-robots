@@ -26,7 +26,7 @@ def generate_launch_description():
   behavior_tree_xml_path = os.path.join(pkg_bt, 'behavior_trees', 'navigate_w_replanning_and_recovery.xml')
 
   rviz_config_path = os.path.join(pkg_navigation, 'rviz/nav2_config.rviz')
-  static_map_path = os.path.join(pkg_navigation, 'maps', 'currentMap.yaml')
+  static_map_path = os.path.join(pkg_navigation, 'maps', 'povo.yaml')
   nav2_params_path = os.path.join(pkg_navigation, 'params', 'nav2_params.yaml')
 
   model_path = os.path.join(pkg_models, 'models/robot_model.urdf')
