@@ -32,7 +32,7 @@ public:
                 response) {
           goal_->pose.position.x = request->x;
           goal_->pose.position.y = request->y;
-          goal_->pose.position.z = 0;
+          goal_->pose.position.z = 1.5;
           goal_->pose.orientation.x = 0.0;
           goal_->pose.orientation.y = 0.0;
           goal_->pose.orientation.z = 0.0;

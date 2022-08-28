@@ -22,7 +22,7 @@ using namespace std::chrono_literals;
 
 class MoveAction : public plansys2::ActionExecutorClient {
 public:
-  MoveAction() : plansys2::ActionExecutorClient("ugv_move", 250ms) {
+  MoveAction() : plansys2::ActionExecutorClient("ugv_transporting_uav_move", 250ms) {
     progress_ = 0.0;
 
     start_navigation_client_ = create_client<planning_bridge_msgs::srv::StartNavigation>("start_navigation");
@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<MoveAction>();
 
-  node->set_parameter(rclcpp::Parameter("action_name", "ugv_move"));
+  node->set_parameter(rclcpp::Parameter("action_name", "ugv_transporting_uav_move"));
   node->trigger_transition(
   lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
 

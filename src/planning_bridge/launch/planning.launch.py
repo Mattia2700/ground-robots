@@ -4,9 +4,9 @@ from launch_ros.actions import Node
  
 def generate_launch_description():
 
-    start_planning_client = Node(
+    start_navigation_client = Node(
         package='planning_bridge',
-        executable='planning_client',
+        executable='navigation_client',
         output='screen')
 
     start_pose_server = Node(
@@ -26,7 +26,7 @@ def generate_launch_description():
 
 
     ld = LaunchDescription()
-    ld.add_action(start_planning_client)
+    ld.add_action(start_navigation_client)
     ld.add_action(start_pose_server)
     ld.add_action(start_ugv_move)
     ld.add_action(start_ugv_transporting_uav_move)

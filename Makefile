@@ -3,12 +3,6 @@ SHELL := /bin/bash
 home = ${HOME}
 current_dir = ${PWD}
 
-ifeq ($(SIM),)
-all: clean build run
-else
-all: clean build sim
-endif
-
 models:	
 	@echo "Creating symbolic link for model in $(home)/.gazebo/models"
 	@if [ -d $(home)/.gazebo/models ]; then if (file $(home)/.gazebo/models | grep -q symbolic; echo $? ); then rm -rf $(home)/.gazebo/models; fi; fi;
@@ -21,12 +15,10 @@ clean:
 
 build:
 	@echo "Building ROS2 packages"
-	@clear
-	@source /opt/ros/foxy/setup.bash
 	@make msgs
 	@source $(current_dir)/install/setup.bash && colcon build --packages-ignore planning_bridge_msgs
 
-run: 
+navigation: 
 	@echo "Running navigation"
 	@source $(current_dir)/install/setup.bash && ros2 launch ground_robots_navigation navigation.launch.py
 
@@ -39,7 +31,7 @@ sim:
 		rviz_config_file:='$(current_dir)/install/ground_robots_navigation/share/ground_robots_navigation/rviz/nav2_config_sim.rviz'
 
 msgs:
-	@colcon build --packages-select planning_bridge_msgs
+	@source /opt/ros/foxy/setup.bash && colcon build --packages-select planning_bridge_msgs
 
 bridge:
 	@echo "Running bridge"
@@ -49,5 +41,5 @@ planning:
 	@echo "Running planning"
 	@source $(current_dir)/install/setup.bash && ros2 launch planning_bridge planning.launch.py
 
-.PHONY: clean build models run sim
+.PHONY: models clean build msgs navigation sim bridge planning
 

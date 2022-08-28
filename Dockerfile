@@ -13,47 +13,37 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
 
 RUN \
   apt-get update && \
-  apt-get -y install apt-utils
+  apt-get install -y apt-utils && \
+  apt-get upgrade -y
 
-RUN \
-  apt-get -y install libgl1-mesa-glx libgl1-mesa-dri mesa-utils dbus 
+RUN apt-get install -y libgl1-mesa-glx libgl1-mesa-dri mesa-utils dbus 
 
-RUN \
-  apt-get -y install nano python3-pip libzmq3-dev
+RUN apt-get install -y nano python3-pip libzmq3-dev 
+
+RUN apt-get install -y file
+
+RUN apt-get install -y build-essential cmake gdb coinor-libcbc-dev coinor-libclp-dev coinor-libcoinutils-dev coinor-libcgl-dev coinor-libcoinutils-dev libgsl-dev bison flex black
   
-RUN \
-  apt-get -y install ros-noetic-tf2-bullet \
-                     ros-noetic-grid-map-ros \
-                     ros-noetic-voxel-grid \
-                     ros-noetic-amcl \
-                     ros-noetic-costmap-2d \
-                     ros-noetic-map-server \
-                     ros-noetic-depthimage-to-laserscan \
-                     ros-noetic-slam-toolbox --fix-missing
-                     
-RUN \
-  apt-get -y upgrade
-
-
-RUN apt-get update && apt-get upgrade -y
-
-RUN apt-get install -y python3-colcon-common-extensions
-RUN apt-get install -y ros-foxy-test-msgs 
-RUN apt-get install -y ros-foxy-gazebo-ros-pkgs 
-RUN apt-get install -y ros-foxy-xacro
-RUN apt-get install -y ros-foxy-joint-state-publisher-gui
-RUN apt-get update && apt-get install -y ros-foxy-rqt-robot-steering
-RUN apt-get install -y ros-foxy-nav2-bringup
-RUN apt-get install -y ros-foxy-robot-localization
-RUN apt-get install -y ros-foxy-lifecycle-msgs
+# RUN   apt-get -y install ros-noetic-depthimage-to-laserscan \
 
 RUN apt-get install -y \
   python3-colcon-common-extensions \
-  ros-foxy-test-msgs \
+  ros-foxy-test-msgs
+
+RUN apt-get install -y \
+  ros-foxy-xacro \ 
+  ros-foxy-rqt-robot-steering \
+  ros-foxy-nav2-bringup \
+  ros-foxy-rviz2 \
+  ros-foxy-gazebo-ros-pkgs
+
+RUN apt-get install -y \
   ros-foxy-rosbridge-server \
   ros-foxy-plansys2-*
 
-RUN apt-get install -y gdb
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh && \
+  sh /tmp/nodesource_setup.sh && \
+  sudo apt-get install -y nodejs 
 
 RUN sed -i 's/(ALL:ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers # Enable sudo without password
 
@@ -62,20 +52,6 @@ RUN useradd -ms /bin/bash -G sudo ros2
 USER ros2
 WORKDIR /home/ros2
 
-RUN echo 'alias noetic="source /opt/ros/noetic/setup.bash"' >> ~/.bashrc
-RUN echo 'alias foxy="source /opt/ros/foxy/setup.bash"' >> ~/.bashrc
-RUN echo 'alias rosplz1="source ./devel/setup.bash"' >> ~/.bashrc
-RUN echo 'alias rosplz2="source ./install/setup.bash"' >> ~/.bashrc
-
-RUN echo 'alias rosinstall="rosdep install -y -r -q --from-paths src --ignore-src --rosdistro foxy"' >> ~/.bashrc
-RUN echo 'source /opt/ros/foxy/setup.bash' >> ~/.bashrc
-RUN echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
-
-RUN sudo apt-get install -y file ros-foxy-rviz2
-
-RUN sudo apt-get update && sudo apt-get upgrade -y
-
-RUN sudo apt-get install iputils-ping
-RUN sudo apt-get install iperf
+RUN echo '<?xml version="1.0" encoding="UTF-8" ?><profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles"><transport_descriptors><transport_descriptor><transport_id>CustomUdpTransport</transport_id><type>UDPv4</type></transport_descriptor></transport_descriptors><participant profile_name="participant_profile" is_default_profile="true"><rtps><userTransports><transport_id>CustomUdpTransport</transport_id></userTransports><useBuiltinTransports>false</useBuiltinTransports></rtps></participant></profiles>' > fastrtps-profile.xml
 
 ENTRYPOINT ["bash"]
