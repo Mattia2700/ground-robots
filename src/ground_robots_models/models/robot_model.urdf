@@ -77,7 +77,7 @@
 
   <!-- *********************** DRIVE WHEELS ******************************  -->
 
-  <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
+  <!-- <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
     <link name="${prefix}_link">
       <visual>
         <origin xyz="0 0 0" rpy="1.5707963267949 0 0"/>
@@ -100,9 +100,6 @@
       
     </link>
 
-    <!-- Connect the wheels to the base_link at the appropriate location, and 
-         define a continuous joint to allow the wheels to freely rotate about
-         an axis -->
     <joint name="${prefix}_joint" type="revolute">
       <parent link="base_link"/>
       <child link="${prefix}_link"/>
@@ -112,11 +109,8 @@
     </joint>
   </xacro:macro>
 
-  <!-- Instantiate two wheels using the macro we just made through the 
-       xacro:wheel tags. We also define the parameters to have one wheel
-       on both sides at the back of our robot (i.e. x_reflect=-1). -->
   <xacro:wheel prefix="drivewhl_l" x_reflect="-1" y_reflect="1" />
-  <xacro:wheel prefix="drivewhl_r" x_reflect="-1" y_reflect="-1" />
+  <xacro:wheel prefix="drivewhl_r" x_reflect="-1" y_reflect="-1" /> -->
 
   <!-- *********************** CASTER WHEEL ******************************  -->
   <!-- We add a caster wheel. It will be modeled as sphere.

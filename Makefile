@@ -30,12 +30,18 @@ sim:
 		headless:=True \
 		rviz_config_file:='$(current_dir)/install/ground_robots_navigation/share/ground_robots_navigation/rviz/nav2_config_sim.rviz'
 
+slam:
+	@echo "Running SLAM"
+	@make models
+	@source $(current_dir)/install/setup.bash && ros2 launch ground_robots_navigation navigation.launch.py \
+		slam:=True # aggiungere rviz file per slam 
+
+lidar:
+	@echo "Running LIDAR transform"
+	@source $(current_dir)/install/setup.bash && ros2 run tf2_ros static_transform_publisher 0 0 0.45 0 0 0 base_link lidar_link
+
 msgs:
 	@source /opt/ros/foxy/setup.bash && colcon build --packages-select planning_bridge_msgs
-
-bridge:
-	@echo "Running bridge"
-	@source /opt/ros/noetic/setup.bash && source /opt/ros/foxy/setup.bash && ros2 run ros1_bridge dynamic_bridge --bridge-all-1to2-topics
 
 planning:
 	@echo "Running planning"
