@@ -1,0 +1,177 @@
+\hypertarget{classNav2Pose}{}\doxysection{Nav2\+Pose Class Reference}
+\label{classNav2Pose}\index{Nav2Pose@{Nav2Pose}}
+
+
+A simple node with anaction client that requests the navigation to a goal pose, passed by a service request.  
+
+
+Inheritance diagram for Nav2\+Pose\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNav2Pose}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}{Action\+Nav2\+Pose}} = nav2\+\_\+msgs\+::action\+::\+Navigate\+To\+Pose
+\item 
+using \mbox{\hyperlink{classNav2Pose_a9f732ae4770b62e1fe103d08d841e179}{Goal\+Handle\+Nav2\+Pose}} = rclcpp\+\_\+action\+::\+Client\+Goal\+Handle$<$ \mbox{\hyperlink{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}{Action\+Nav2\+Pose}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNav2Pose_af881f25225660b969facf1e9bd40b549}{Nav2\+Pose}} (const rclcpp\+::\+Node\+Options \&options=rclcpp\+::\+Node\+Options())
+\begin{DoxyCompactList}\small\item\em Creates the \char`\"{}\+Navigate\+To\+Pose\char`\"{} action client and initialize the custom Start\+Navigation service server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNav2Pose_a01d50b15e85a1febcf8bf6c4292117a2}{send\+\_\+goal}} ()
+\begin{DoxyCompactList}\small\item\em Sends the goal to the action server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classNav2Pose_ad5e966254f4516f6ba48f6ff8f6c2136}{goal\+\_\+response\+\_\+callback}} (std\+::shared\+\_\+future$<$ Goal\+Handle\+Nav2\+Pose\+::\+Shared\+Ptr $>$ future)
+\begin{DoxyCompactList}\small\item\em Callback function called when the action server responds to the goal request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNav2Pose_a0cc0c1d8b5586dc50d2dbb2a7751df24}{feedback\+\_\+callback}} (Goal\+Handle\+Nav2\+Pose\+::\+Shared\+Ptr, const std\+::shared\+\_\+ptr$<$ const Action\+Nav2\+Pose\+::\+Feedback $>$ feedback)
+\begin{DoxyCompactList}\small\item\em Callback function called when the action is being executed, providing feedback (not used, but required) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNav2Pose_a58512aef23518e16705f268d1c052839}{result\+\_\+callback}} (const Goal\+Handle\+Nav2\+Pose\+::\+Wrapped\+Result \&result)
+\begin{DoxyCompactList}\small\item\em Callback function called when the action is completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+\_\+action\+::\+Client$<$ \mbox{\hyperlink{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}{Action\+Nav2\+Pose}} $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classNav2Pose_ae36513209cea6c2d653be1774fadf779}{action\+\_\+nav\+\_\+pose\+\_\+ptr\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Action client pointer. \end{DoxyCompactList}\item 
+rclcpp\+::\+Service$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classNav2Pose_a44e7943ae8d2c3cb543883a9ade70f96}{start\+\_\+navigation\+\_\+service\+\_\+ptr\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Service server pointer. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped $>$ \mbox{\hyperlink{classNav2Pose_a28873c131dfcbc74e283f76d1c9edaeb}{goal\+\_\+}} = std\+::make\+\_\+shared$<$geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped$>$()
+\begin{DoxyCompactList}\small\item\em Goal pose pointer recevied by the service request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple node with anaction client that requests the navigation to a goal pose, passed by a service request. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}\label{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}} 
+\index{Nav2Pose@{Nav2Pose}!ActionNav2Pose@{ActionNav2Pose}}
+\index{ActionNav2Pose@{ActionNav2Pose}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{ActionNav2Pose}{ActionNav2Pose}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}{Nav2\+Pose\+::\+Action\+Nav2\+Pose}} =  nav2\+\_\+msgs\+::action\+::\+Navigate\+To\+Pose}
+
+\mbox{\Hypertarget{classNav2Pose_a9f732ae4770b62e1fe103d08d841e179}\label{classNav2Pose_a9f732ae4770b62e1fe103d08d841e179}} 
+\index{Nav2Pose@{Nav2Pose}!GoalHandleNav2Pose@{GoalHandleNav2Pose}}
+\index{GoalHandleNav2Pose@{GoalHandleNav2Pose}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{GoalHandleNav2Pose}{GoalHandleNav2Pose}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classNav2Pose_a9f732ae4770b62e1fe103d08d841e179}{Nav2\+Pose\+::\+Goal\+Handle\+Nav2\+Pose}} =  rclcpp\+\_\+action\+::\+Client\+Goal\+Handle$<$\mbox{\hyperlink{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}{Action\+Nav2\+Pose}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNav2Pose_af881f25225660b969facf1e9bd40b549}\label{classNav2Pose_af881f25225660b969facf1e9bd40b549}} 
+\index{Nav2Pose@{Nav2Pose}!Nav2Pose@{Nav2Pose}}
+\index{Nav2Pose@{Nav2Pose}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{Nav2Pose()}{Nav2Pose()}}
+{\footnotesize\ttfamily Nav2\+Pose\+::\+Nav2\+Pose (\begin{DoxyParamCaption}\item[{const rclcpp\+::\+Node\+Options \&}]{options = {\ttfamily rclcpp\+:\+:NodeOptions()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Creates the \char`\"{}\+Navigate\+To\+Pose\char`\"{} action client and initialize the custom Start\+Navigation service server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & default node options passed by ROS2 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNav2Pose_a0cc0c1d8b5586dc50d2dbb2a7751df24}\label{classNav2Pose_a0cc0c1d8b5586dc50d2dbb2a7751df24}} 
+\index{Nav2Pose@{Nav2Pose}!feedback\_callback@{feedback\_callback}}
+\index{feedback\_callback@{feedback\_callback}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{feedback\_callback()}{feedback\_callback()}}
+{\footnotesize\ttfamily void Nav2\+Pose\+::feedback\+\_\+callback (\begin{DoxyParamCaption}\item[{Goal\+Handle\+Nav2\+Pose\+::\+Shared\+Ptr}]{,  }\item[{const std\+::shared\+\_\+ptr$<$ const Action\+Nav2\+Pose\+::\+Feedback $>$}]{feedback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function called when the action is being executed, providing feedback (not used, but required) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em feedback} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNav2Pose_ad5e966254f4516f6ba48f6ff8f6c2136}\label{classNav2Pose_ad5e966254f4516f6ba48f6ff8f6c2136}} 
+\index{Nav2Pose@{Nav2Pose}!goal\_response\_callback@{goal\_response\_callback}}
+\index{goal\_response\_callback@{goal\_response\_callback}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{goal\_response\_callback()}{goal\_response\_callback()}}
+{\footnotesize\ttfamily void Nav2\+Pose\+::goal\+\_\+response\+\_\+callback (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+future$<$ Goal\+Handle\+Nav2\+Pose\+::\+Shared\+Ptr $>$}]{future }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function called when the action server responds to the goal request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em future} & Informations about the goal \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNav2Pose_a58512aef23518e16705f268d1c052839}\label{classNav2Pose_a58512aef23518e16705f268d1c052839}} 
+\index{Nav2Pose@{Nav2Pose}!result\_callback@{result\_callback}}
+\index{result\_callback@{result\_callback}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{result\_callback()}{result\_callback()}}
+{\footnotesize\ttfamily void Nav2\+Pose\+::result\+\_\+callback (\begin{DoxyParamCaption}\item[{const Goal\+Handle\+Nav2\+Pose\+::\+Wrapped\+Result \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function called when the action is completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & Information codes about the result \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNav2Pose_a01d50b15e85a1febcf8bf6c4292117a2}\label{classNav2Pose_a01d50b15e85a1febcf8bf6c4292117a2}} 
+\index{Nav2Pose@{Nav2Pose}!send\_goal@{send\_goal}}
+\index{send\_goal@{send\_goal}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{send\_goal()}{send\_goal()}}
+{\footnotesize\ttfamily void Nav2\+Pose\+::send\+\_\+goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends the goal to the action server. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNav2Pose_ae36513209cea6c2d653be1774fadf779}\label{classNav2Pose_ae36513209cea6c2d653be1774fadf779}} 
+\index{Nav2Pose@{Nav2Pose}!action\_nav\_pose\_ptr\_@{action\_nav\_pose\_ptr\_}}
+\index{action\_nav\_pose\_ptr\_@{action\_nav\_pose\_ptr\_}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{action\_nav\_pose\_ptr\_}{action\_nav\_pose\_ptr\_}}
+{\footnotesize\ttfamily rclcpp\+\_\+action\+::\+Client$<$\mbox{\hyperlink{classNav2Pose_adcd2e3f48770f7da74355a08b1037a45}{Action\+Nav2\+Pose}}$>$\+::\+Shared\+Ptr Nav2\+Pose\+::action\+\_\+nav\+\_\+pose\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Action client pointer. 
+
+\mbox{\Hypertarget{classNav2Pose_a28873c131dfcbc74e283f76d1c9edaeb}\label{classNav2Pose_a28873c131dfcbc74e283f76d1c9edaeb}} 
+\index{Nav2Pose@{Nav2Pose}!goal\_@{goal\_}}
+\index{goal\_@{goal\_}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{goal\_}{goal\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped$>$ Nav2\+Pose\+::goal\+\_\+ = std\+::make\+\_\+shared$<$geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Goal pose pointer recevied by the service request. 
+
+\mbox{\Hypertarget{classNav2Pose_a44e7943ae8d2c3cb543883a9ade70f96}\label{classNav2Pose_a44e7943ae8d2c3cb543883a9ade70f96}} 
+\index{Nav2Pose@{Nav2Pose}!start\_navigation\_service\_ptr\_@{start\_navigation\_service\_ptr\_}}
+\index{start\_navigation\_service\_ptr\_@{start\_navigation\_service\_ptr\_}!Nav2Pose@{Nav2Pose}}
+\doxysubsubsection{\texorpdfstring{start\_navigation\_service\_ptr\_}{start\_navigation\_service\_ptr\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Service$<$planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation$>$\+::\+Shared\+Ptr Nav2\+Pose\+::start\+\_\+navigation\+\_\+service\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Service server pointer. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/planning\+\_\+bridge/src/\mbox{\hyperlink{navigation__client_8cpp}{navigation\+\_\+client.\+cpp}}\end{DoxyCompactItemize}

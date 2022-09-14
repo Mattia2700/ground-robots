@@ -1,0 +1,273 @@
+\hypertarget{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp_source}{}\doxysection{current\+\_\+pose\+\_\+\+\_\+struct.\+hpp}
+\label{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp_source}\index{build/planning\_bridge\_msgs/rosidl\_generator\_cpp/planning\_bridge\_msgs/srv/detail/current\_pose\_\_struct.hpp@{build/planning\_bridge\_msgs/rosidl\_generator\_cpp/planning\_bridge\_msgs/srv/detail/current\_pose\_\_struct.hpp}}
+\mbox{\hyperlink{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// generated from rosidl\_generator\_cpp/resource/idl\_\_struct.hpp.em}}
+\DoxyCodeLine{2 \textcolor{comment}{// with input from planning\_bridge\_msgs:srv/CurrentPose.idl}}
+\DoxyCodeLine{3 \textcolor{comment}{// generated code does not contain a copyright notice}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef PLANNING\_BRIDGE\_MSGS\_\_SRV\_\_DETAIL\_\_CURRENT\_POSE\_\_STRUCT\_HPP\_}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define PLANNING\_BRIDGE\_MSGS\_\_SRV\_\_DETAIL\_\_CURRENT\_POSE\_\_STRUCT\_HPP\_}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <rosidl\_runtime\_cpp/bounded\_vector.hpp>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <rosidl\_runtime\_cpp/message\_initialization.hpp>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Request \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Request \_\_declspec(deprecated)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceplanning__bridge__msgs}{planning\_bridge\_msgs}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }srv}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{// message struct}}
+\DoxyCodeLine{30 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerAllocator>}
+\DoxyCodeLine{31 \textcolor{keyword}{struct }\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{CurrentPose\_Request\_}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{Type}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{CurrentPose\_Request\_<ContainerAllocator>}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___adfe7aa0a0142854820409e01d5fec156}{CurrentPose\_Request\_}}(rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{36   \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{38       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ac13685cb51db6cca4e0ec9625579e1d0}{structure\_needs\_at\_least\_one\_member}} = 0;}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42   \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___aa1f29a75e1995f8dbd3d255190ba0fd9}{CurrentPose\_Request\_}}(\textcolor{keyword}{const} ContainerAllocator \& \_alloc, rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{45   \{}
+\DoxyCodeLine{46     (void)\_alloc;}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{48       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ac13685cb51db6cca4e0ec9625579e1d0}{structure\_needs\_at\_least\_one\_member}} = 0;}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{comment}{// field types and members}}
+\DoxyCodeLine{55   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a5fae26e821983f3a0f03f7adc206140f}{\_structure\_needs\_at\_least\_one\_member\_type}} =}
+\DoxyCodeLine{56     uint8\_t;}
+\DoxyCodeLine{57   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a5fae26e821983f3a0f03f7adc206140f}{\_structure\_needs\_at\_least\_one\_member\_type}} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ac13685cb51db6cca4e0ec9625579e1d0}{structure\_needs\_at\_least\_one\_member}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{// constant declarations}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{comment}{// pointer types}}
+\DoxyCodeLine{63   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{RawPtr}} =}
+\DoxyCodeLine{64     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{65   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{ConstRawPtr}} =}
+\DoxyCodeLine{66     \textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{67   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ae68c465929a40f0b25cf818b2fbc46ac}{SharedPtr}} =}
+\DoxyCodeLine{68     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>>;}
+\DoxyCodeLine{69   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___af4097dd3f4ec5d3e4e484e5810454f3d}{ConstSharedPtr}} =}
+\DoxyCodeLine{70     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{73       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{74   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a881ff63cce291e66272d96cf238b316b}{UniquePtrWithDeleter}} =}
+\DoxyCodeLine{75     std::unique\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>, Deleter>;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___aa5b98e58e2e2fbe0ac073fd0e2e9ebef}{UniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a881ff63cce291e66272d96cf238b316b}{UniquePtrWithDeleter<>}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{80       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{81   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a4fd316cca4edcff57ccf5af7b7be52b6}{ConstUniquePtrWithDeleter}} =}
+\DoxyCodeLine{82     std::unique\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator> \textcolor{keyword}{const}, Deleter>;}
+\DoxyCodeLine{83   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a0407fe06f14ce0598982b2531210d815}{ConstUniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a4fd316cca4edcff57ccf5af7b7be52b6}{ConstUniquePtrWithDeleter<>}};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a7a0e541f315f9348ff22da023bf2e735}{WeakPtr}} =}
+\DoxyCodeLine{86     std::weak\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>>;}
+\DoxyCodeLine{87   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___a0089815d1344f9bc55785369b1c473f3}{ConstWeakPtr}} =}
+\DoxyCodeLine{88     std::weak\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{comment}{// pointer types similar to ROS 1, use SharedPtr / ConstSharedPtr instead}}
+\DoxyCodeLine{91   \textcolor{comment}{// NOTE: Can't use 'using' here because GNU C++ can't parse attributes properly}}
+\DoxyCodeLine{92   \textcolor{keyword}{typedef} \mbox{\hyperlink{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp_a48925aced06655d676b7507cfc274861}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Request}}}
+\DoxyCodeLine{93     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator>>}
+\DoxyCodeLine{94     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ac03cbfa2f00140545d22801b6e0067e7}{Ptr}};}
+\DoxyCodeLine{95   \textcolor{keyword}{typedef} \mbox{\hyperlink{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp_a48925aced06655d676b7507cfc274861}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Request}}}
+\DoxyCodeLine{96     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Request\_<ContainerAllocator> \textcolor{keyword}{const}>}
+\DoxyCodeLine{97     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ae85b3196989bb4b8685f2e1996a67ff1}{ConstPtr}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{comment}{// comparison operators}}
+\DoxyCodeLine{100   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___aaf1ef520da6c39538ddc6fb880528d2e}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{CurrentPose\_Request\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{101 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if} (this-\/>structure\_needs\_at\_least\_one\_member != other.\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___ac13685cb51db6cca4e0ec9625579e1d0}{structure\_needs\_at\_least\_one\_member}}) \{}
+\DoxyCodeLine{103       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{106   \}}
+\DoxyCodeLine{107   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___aa6e639b744a402544a32317ee29895ff}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{CurrentPose\_Request\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{108 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{109     \textcolor{keywordflow}{return} !this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request___aaf1ef520da6c39538ddc6fb880528d2e}{operator==}}(other);}
+\DoxyCodeLine{110   \}}
+\DoxyCodeLine{111 \};  \textcolor{comment}{// struct CurrentPose\_Request\_}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{// alias to use template instance with default allocator}}
+\DoxyCodeLine{114 \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request}{CurrentPose\_Request}} =}
+\DoxyCodeLine{115   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request__}{planning\_bridge\_msgs::srv::CurrentPose\_Request\_<std::allocator<void>}}>;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{comment}{// constant definitions}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \}  \textcolor{comment}{// namespace srv}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \}  \textcolor{comment}{// namespace planning\_bridge\_msgs}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Response \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Response \_\_declspec(deprecated)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceplanning__bridge__msgs}{planning\_bridge\_msgs}}}
+\DoxyCodeLine{131 \{}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{namespace }srv}
+\DoxyCodeLine{134 \{}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{comment}{// message struct}}
+\DoxyCodeLine{137 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerAllocator>}
+\DoxyCodeLine{138 \textcolor{keyword}{struct }\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{CurrentPose\_Response\_}}}
+\DoxyCodeLine{139 \{}
+\DoxyCodeLine{140   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{Type}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{CurrentPose\_Response\_<ContainerAllocator>}};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___ac0a715c79efc67de770833fcb942e611}{CurrentPose\_Response\_}}(rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{143   \{}
+\DoxyCodeLine{144     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{145       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{146     \{}
+\DoxyCodeLine{147       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a450dc17548e36b7db7ad5a4cea41440b}{x}} = 0.0f;}
+\DoxyCodeLine{148       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___af29d1ae5c1b874a3f0e7ffc98abbdacf}{y}} = 0.0f;}
+\DoxyCodeLine{149     \}}
+\DoxyCodeLine{150   \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___ab54a044d387c0f9270fe0479231baffb}{CurrentPose\_Response\_}}(\textcolor{keyword}{const} ContainerAllocator \& \_alloc, rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{153   \{}
+\DoxyCodeLine{154     (void)\_alloc;}
+\DoxyCodeLine{155     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{156       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{157     \{}
+\DoxyCodeLine{158       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a450dc17548e36b7db7ad5a4cea41440b}{x}} = 0.0f;}
+\DoxyCodeLine{159       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___af29d1ae5c1b874a3f0e7ffc98abbdacf}{y}} = 0.0f;}
+\DoxyCodeLine{160     \}}
+\DoxyCodeLine{161   \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \textcolor{comment}{// field types and members}}
+\DoxyCodeLine{164   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a8cff02a9362aa0633a93860f98f06431}{\_x\_type}} =}
+\DoxyCodeLine{165     float;}
+\DoxyCodeLine{166   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a8cff02a9362aa0633a93860f98f06431}{\_x\_type}} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a450dc17548e36b7db7ad5a4cea41440b}{x}};}
+\DoxyCodeLine{167   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a9b2c03746f49aa9126cfa6766542f32c}{\_y\_type}} =}
+\DoxyCodeLine{168     float;}
+\DoxyCodeLine{169   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a9b2c03746f49aa9126cfa6766542f32c}{\_y\_type}} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___af29d1ae5c1b874a3f0e7ffc98abbdacf}{y}};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171   \textcolor{comment}{// setters for named parameter idiom}}
+\DoxyCodeLine{172   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{Type}} \& \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a2eb1b54b76afedd41aa30ed43d551e10}{set\_\_x}}(}
+\DoxyCodeLine{173     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& \_arg)}
+\DoxyCodeLine{174   \{}
+\DoxyCodeLine{175     this-\/>x = \_arg;}
+\DoxyCodeLine{176     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{177   \}}
+\DoxyCodeLine{178   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{Type}} \& \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a5a4e2f8d95c6bd984b09c329143d03e0}{set\_\_y}}(}
+\DoxyCodeLine{179     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& \_arg)}
+\DoxyCodeLine{180   \{}
+\DoxyCodeLine{181     this-\/>y = \_arg;}
+\DoxyCodeLine{182     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{183   \}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185   \textcolor{comment}{// constant declarations}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{comment}{// pointer types}}
+\DoxyCodeLine{188   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{RawPtr}} =}
+\DoxyCodeLine{189     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{190   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{ConstRawPtr}} =}
+\DoxyCodeLine{191     \textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{192   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a2365e2835e533d25efb9d7344d0e8792}{SharedPtr}} =}
+\DoxyCodeLine{193     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>>;}
+\DoxyCodeLine{194   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___ad5e25075b7272070639c85a8df1b4c90}{ConstSharedPtr}} =}
+\DoxyCodeLine{195     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{198       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{199   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a450a64a24e70f2cf54b007fb38996ee7}{UniquePtrWithDeleter}} =}
+\DoxyCodeLine{200     std::unique\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>, Deleter>;}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___af5132a492b6b5e54cbad4f20e5c828bb}{UniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a450a64a24e70f2cf54b007fb38996ee7}{UniquePtrWithDeleter<>}};}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{205       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{206   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a8a077fd0655c89275a6ca697a4fb82c7}{ConstUniquePtrWithDeleter}} =}
+\DoxyCodeLine{207     std::unique\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator> \textcolor{keyword}{const}, Deleter>;}
+\DoxyCodeLine{208   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___ae0754975a155405e1859a8b61b8abcc6}{ConstUniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a8a077fd0655c89275a6ca697a4fb82c7}{ConstUniquePtrWithDeleter<>}};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a1f1727de2a19f26bf293a021411add15}{WeakPtr}} =}
+\DoxyCodeLine{211     std::weak\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>>;}
+\DoxyCodeLine{212   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a76d5f895c1edbb9db098c1d8aab1fc75}{ConstWeakPtr}} =}
+\DoxyCodeLine{213     std::weak\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215   \textcolor{comment}{// pointer types similar to ROS 1, use SharedPtr / ConstSharedPtr instead}}
+\DoxyCodeLine{216   \textcolor{comment}{// NOTE: Can't use 'using' here because GNU C++ can't parse attributes properly}}
+\DoxyCodeLine{217   \textcolor{keyword}{typedef} \mbox{\hyperlink{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp_a8134a9c457cbdb2e5bb645216b5aa5e3}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Response}}}
+\DoxyCodeLine{218     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator>>}
+\DoxyCodeLine{219     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a96dfaca66e566b2f16abad6340294220}{Ptr}};}
+\DoxyCodeLine{220   \textcolor{keyword}{typedef} \mbox{\hyperlink{build_2planning__bridge__msgs_2rosidl__generator__cpp_2planning__bridge__msgs_2srv_2detail_2current__pose____struct_8hpp_a8134a9c457cbdb2e5bb645216b5aa5e3}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_CurrentPose\_Response}}}
+\DoxyCodeLine{221     std::shared\_ptr<planning\_bridge\_msgs::srv::CurrentPose\_Response\_<ContainerAllocator> \textcolor{keyword}{const}>}
+\DoxyCodeLine{222     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a8f9563087b290301449c20cc575e0f08}{ConstPtr}};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224   \textcolor{comment}{// comparison operators}}
+\DoxyCodeLine{225   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a81bedf971d1e917e30faac813830de04}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{CurrentPose\_Response\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{226 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{227     \textcolor{keywordflow}{if} (this-\/>x != other.\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a450dc17548e36b7db7ad5a4cea41440b}{x}}) \{}
+\DoxyCodeLine{228       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{229     \}}
+\DoxyCodeLine{230     \textcolor{keywordflow}{if} (this-\/>y != other.\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___af29d1ae5c1b874a3f0e7ffc98abbdacf}{y}}) \{}
+\DoxyCodeLine{231       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{232     \}}
+\DoxyCodeLine{233     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{234   \}}
+\DoxyCodeLine{235   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___ad9acfe53855dbbb0b1b3a1790bef8f37}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{CurrentPose\_Response\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{236 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{237     \textcolor{keywordflow}{return} !this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response___a81bedf971d1e917e30faac813830de04}{operator==}}(other);}
+\DoxyCodeLine{238   \}}
+\DoxyCodeLine{239 \};  \textcolor{comment}{// struct CurrentPose\_Response\_}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{comment}{// alias to use template instance with default allocator}}
+\DoxyCodeLine{242 \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response}{CurrentPose\_Response}} =}
+\DoxyCodeLine{243   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response__}{planning\_bridge\_msgs::srv::CurrentPose\_Response\_<std::allocator<void>}}>;}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{// constant definitions}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \}  \textcolor{comment}{// namespace srv}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \}  \textcolor{comment}{// namespace planning\_bridge\_msgs}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceplanning__bridge__msgs}{planning\_bridge\_msgs}}}
+\DoxyCodeLine{252 \{}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{keyword}{namespace }srv}
+\DoxyCodeLine{255 \{}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{keyword}{struct }\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose}{CurrentPose}}}
+\DoxyCodeLine{258 \{}
+\DoxyCodeLine{259   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Request}{Request}} = \mbox{\hyperlink{namespaceplanning__bridge__msgs_1_1srv_a61a1c1f3d257efc304894caf3240b51f}{planning\_bridge\_msgs::srv::CurrentPose\_Request}};}
+\DoxyCodeLine{260   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1CurrentPose__Response}{Response}} = \mbox{\hyperlink{namespaceplanning__bridge__msgs_1_1srv_a7782d52ed9379ac0e3028ac324c33c44}{planning\_bridge\_msgs::srv::CurrentPose\_Response}};}
+\DoxyCodeLine{261 \};}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \}  \textcolor{comment}{// namespace srv}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \}  \textcolor{comment}{// namespace planning\_bridge\_msgs}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// PLANNING\_BRIDGE\_MSGS\_\_SRV\_\_DETAIL\_\_CURRENT\_POSE\_\_STRUCT\_HPP\_}}
+
+\end{DoxyCode}

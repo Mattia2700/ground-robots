@@ -1,0 +1,274 @@
+\hypertarget{namespace__local__setup__util__sh}{}\doxysection{\+\_\+local\+\_\+setup\+\_\+util\+\_\+sh Namespace Reference}
+\label{namespace__local__setup__util__sh}\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a4d1815558d1490a73f1c44e222173693}{main}} (argv=sys.\+argv\mbox{[}1\+:\mbox{]})
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a2f1742b870a8a17798552a1519d19437}{get\+\_\+packages}} (prefix\+\_\+path, merged\+\_\+install)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a1ece6657ddeee9ec82ae7d7ea5eef64b}{add\+\_\+package\+\_\+runtime\+\_\+dependencies}} (path, packages)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a6ee80c9c07e07dea37b72f7cebb0761a}{order\+\_\+packages}} (packages)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_ae8829cc930605de807bc14be3018c905}{reduce\+\_\+cycle\+\_\+set}} (packages)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a503a9d287561afe36d87ab93f0ef35d7}{\+\_\+include\+\_\+comments}} ()
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a221b04d4aa9c64e360480f238a842be6}{get\+\_\+commands}} (pkg\+\_\+name, prefix, primary\+\_\+extension, additional\+\_\+extension)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_af340df6b2b0789a407a4ea8c5c7e9af9}{process\+\_\+dsv\+\_\+file}} (dsv\+\_\+path, prefix, primary\+\_\+extension=None, additional\+\_\+extension=None)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a6e48c799bda5fe5eba245a0a0ed79830}{handle\+\_\+dsv\+\_\+types\+\_\+except\+\_\+source}} (type\+\_\+, remainder, prefix)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_aa2d6594e6606f517c9aede4b672217c3}{\+\_\+append\+\_\+unique\+\_\+value}} (name, value)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_ae5eb977a9ed2ba740a5845be3ad79167}{\+\_\+prepend\+\_\+unique\+\_\+value}} (name, value)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a53fdca12337d53ca0048f083a59a1dbf}{\+\_\+remove\+\_\+ending\+\_\+separators}} ()
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a582b2480651d7cda8b58abdbc1e36c38}{\+\_\+set}} (name, value)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_ad08a9f296cfc1df5255b7fece1e55afd}{\+\_\+set\+\_\+if\+\_\+unset}} (name, value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_abeaa9a4bbdb239306444d6ec8f2711c7}{FORMAT\+\_\+\+STR\+\_\+\+COMMENT\+\_\+\+LINE}} = \textquotesingle{}\# \{comment\}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_a83155fcb4b121b436b2a10cddbb15fcb}{FORMAT\+\_\+\+STR\+\_\+\+SET\+\_\+\+ENV\+\_\+\+VAR}} = \textquotesingle{}export \{name\}=\char`\"{}\{value\}\char`\"{}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_abf9fce18cdd352b7e760ea9945d5e91a}{FORMAT\+\_\+\+STR\+\_\+\+USE\+\_\+\+ENV\+\_\+\+VAR}} = \textquotesingle{}\$\{name\}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_ad47538d04f93ed797e697be5914dc5f1}{FORMAT\+\_\+\+STR\+\_\+\+INVOKE\+\_\+\+SCRIPT}} = \textquotesingle{}COLCON\+\_\+\+CURRENT\+\_\+\+PREFIX=\char`\"{}\{prefix\}\char`\"{} \+\_\+colcon\+\_\+prefix\+\_\+sh\+\_\+source\+\_\+script \char`\"{}\{script\+\_\+path\}\char`\"{}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_a00edbf6b33c80dc0caba30cff3a1c04b}{FORMAT\+\_\+\+STR\+\_\+\+REMOVE\+\_\+\+LEADING\+\_\+\+SEPARATOR}} = \textquotesingle{}if \mbox{[} \char`\"{}\$(echo -\/n \$\{name\} $\vert$ head -\/c 1)\char`\"{} = \char`\"{}\+:\char`\"{} \mbox{]}; then export \{name\}=\$\{\{\{name\}\#?\}\} ; fi\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_a948e719243e27b37000c12521665b8eb}{FORMAT\+\_\+\+STR\+\_\+\+REMOVE\+\_\+\+TRAILING\+\_\+\+SEPARATOR}} = \textquotesingle{}if \mbox{[} \char`\"{}\$(echo -\/n \$\{name\} $\vert$ tail -\/c 1)\char`\"{} = \char`\"{}\+:\char`\"{} \mbox{]}; then export \{name\}=\$\{\{\{name\}\%?\}\} ; fi\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_a21c16cb13739fe92ce130f95219e9932}{DSV\+\_\+\+TYPE\+\_\+\+APPEND\+\_\+\+NON\+\_\+\+DUPLICATE}} = \textquotesingle{}append-\/non-\/duplicate\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_af084d52a68a3c03afe4f286eb17876de}{DSV\+\_\+\+TYPE\+\_\+\+PREPEND\+\_\+\+NON\+\_\+\+DUPLICATE}} = \textquotesingle{}prepend-\/non-\/duplicate\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_a489897075a6b0fd6750725827920995b}{DSV\+\_\+\+TYPE\+\_\+\+PREPEND\+\_\+\+NON\+\_\+\+DUPLICATE\+\_\+\+IF\+\_\+\+EXISTS}} = \textquotesingle{}prepend-\/non-\/duplicate-\/if-\/exists\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_afee048aa6c582ac8562eccdce626fcaa}{DSV\+\_\+\+TYPE\+\_\+\+SET}} = \textquotesingle{}set\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_af53ea6261672426b2a1296eb42978b58}{DSV\+\_\+\+TYPE\+\_\+\+SET\+\_\+\+IF\+\_\+\+UNSET}} = \textquotesingle{}set-\/if-\/unset\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__sh_a5d8d4e7c5f074ea3fcf22bdd34383230}{DSV\+\_\+\+TYPE\+\_\+\+SOURCE}} = \textquotesingle{}source\textquotesingle{}
+\item 
+dictionary \mbox{\hyperlink{namespace__local__setup__util__sh_ae2089181f5be4577041869d1ae4f49b6}{env\+\_\+state}} = \{\}
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__sh_a33c8846fcbbb8b254bd1bb1564a82282}{rc}} = \mbox{\hyperlink{namespace__local__setup__util__sh_a4d1815558d1490a73f1c44e222173693}{main}}()
+\item 
+\mbox{\hyperlink{namespace__local__setup__util__sh_a8a4c43c0327926319dae62ac05e08b1d}{file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace__local__setup__util__sh_aa2d6594e6606f517c9aede4b672217c3}\label{namespace__local__setup__util__sh_aa2d6594e6606f517c9aede4b672217c3}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!\_append\_unique\_value@{\_append\_unique\_value}}
+\index{\_append\_unique\_value@{\_append\_unique\_value}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{\_append\_unique\_value()}{\_append\_unique\_value()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+\_\+append\+\_\+unique\+\_\+value (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a503a9d287561afe36d87ab93f0ef35d7}\label{namespace__local__setup__util__sh_a503a9d287561afe36d87ab93f0ef35d7}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!\_include\_comments@{\_include\_comments}}
+\index{\_include\_comments@{\_include\_comments}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{\_include\_comments()}{\_include\_comments()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+\_\+include\+\_\+comments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_ae5eb977a9ed2ba740a5845be3ad79167}\label{namespace__local__setup__util__sh_ae5eb977a9ed2ba740a5845be3ad79167}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!\_prepend\_unique\_value@{\_prepend\_unique\_value}}
+\index{\_prepend\_unique\_value@{\_prepend\_unique\_value}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{\_prepend\_unique\_value()}{\_prepend\_unique\_value()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+\_\+prepend\+\_\+unique\+\_\+value (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a53fdca12337d53ca0048f083a59a1dbf}\label{namespace__local__setup__util__sh_a53fdca12337d53ca0048f083a59a1dbf}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!\_remove\_ending\_separators@{\_remove\_ending\_separators}}
+\index{\_remove\_ending\_separators@{\_remove\_ending\_separators}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{\_remove\_ending\_separators()}{\_remove\_ending\_separators()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+\_\+remove\+\_\+ending\+\_\+separators (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a582b2480651d7cda8b58abdbc1e36c38}\label{namespace__local__setup__util__sh_a582b2480651d7cda8b58abdbc1e36c38}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!\_set@{\_set}}
+\index{\_set@{\_set}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{\_set()}{\_set()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+\_\+set (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_ad08a9f296cfc1df5255b7fece1e55afd}\label{namespace__local__setup__util__sh_ad08a9f296cfc1df5255b7fece1e55afd}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!\_set\_if\_unset@{\_set\_if\_unset}}
+\index{\_set\_if\_unset@{\_set\_if\_unset}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{\_set\_if\_unset()}{\_set\_if\_unset()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+\_\+set\+\_\+if\+\_\+unset (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a1ece6657ddeee9ec82ae7d7ea5eef64b}\label{namespace__local__setup__util__sh_a1ece6657ddeee9ec82ae7d7ea5eef64b}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!add\_package\_runtime\_dependencies@{add\_package\_runtime\_dependencies}}
+\index{add\_package\_runtime\_dependencies@{add\_package\_runtime\_dependencies}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{add\_package\_runtime\_dependencies()}{add\_package\_runtime\_dependencies()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+add\+\_\+package\+\_\+runtime\+\_\+dependencies (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{packages }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check the path and if it exists extract the packages runtime dependencies.
+
+:param Path path: The resource file containing the runtime dependencies
+:param dict packages: A mapping from package names to the sets of runtime
+  dependencies to add to
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespace__local__setup__util__sh_a221b04d4aa9c64e360480f238a842be6}\label{namespace__local__setup__util__sh_a221b04d4aa9c64e360480f238a842be6}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!get\_commands@{get\_commands}}
+\index{get\_commands@{get\_commands}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{get\_commands()}{get\_commands()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+get\+\_\+commands (\begin{DoxyParamCaption}\item[{}]{pkg\+\_\+name,  }\item[{}]{prefix,  }\item[{}]{primary\+\_\+extension,  }\item[{}]{additional\+\_\+extension }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a2f1742b870a8a17798552a1519d19437}\label{namespace__local__setup__util__sh_a2f1742b870a8a17798552a1519d19437}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!get\_packages@{get\_packages}}
+\index{get\_packages@{get\_packages}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{get\_packages()}{get\_packages()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+get\+\_\+packages (\begin{DoxyParamCaption}\item[{}]{prefix\+\_\+path,  }\item[{}]{merged\+\_\+install }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find packages based on colcon-specific files created during installation.
+
+:param Path prefix_path: The install prefix path of all packages
+:param bool merged_install: The flag if the packages are all installed
+  directly in the prefix or if each package is installed in a subdirectory
+  named after the package
+:returns: A mapping from the package name to the set of runtime
+  dependencies
+:rtype: dict
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespace__local__setup__util__sh_a6e48c799bda5fe5eba245a0a0ed79830}\label{namespace__local__setup__util__sh_a6e48c799bda5fe5eba245a0a0ed79830}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!handle\_dsv\_types\_except\_source@{handle\_dsv\_types\_except\_source}}
+\index{handle\_dsv\_types\_except\_source@{handle\_dsv\_types\_except\_source}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{handle\_dsv\_types\_except\_source()}{handle\_dsv\_types\_except\_source()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+handle\+\_\+dsv\+\_\+types\+\_\+except\+\_\+source (\begin{DoxyParamCaption}\item[{}]{type\+\_\+,  }\item[{}]{remainder,  }\item[{}]{prefix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a4d1815558d1490a73f1c44e222173693}\label{namespace__local__setup__util__sh_a4d1815558d1490a73f1c44e222173693}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!main@{main}}
+\index{main@{main}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+main (\begin{DoxyParamCaption}\item[{}]{argv = {\ttfamily sys.argv\mbox{[}1\+:\mbox{]}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a6ee80c9c07e07dea37b72f7cebb0761a}\label{namespace__local__setup__util__sh_a6ee80c9c07e07dea37b72f7cebb0761a}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!order\_packages@{order\_packages}}
+\index{order\_packages@{order\_packages}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{order\_packages()}{order\_packages()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+order\+\_\+packages (\begin{DoxyParamCaption}\item[{}]{packages }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Order packages topologically.
+
+:param dict packages: A mapping from package name to the set of runtime
+  dependencies
+:returns: The package names
+:rtype: list
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespace__local__setup__util__sh_af340df6b2b0789a407a4ea8c5c7e9af9}\label{namespace__local__setup__util__sh_af340df6b2b0789a407a4ea8c5c7e9af9}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!process\_dsv\_file@{process\_dsv\_file}}
+\index{process\_dsv\_file@{process\_dsv\_file}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{process\_dsv\_file()}{process\_dsv\_file()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+process\+\_\+dsv\+\_\+file (\begin{DoxyParamCaption}\item[{}]{dsv\+\_\+path,  }\item[{}]{prefix,  }\item[{}]{primary\+\_\+extension = {\ttfamily None},  }\item[{}]{additional\+\_\+extension = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_ae8829cc930605de807bc14be3018c905}\label{namespace__local__setup__util__sh_ae8829cc930605de807bc14be3018c905}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!reduce\_cycle\_set@{reduce\_cycle\_set}}
+\index{reduce\_cycle\_set@{reduce\_cycle\_set}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{reduce\_cycle\_set()}{reduce\_cycle\_set()}}
+{\footnotesize\ttfamily def \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+reduce\+\_\+cycle\+\_\+set (\begin{DoxyParamCaption}\item[{}]{packages }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reduce the set of packages to the ones part of the circular dependency.
+
+:param dict packages: A mapping from package name to the set of runtime
+  dependencies which is modified in place
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a21c16cb13739fe92ce130f95219e9932}\label{namespace__local__setup__util__sh_a21c16cb13739fe92ce130f95219e9932}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!DSV\_TYPE\_APPEND\_NON\_DUPLICATE@{DSV\_TYPE\_APPEND\_NON\_DUPLICATE}}
+\index{DSV\_TYPE\_APPEND\_NON\_DUPLICATE@{DSV\_TYPE\_APPEND\_NON\_DUPLICATE}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{DSV\_TYPE\_APPEND\_NON\_DUPLICATE}{DSV\_TYPE\_APPEND\_NON\_DUPLICATE}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+DSV\+\_\+\+TYPE\+\_\+\+APPEND\+\_\+\+NON\+\_\+\+DUPLICATE = \textquotesingle{}append-\/non-\/duplicate\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_af084d52a68a3c03afe4f286eb17876de}\label{namespace__local__setup__util__sh_af084d52a68a3c03afe4f286eb17876de}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!DSV\_TYPE\_PREPEND\_NON\_DUPLICATE@{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE}}
+\index{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE@{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE}{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+DSV\+\_\+\+TYPE\+\_\+\+PREPEND\+\_\+\+NON\+\_\+\+DUPLICATE = \textquotesingle{}prepend-\/non-\/duplicate\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a489897075a6b0fd6750725827920995b}\label{namespace__local__setup__util__sh_a489897075a6b0fd6750725827920995b}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!DSV\_TYPE\_PREPEND\_NON\_DUPLICATE\_IF\_EXISTS@{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE\_IF\_EXISTS}}
+\index{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE\_IF\_EXISTS@{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE\_IF\_EXISTS}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE\_IF\_EXISTS}{DSV\_TYPE\_PREPEND\_NON\_DUPLICATE\_IF\_EXISTS}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+DSV\+\_\+\+TYPE\+\_\+\+PREPEND\+\_\+\+NON\+\_\+\+DUPLICATE\+\_\+\+IF\+\_\+\+EXISTS = \textquotesingle{}prepend-\/non-\/duplicate-\/if-\/exists\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_afee048aa6c582ac8562eccdce626fcaa}\label{namespace__local__setup__util__sh_afee048aa6c582ac8562eccdce626fcaa}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!DSV\_TYPE\_SET@{DSV\_TYPE\_SET}}
+\index{DSV\_TYPE\_SET@{DSV\_TYPE\_SET}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{DSV\_TYPE\_SET}{DSV\_TYPE\_SET}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+DSV\+\_\+\+TYPE\+\_\+\+SET = \textquotesingle{}set\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_af53ea6261672426b2a1296eb42978b58}\label{namespace__local__setup__util__sh_af53ea6261672426b2a1296eb42978b58}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!DSV\_TYPE\_SET\_IF\_UNSET@{DSV\_TYPE\_SET\_IF\_UNSET}}
+\index{DSV\_TYPE\_SET\_IF\_UNSET@{DSV\_TYPE\_SET\_IF\_UNSET}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{DSV\_TYPE\_SET\_IF\_UNSET}{DSV\_TYPE\_SET\_IF\_UNSET}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+DSV\+\_\+\+TYPE\+\_\+\+SET\+\_\+\+IF\+\_\+\+UNSET = \textquotesingle{}set-\/if-\/unset\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a5d8d4e7c5f074ea3fcf22bdd34383230}\label{namespace__local__setup__util__sh_a5d8d4e7c5f074ea3fcf22bdd34383230}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!DSV\_TYPE\_SOURCE@{DSV\_TYPE\_SOURCE}}
+\index{DSV\_TYPE\_SOURCE@{DSV\_TYPE\_SOURCE}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{DSV\_TYPE\_SOURCE}{DSV\_TYPE\_SOURCE}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+DSV\+\_\+\+TYPE\+\_\+\+SOURCE = \textquotesingle{}source\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_ae2089181f5be4577041869d1ae4f49b6}\label{namespace__local__setup__util__sh_ae2089181f5be4577041869d1ae4f49b6}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!env\_state@{env\_state}}
+\index{env\_state@{env\_state}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{env\_state}{env\_state}}
+{\footnotesize\ttfamily dictionary \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+env\+\_\+state = \{\}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a8a4c43c0327926319dae62ac05e08b1d}\label{namespace__local__setup__util__sh_a8a4c43c0327926319dae62ac05e08b1d}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!file@{file}}
+\index{file@{file}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+file}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_abeaa9a4bbdb239306444d6ec8f2711c7}\label{namespace__local__setup__util__sh_abeaa9a4bbdb239306444d6ec8f2711c7}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!FORMAT\_STR\_COMMENT\_LINE@{FORMAT\_STR\_COMMENT\_LINE}}
+\index{FORMAT\_STR\_COMMENT\_LINE@{FORMAT\_STR\_COMMENT\_LINE}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_STR\_COMMENT\_LINE}{FORMAT\_STR\_COMMENT\_LINE}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+FORMAT\+\_\+\+STR\+\_\+\+COMMENT\+\_\+\+LINE = \textquotesingle{}\# \{comment\}\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_ad47538d04f93ed797e697be5914dc5f1}\label{namespace__local__setup__util__sh_ad47538d04f93ed797e697be5914dc5f1}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!FORMAT\_STR\_INVOKE\_SCRIPT@{FORMAT\_STR\_INVOKE\_SCRIPT}}
+\index{FORMAT\_STR\_INVOKE\_SCRIPT@{FORMAT\_STR\_INVOKE\_SCRIPT}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_STR\_INVOKE\_SCRIPT}{FORMAT\_STR\_INVOKE\_SCRIPT}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+FORMAT\+\_\+\+STR\+\_\+\+INVOKE\+\_\+\+SCRIPT = \textquotesingle{}COLCON\+\_\+\+CURRENT\+\_\+\+PREFIX=\char`\"{}\{prefix\}\char`\"{} \+\_\+colcon\+\_\+prefix\+\_\+sh\+\_\+source\+\_\+script \char`\"{}\{script\+\_\+path\}\char`\"{}\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a00edbf6b33c80dc0caba30cff3a1c04b}\label{namespace__local__setup__util__sh_a00edbf6b33c80dc0caba30cff3a1c04b}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!FORMAT\_STR\_REMOVE\_LEADING\_SEPARATOR@{FORMAT\_STR\_REMOVE\_LEADING\_SEPARATOR}}
+\index{FORMAT\_STR\_REMOVE\_LEADING\_SEPARATOR@{FORMAT\_STR\_REMOVE\_LEADING\_SEPARATOR}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_STR\_REMOVE\_LEADING\_SEPARATOR}{FORMAT\_STR\_REMOVE\_LEADING\_SEPARATOR}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+FORMAT\+\_\+\+STR\+\_\+\+REMOVE\+\_\+\+LEADING\+\_\+\+SEPARATOR = \textquotesingle{}if \mbox{[} \char`\"{}\$(echo -\/n \$\{name\} $\vert$ head -\/c 1)\char`\"{} = \char`\"{}\+:\char`\"{} \mbox{]}; then export \{name\}=\$\{\{\{name\}\#?\}\} ; fi\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a948e719243e27b37000c12521665b8eb}\label{namespace__local__setup__util__sh_a948e719243e27b37000c12521665b8eb}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!FORMAT\_STR\_REMOVE\_TRAILING\_SEPARATOR@{FORMAT\_STR\_REMOVE\_TRAILING\_SEPARATOR}}
+\index{FORMAT\_STR\_REMOVE\_TRAILING\_SEPARATOR@{FORMAT\_STR\_REMOVE\_TRAILING\_SEPARATOR}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_STR\_REMOVE\_TRAILING\_SEPARATOR}{FORMAT\_STR\_REMOVE\_TRAILING\_SEPARATOR}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+FORMAT\+\_\+\+STR\+\_\+\+REMOVE\+\_\+\+TRAILING\+\_\+\+SEPARATOR = \textquotesingle{}if \mbox{[} \char`\"{}\$(echo -\/n \$\{name\} $\vert$ tail -\/c 1)\char`\"{} = \char`\"{}\+:\char`\"{} \mbox{]}; then export \{name\}=\$\{\{\{name\}\%?\}\} ; fi\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a83155fcb4b121b436b2a10cddbb15fcb}\label{namespace__local__setup__util__sh_a83155fcb4b121b436b2a10cddbb15fcb}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!FORMAT\_STR\_SET\_ENV\_VAR@{FORMAT\_STR\_SET\_ENV\_VAR}}
+\index{FORMAT\_STR\_SET\_ENV\_VAR@{FORMAT\_STR\_SET\_ENV\_VAR}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_STR\_SET\_ENV\_VAR}{FORMAT\_STR\_SET\_ENV\_VAR}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+FORMAT\+\_\+\+STR\+\_\+\+SET\+\_\+\+ENV\+\_\+\+VAR = \textquotesingle{}export \{name\}=\char`\"{}\{value\}\char`\"{}\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_abf9fce18cdd352b7e760ea9945d5e91a}\label{namespace__local__setup__util__sh_abf9fce18cdd352b7e760ea9945d5e91a}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!FORMAT\_STR\_USE\_ENV\_VAR@{FORMAT\_STR\_USE\_ENV\_VAR}}
+\index{FORMAT\_STR\_USE\_ENV\_VAR@{FORMAT\_STR\_USE\_ENV\_VAR}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_STR\_USE\_ENV\_VAR}{FORMAT\_STR\_USE\_ENV\_VAR}}
+{\footnotesize\ttfamily string \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+FORMAT\+\_\+\+STR\+\_\+\+USE\+\_\+\+ENV\+\_\+\+VAR = \textquotesingle{}\$\{name\}\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace__local__setup__util__sh_a33c8846fcbbb8b254bd1bb1564a82282}\label{namespace__local__setup__util__sh_a33c8846fcbbb8b254bd1bb1564a82282}} 
+\index{\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}!rc@{rc}}
+\index{rc@{rc}!\_local\_setup\_util\_sh@{\_local\_setup\_util\_sh}}
+\doxysubsubsection{\texorpdfstring{rc}{rc}}
+{\footnotesize\ttfamily int \+\_\+local\+\_\+setup\+\_\+util\+\_\+sh.\+rc = \mbox{\hyperlink{namespace__local__setup__util__sh_a4d1815558d1490a73f1c44e222173693}{main}}()}
+

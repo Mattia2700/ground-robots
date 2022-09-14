@@ -1,0 +1,71 @@
+\hypertarget{__local__setup__util__ps1_8py}{}\doxysection{install/\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.py File Reference}
+\label{__local__setup__util__ps1_8py}\index{install/\_local\_setup\_util\_ps1.py@{install/\_local\_setup\_util\_ps1.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace__local__setup__util__ps1}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a58666f47d601585286ee6f70d8486529}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+main}} (argv=sys.\+argv\mbox{[}1\+:\mbox{]})
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a660d65b85dd7a6ecac54a568e5317a9f}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+get\+\_\+packages}} (prefix\+\_\+path, merged\+\_\+install)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a13d44f7f585864aecfa5e18963863b2f}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+add\+\_\+package\+\_\+runtime\+\_\+dependencies}} (path, packages)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a8188480b0e2154d9e9a263f5703d1c94}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+order\+\_\+packages}} (packages)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a15d4731180cf0c4183d7ca10882dcabe}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+reduce\+\_\+cycle\+\_\+set}} (packages)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_aa3e2fbb807d8380ccec56fc63df301b5}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+\_\+include\+\_\+comments}} ()
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_ad54616a9bde1f8e5ea9d9eb6877d9070}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+get\+\_\+commands}} (pkg\+\_\+name, prefix, primary\+\_\+extension, additional\+\_\+extension)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a944c92f989ec2324698ca7084a748098}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+process\+\_\+dsv\+\_\+file}} (dsv\+\_\+path, prefix, primary\+\_\+extension=None, additional\+\_\+extension=None)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_af77fd2c41857f7c0d0254a971d8de3b4}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+handle\+\_\+dsv\+\_\+types\+\_\+except\+\_\+source}} (type\+\_\+, remainder, prefix)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a6280c3724ce5556ddcf98f719ba67628}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+\_\+append\+\_\+unique\+\_\+value}} (name, value)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_ac00aca9cb17119b2f0d4f00e3d26f96f}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+\_\+prepend\+\_\+unique\+\_\+value}} (name, value)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_ab6acee9ab7234219630c25fbbe82214c}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+\_\+remove\+\_\+ending\+\_\+separators}} ()
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a5969a0f97d5bb5659c613adfc51de988}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+\_\+set}} (name, value)
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_a42d5a050d88a8f370bd5e72d7c0f597c}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+\_\+set\+\_\+if\+\_\+unset}} (name, value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_ae4257e2524fe12bb24dd506d266e76b7}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+FORMAT\+\_\+\+STR\+\_\+\+COMMENT\+\_\+\+LINE}} = \textquotesingle{}\# \{comment\}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_a91b75f6742473a461f06b7ea097eb855}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+FORMAT\+\_\+\+STR\+\_\+\+SET\+\_\+\+ENV\+\_\+\+VAR}} = \textquotesingle{}Set-\/Item -\/Path \char`\"{}Env\+:\{name\}\char`\"{} -\/Value \char`\"{}\{value\}\char`\"{}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_ad38b333bb95189e2a788640e7a251c59}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+FORMAT\+\_\+\+STR\+\_\+\+USE\+\_\+\+ENV\+\_\+\+VAR}} = \textquotesingle{}\$env\+:\{name\}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_a8372d8a50a1d7009051781068e7e55f3}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+FORMAT\+\_\+\+STR\+\_\+\+INVOKE\+\_\+\+SCRIPT}} = \textquotesingle{}\+\_\+colcon\+\_\+prefix\+\_\+powershell\+\_\+source\+\_\+script \char`\"{}\{script\+\_\+path\}\char`\"{}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_a1df28aa95bdd1278ad5db8795d8ba08a}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+FORMAT\+\_\+\+STR\+\_\+\+REMOVE\+\_\+\+LEADING\+\_\+\+SEPARATOR}} = \textquotesingle{}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_aad8c194859c439bcde36009d86f72fc1}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+FORMAT\+\_\+\+STR\+\_\+\+REMOVE\+\_\+\+TRAILING\+\_\+\+SEPARATOR}} = \textquotesingle{}\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_a9e2461922a9a8000ff9e51254bc5bba6}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+DSV\+\_\+\+TYPE\+\_\+\+APPEND\+\_\+\+NON\+\_\+\+DUPLICATE}} = \textquotesingle{}append-\/non-\/duplicate\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_a0a2aa5df3e4cbeafc5e8b925b99ac75e}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+DSV\+\_\+\+TYPE\+\_\+\+PREPEND\+\_\+\+NON\+\_\+\+DUPLICATE}} = \textquotesingle{}prepend-\/non-\/duplicate\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_a1dd0b06bdc509bfe2d3f45956905fcd7}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+DSV\+\_\+\+TYPE\+\_\+\+PREPEND\+\_\+\+NON\+\_\+\+DUPLICATE\+\_\+\+IF\+\_\+\+EXISTS}} = \textquotesingle{}prepend-\/non-\/duplicate-\/if-\/exists\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_ab69f3a892e8b911fcaa1332d97cfbcfe}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+DSV\+\_\+\+TYPE\+\_\+\+SET}} = \textquotesingle{}set\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_adf903ff9a19c958a4ef8eeec1e6f792d}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+DSV\+\_\+\+TYPE\+\_\+\+SET\+\_\+\+IF\+\_\+\+UNSET}} = \textquotesingle{}set-\/if-\/unset\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace__local__setup__util__ps1_ad4d12ff5edb5c76bb9dc75d6cdce0ba4}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+DSV\+\_\+\+TYPE\+\_\+\+SOURCE}} = \textquotesingle{}source\textquotesingle{}
+\item 
+dictionary \mbox{\hyperlink{namespace__local__setup__util__ps1_ae1d5cb44523bf831182cd1a71c4548c4}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+env\+\_\+state}} = \{\}
+\item 
+def \mbox{\hyperlink{namespace__local__setup__util__ps1_aafb1ac7e0d5b0a696e337c730e2e4830}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+rc}} = \mbox{\hyperlink{teleop__node_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}()
+\item 
+\mbox{\hyperlink{namespace__local__setup__util__ps1_a2d82f0862abcccc453a824bee330545f}{\+\_\+local\+\_\+setup\+\_\+util\+\_\+ps1.\+file}}
+\end{DoxyCompactItemize}

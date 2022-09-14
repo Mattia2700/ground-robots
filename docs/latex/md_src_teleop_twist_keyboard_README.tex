@@ -1,0 +1,31 @@
+Generic Keyboard Teleoperation for ROS\hypertarget{md_src_teleop_twist_keyboard_README_autotoc_md11}{}\doxysection{Launch}\label{md_src_teleop_twist_keyboard_README_autotoc_md11}
+To run\+: {\ttfamily ros2 run \mbox{\hyperlink{namespaceteleop__twist__keyboard}{teleop\+\_\+twist\+\_\+keyboard}} \mbox{\hyperlink{namespaceteleop__twist__keyboard}{teleop\+\_\+twist\+\_\+keyboard}}}\hypertarget{md_src_teleop_twist_keyboard_README_autotoc_md12}{}\doxysection{Usage}\label{md_src_teleop_twist_keyboard_README_autotoc_md12}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{This node takes keypresses from the keyboard and publishes them as Twist}
+\DoxyCodeLine{messages. It works best with a US keyboard layout.}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{Moving around:}
+\DoxyCodeLine{   u    i    o}
+\DoxyCodeLine{   j    k    l}
+\DoxyCodeLine{   m    ,    .}
+\DoxyCodeLine{}
+\DoxyCodeLine{For Holonomic mode (strafing), hold down the shift key:}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{   U    I    O}
+\DoxyCodeLine{   J    K    L}
+\DoxyCodeLine{   M    <    >}
+\DoxyCodeLine{}
+\DoxyCodeLine{t : up (+z)}
+\DoxyCodeLine{b : down (-\/z)}
+\DoxyCodeLine{}
+\DoxyCodeLine{anything else : stop}
+\DoxyCodeLine{}
+\DoxyCodeLine{q/z : increase/decrease max speeds by 10\%}
+\DoxyCodeLine{w/x : increase/decrease only linear speed by 10\%}
+\DoxyCodeLine{e/c : increase/decrease only angular speed by 10\%}
+\DoxyCodeLine{}
+\DoxyCodeLine{CTRL-\/C to quit}
+
+\end{DoxyCode}
+ 

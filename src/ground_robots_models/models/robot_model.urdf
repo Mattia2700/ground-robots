@@ -149,11 +149,11 @@
   <!-- *********************** LIDAR SETUP **********************************  -->
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="lidar_link"/>
+    <child link="base_laser"/>
     <origin xyz="0 0 0.42" rpy="0 0 0"/>
   </joint>
 
-  <link name="lidar_link">
+  <link name="base_laser">
   
     <collision>
      <origin xyz="0 0 0" rpy="0 0 0"/>

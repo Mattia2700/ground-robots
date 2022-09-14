@@ -1,0 +1,118 @@
+\hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl}{}\doxysection{teleop\+\_\+twist\+\_\+joy\+::Teleop\+Twist\+Joy\+::Impl Struct Reference}
+\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl}\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a623474d583e54ca94681ab4976e07135}{joy\+Callback}} (const sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr joy)
+\item 
+void \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a10ae9fe0dbce0a3daa1b03dc45776915}{send\+Cmd\+Vel\+Msg}} (const sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr, const std\+::string \&which\+\_\+map)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Joy $>$\+::\+Shared\+Ptr \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a988ae52ac00d3db50a66ce0be061e80d}{joy\+\_\+sub}}
+\item 
+rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::\+Shared\+Ptr \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a50018e2a8130df68f97de3fc8508711e}{cmd\+\_\+vel\+\_\+pub}}
+\item 
+bool \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ae4b9c12706948233ca65b7897f4fc11e}{require\+\_\+enable\+\_\+button}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ade74d1c414a23d79e41281dd3ae9330c}{enable\+\_\+button}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a6c4824331d7ba98d4f36a88e37e5bf81}{enable\+\_\+turbo\+\_\+button}}
+\item 
+std\+::map$<$ std\+::string, int64\+\_\+t $>$ \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a735dab5f4337066ca3ca220134f86d50}{axis\+\_\+linear\+\_\+map}}
+\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, double $>$ $>$ \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_acb1cede93520edbfa0ec9cd89dafeba3}{scale\+\_\+linear\+\_\+map}}
+\item 
+std\+::map$<$ std\+::string, int64\+\_\+t $>$ \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ade1af1c1adf5d9568b1193b730417d4a}{axis\+\_\+angular\+\_\+map}}
+\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, double $>$ $>$ \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a043b2ace6e55568bfef94e26940be66e}{scale\+\_\+angular\+\_\+map}}
+\item 
+bool \mbox{\hyperlink{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a1188b9a2c245dba036ff9227712610af}{sent\+\_\+disable\+\_\+msg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal members of class. This is the pimpl idiom, and allows more flexibility in adding parameters later without breaking ABI compatibility, for robots which link \mbox{\hyperlink{classteleop__twist__joy_1_1TeleopTwistJoy}{Teleop\+Twist\+Joy}} directly into base nodes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a623474d583e54ca94681ab4976e07135}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a623474d583e54ca94681ab4976e07135}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!joyCallback@{joyCallback}}
+\index{joyCallback@{joyCallback}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{joyCallback()}{joyCallback()}}
+{\footnotesize\ttfamily void teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::joy\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr}]{joy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a10ae9fe0dbce0a3daa1b03dc45776915}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a10ae9fe0dbce0a3daa1b03dc45776915}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!sendCmdVelMsg@{sendCmdVelMsg}}
+\index{sendCmdVelMsg@{sendCmdVelMsg}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{sendCmdVelMsg()}{sendCmdVelMsg()}}
+{\footnotesize\ttfamily void teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::send\+Cmd\+Vel\+Msg (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr}]{joy\+\_\+msg,  }\item[{const std\+::string \&}]{which\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ade1af1c1adf5d9568b1193b730417d4a}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ade1af1c1adf5d9568b1193b730417d4a}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!axis\_angular\_map@{axis\_angular\_map}}
+\index{axis\_angular\_map@{axis\_angular\_map}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{axis\_angular\_map}{axis\_angular\_map}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int64\+\_\+t$>$ teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::axis\+\_\+angular\+\_\+map}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a735dab5f4337066ca3ca220134f86d50}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a735dab5f4337066ca3ca220134f86d50}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!axis\_linear\_map@{axis\_linear\_map}}
+\index{axis\_linear\_map@{axis\_linear\_map}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{axis\_linear\_map}{axis\_linear\_map}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int64\+\_\+t$>$ teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::axis\+\_\+linear\+\_\+map}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a50018e2a8130df68f97de3fc8508711e}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a50018e2a8130df68f97de3fc8508711e}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!cmd\_vel\_pub@{cmd\_vel\_pub}}
+\index{cmd\_vel\_pub@{cmd\_vel\_pub}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{cmd\_vel\_pub}{cmd\_vel\_pub}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::\+Shared\+Ptr teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::cmd\+\_\+vel\+\_\+pub}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ade74d1c414a23d79e41281dd3ae9330c}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ade74d1c414a23d79e41281dd3ae9330c}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!enable\_button@{enable\_button}}
+\index{enable\_button@{enable\_button}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{enable\_button}{enable\_button}}
+{\footnotesize\ttfamily int64\+\_\+t teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::enable\+\_\+button}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a6c4824331d7ba98d4f36a88e37e5bf81}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a6c4824331d7ba98d4f36a88e37e5bf81}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!enable\_turbo\_button@{enable\_turbo\_button}}
+\index{enable\_turbo\_button@{enable\_turbo\_button}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{enable\_turbo\_button}{enable\_turbo\_button}}
+{\footnotesize\ttfamily int64\+\_\+t teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::enable\+\_\+turbo\+\_\+button}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a988ae52ac00d3db50a66ce0be061e80d}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a988ae52ac00d3db50a66ce0be061e80d}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!joy\_sub@{joy\_sub}}
+\index{joy\_sub@{joy\_sub}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{joy\_sub}{joy\_sub}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Joy$>$\+::\+Shared\+Ptr teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::joy\+\_\+sub}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ae4b9c12706948233ca65b7897f4fc11e}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_ae4b9c12706948233ca65b7897f4fc11e}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!require\_enable\_button@{require\_enable\_button}}
+\index{require\_enable\_button@{require\_enable\_button}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{require\_enable\_button}{require\_enable\_button}}
+{\footnotesize\ttfamily bool teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::require\+\_\+enable\+\_\+button}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a043b2ace6e55568bfef94e26940be66e}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a043b2ace6e55568bfef94e26940be66e}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!scale\_angular\_map@{scale\_angular\_map}}
+\index{scale\_angular\_map@{scale\_angular\_map}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{scale\_angular\_map}{scale\_angular\_map}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, double$>$ $>$ teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::scale\+\_\+angular\+\_\+map}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_acb1cede93520edbfa0ec9cd89dafeba3}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_acb1cede93520edbfa0ec9cd89dafeba3}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!scale\_linear\_map@{scale\_linear\_map}}
+\index{scale\_linear\_map@{scale\_linear\_map}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{scale\_linear\_map}{scale\_linear\_map}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, double$>$ $>$ teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::scale\+\_\+linear\+\_\+map}
+
+\mbox{\Hypertarget{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a1188b9a2c245dba036ff9227712610af}\label{structteleop__twist__joy_1_1TeleopTwistJoy_1_1Impl_a1188b9a2c245dba036ff9227712610af}} 
+\index{teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}!sent\_disable\_msg@{sent\_disable\_msg}}
+\index{sent\_disable\_msg@{sent\_disable\_msg}!teleop\_twist\_joy::TeleopTwistJoy::Impl@{teleop\_twist\_joy::TeleopTwistJoy::Impl}}
+\doxysubsubsection{\texorpdfstring{sent\_disable\_msg}{sent\_disable\_msg}}
+{\footnotesize\ttfamily bool teleop\+\_\+twist\+\_\+joy\+::\+Teleop\+Twist\+Joy\+::\+Impl\+::sent\+\_\+disable\+\_\+msg}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/teleop\+\_\+twist\+\_\+joy/src/\mbox{\hyperlink{teleop__twist__joy_8cpp}{teleop\+\_\+twist\+\_\+joy.\+cpp}}\end{DoxyCompactItemize}

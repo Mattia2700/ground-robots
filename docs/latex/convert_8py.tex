@@ -1,0 +1,36 @@
+\hypertarget{convert_8py}{}\doxysection{src/planning\+\_\+bridge/config/convert.py File Reference}
+\label{convert_8py}\index{src/planning\_bridge/config/convert.py@{src/planning\_bridge/config/convert.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceconvert}{convert}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconvert_a9992969e06c48b92677c85aee46f22cf}{convert.\+translation}} = np.\+array(\mbox{[}6.\+8210, 8.\+7180, 0\mbox{]})
+\item 
+int \mbox{\hyperlink{namespaceconvert_a63b74ea1174ec23a5fb0b814d2e1c6ef}{convert.\+rotation\+\_\+z}} = 135 $\ast$ np.\+pi / 180
+\item 
+float \mbox{\hyperlink{namespaceconvert_a8a1cea0c58b7205c56cbaf4a5f50b389}{convert.\+scale\+\_\+y}} = 1.\+0925
+\item 
+\mbox{\hyperlink{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}{convert.\+current\+\_\+folder}} = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+string \mbox{\hyperlink{namespaceconvert_ac2159264258e8eb06678267d83c46700}{convert.\+original\+\_\+name}} = current\+\_\+folder + \char`\"{}/waypoints\+\_\+original.\+json\char`\"{}
+\item 
+string \mbox{\hyperlink{namespaceconvert_a72741c81f2e2e3d37924fe3882d1e2b0}{convert.\+dict\+\_\+name}} = current\+\_\+folder + \char`\"{}/waypoints.\+json\char`\"{}
+\item 
+\mbox{\hyperlink{namespaceconvert_a8d8fed3d28983654825f4f8b23e9c209}{convert.\+original\+\_\+data}} = json.\+load(f)
+\item 
+\mbox{\hyperlink{namespaceconvert_abe6fefab0fe10baa7ad26add02f60577}{convert.\+rot\+\_\+matrix}}
+\item 
+\mbox{\hyperlink{namespaceconvert_af18bfea2fefd457ed8e76f99e23eadbd}{convert.\+scale\+\_\+matrix}} = np.\+array(\mbox{[}\mbox{[}1, 0, 0\mbox{]}, \mbox{[}0, scale\+\_\+y, 0\mbox{]}, \mbox{[}0, 0, 1\mbox{]}\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceconvert_a4a973dd5cf18803502608032aa04d643}{convert.\+roto\+\_\+scaling}} = np.\+dot(rot\+\_\+matrix, scale\+\_\+matrix)
+\item 
+\mbox{\hyperlink{namespaceconvert_a90cec634e4aee2857eb68d75fdde5405}{convert.\+dict\+\_\+data}} = dict()
+\item 
+\mbox{\hyperlink{namespaceconvert_ab9f27aac61dae64641a274f3c9824c2b}{convert.\+f}}
+\item 
+\mbox{\hyperlink{namespaceconvert_a7254fb4f174937c7afb3b593cd420419}{convert.\+indent}}
+\end{DoxyCompactItemize}

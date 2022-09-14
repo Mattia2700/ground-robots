@@ -24,18 +24,31 @@
 class echoListener
 {
 public:
+  /**
+   * @brief Buffer to store transofrmations
+   * 
+   */
   tf2_ros::Buffer buffer_;
+  /**
+   * @brief Transform listener pointer to listen to the transformations
+   * 
+   */
   std::shared_ptr<tf2_ros::TransformListener> tfl_;
 
+  /**
+   * @brief Construct a new echo Listener object
+   * 
+   * @param clock current clock
+   */
   explicit echoListener(rclcpp::Clock::SharedPtr clock)
   : buffer_(clock)
   {
     tfl_ = std::make_shared<tf2_ros::TransformListener>(buffer_);
   }
-
-  ~echoListener()
-  {
-  }
+  /**
+   * @brief Destroy the echo Listener object
+   */
+  ~echoListener(){}
 };
 
 int main(int argc, char ** argv){

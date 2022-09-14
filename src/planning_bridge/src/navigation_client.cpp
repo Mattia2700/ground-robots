@@ -11,12 +11,20 @@
 #include "planning_bridge_msgs/srv/start_navigation.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 
+/**
+ * @brief A simple node with anaction client that requests the navigation to a goal pose, passed by a service request
+ * 
+ */
 class Nav2Pose : public rclcpp::Node {
 public:
   using ActionNav2Pose = nav2_msgs::action::NavigateToPose;
   using GoalHandleNav2Pose = rclcpp_action::ClientGoalHandle<ActionNav2Pose>;
-  using PoseInt = long unsigned int;
 
+  /**
+   * @brief Creates the "NavigateToPose" action client and initialize the custom StartNavigation service server
+   * 
+   * @param options default node options passed by ROS2
+   */
   explicit Nav2Pose(const rclcpp::NodeOptions &options = rclcpp::NodeOptions())
       : Node("nav_2_pose_client", options) {
     action_nav_pose_ptr_ =
@@ -44,6 +52,10 @@ public:
         });
   }
 
+  /**
+   * @brief Sends the goal to the action server
+   * 
+   */
   void send_goal() {
     using namespace std::placeholders;
 
@@ -70,13 +82,24 @@ public:
   }
 
 private:
-
+  /**
+   * @brief Action client pointer
+   */
   rclcpp_action::Client<ActionNav2Pose>::SharedPtr action_nav_pose_ptr_;
-  rclcpp::Service<planning_bridge_msgs::srv::StartNavigation>::SharedPtr
-      start_navigation_service_ptr_;
-  std::shared_ptr<geometry_msgs::msg::PoseStamped> goal_ =
-      std::make_shared<geometry_msgs::msg::PoseStamped>();
+  /**
+   * @brief Service server pointer
+   */
+  rclcpp::Service<planning_bridge_msgs::srv::StartNavigation>::SharedPtr start_navigation_service_ptr_;
+  /**
+   * @brief Goal pose pointer recevied by the service request
+   */
+  std::shared_ptr<geometry_msgs::msg::PoseStamped> goal_ = std::make_shared<geometry_msgs::msg::PoseStamped>();
 
+  /**
+   * @brief Callback function called when the action server responds to the goal request
+   * 
+   * @param future Informations about the goal
+   */
   void goal_response_callback(
       std::shared_future<GoalHandleNav2Pose::SharedPtr> future) {
     auto goal_handle = future.get();
@@ -88,8 +111,17 @@ private:
     }
   }
 
+  /**
+   * @brief Callback function called when the action is being executed, providing feedback (not used, but required)
+   * @param feedback 
+   */
   void feedback_callback(GoalHandleNav2Pose::SharedPtr, const std::shared_ptr<const ActionNav2Pose::Feedback> feedback) {}
 
+  /**
+   * @brief Callback function called when the action is completed
+   * 
+   * @param result Information codes about the result
+   */
   void result_callback(const GoalHandleNav2Pose::WrappedResult &result) {
     switch (result.code) {
     case rclcpp_action::ResultCode::SUCCEEDED:

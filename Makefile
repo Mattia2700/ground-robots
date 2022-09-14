@@ -16,29 +16,35 @@ clean:
 build:
 	@echo "Building ROS2 packages"
 	@make msgs
-	@source $(current_dir)/install/setup.bash && colcon build --packages-ignore planning_bridge_msgs
+	@source $(current_dir)/install/setup.bash && colcon build --packages-ignore planning_bridge_msgs --parallel-workers $(shell nproc)
 
 navigation: 
 	@echo "Running navigation"
-	@source $(current_dir)/install/setup.bash && ros2 launch ground_robots_navigation navigation.launch.py
-
-sim:
-	@echo "Running simulation"
 	@make models
 	@source $(current_dir)/install/setup.bash && ros2 launch ground_robots_navigation navigation.launch.py \
+		use_lidar:=True
+
+simulation:
+	@echo "Running simulation"
+	@make models
+	@source $(current_dir)/install/setup.bash && ros2 launch ground_robots_navigation simulation.launch.py \
 		use_simulator:=True \
-		headless:=True \
-		rviz_config_file:='$(current_dir)/install/ground_robots_navigation/share/ground_robots_navigation/rviz/nav2_config_sim.rviz'
+		headless:=True
 
 slam:
 	@echo "Running SLAM"
 	@make models
 	@source $(current_dir)/install/setup.bash && ros2 launch ground_robots_navigation navigation.launch.py \
-		slam:=True # aggiungere rviz file per slam 
+		slam:=True \
+		use_sim_time:=True 
 
 lidar:
 	@echo "Running LIDAR transform"
-	@source $(current_dir)/install/setup.bash && ros2 run tf2_ros static_transform_publisher 0 0 0.45 0 0 0 base_link lidar_link
+	@source $(current_dir)/install/setup.bash && ros2 run tf2_ros static_transform_publisher 0 0 0.45 0 0 0 base_link base_laser
+
+footprint:
+	@echo "Running FOOTPRINT transform"
+	@source $(current_dir)/install/setup.bash && ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link base_footprint
 
 msgs:
 	@source /opt/ros/foxy/setup.bash && colcon build --packages-select planning_bridge_msgs
@@ -46,6 +52,10 @@ msgs:
 planning:
 	@echo "Running planning"
 	@source $(current_dir)/install/setup.bash && ros2 launch planning_bridge planning.launch.py
+
+joy:
+	@echo "Running joystick"
+	@source $(current_dir)/install/setup.bash && ros2 launch teleop_twist_joy teleop-launch.py joy_config:='xbox'
 
 .PHONY: models clean build msgs navigation sim bridge planning
 

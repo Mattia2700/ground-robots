@@ -1,0 +1,67 @@
+\hypertarget{ugv__transporting__uav__move_8cpp}{}\doxysection{src/planning\+\_\+bridge/src/ugv\+\_\+transporting\+\_\+uav\+\_\+move.cpp File Reference}
+\label{ugv__transporting__uav__move_8cpp}\index{src/planning\_bridge/src/ugv\_transporting\_uav\_move.cpp@{src/planning\_bridge/src/ugv\_transporting\_uav\_move.cpp}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}plansys2\+\_\+executor/\+Action\+Executor\+Client.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rclcpp/rclcpp.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rclcpp\+\_\+action/rclcpp\+\_\+action.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/msg/pose.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}planning\+\_\+bridge\+\_\+msgs/srv/start\+\_\+navigation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}planning\+\_\+bridge\+\_\+msgs/srv/current\+\_\+pose.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMoveAction}{Move\+Action}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ugv__transporting__uav__move_8cpp_a698d64d03cc0e8ad33d2118777a921b0}{GOAL\+\_\+\+INDEX}}~2
+\item 
+\#define \mbox{\hyperlink{ugv__transporting__uav__move_8cpp_aad18d18dd8d7cfb63a386dc4ee4c25e8}{JSON\+\_\+\+NAME}}~\char`\"{}waypoints.\+json\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{ugv__transporting__uav__move_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ugv__transporting__uav__move_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ugv__transporting__uav__move_8cpp_a698d64d03cc0e8ad33d2118777a921b0}\label{ugv__transporting__uav__move_8cpp_a698d64d03cc0e8ad33d2118777a921b0}} 
+\index{ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}!GOAL\_INDEX@{GOAL\_INDEX}}
+\index{GOAL\_INDEX@{GOAL\_INDEX}!ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}}
+\doxysubsubsection{\texorpdfstring{GOAL\_INDEX}{GOAL\_INDEX}}
+{\footnotesize\ttfamily \#define GOAL\+\_\+\+INDEX~2}
+
+\mbox{\Hypertarget{ugv__transporting__uav__move_8cpp_aad18d18dd8d7cfb63a386dc4ee4c25e8}\label{ugv__transporting__uav__move_8cpp_aad18d18dd8d7cfb63a386dc4ee4c25e8}} 
+\index{ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}!JSON\_NAME@{JSON\_NAME}}
+\index{JSON\_NAME@{JSON\_NAME}!ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_NAME}{JSON\_NAME}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+NAME~\char`\"{}waypoints.\+json\char`\"{}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ugv__transporting__uav__move_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{ugv__transporting__uav__move_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}!json@{json}}
+\index{json@{json}!ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{ugv__move_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ugv__transporting__uav__move_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{ugv__transporting__uav__move_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}!main@{main}}
+\index{main@{main}!ugv\_transporting\_uav\_move.cpp@{ugv\_transporting\_uav\_move.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+

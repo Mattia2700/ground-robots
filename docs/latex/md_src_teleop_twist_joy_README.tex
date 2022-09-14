@@ -1,0 +1,103 @@
+\hypertarget{md_src_teleop_twist_joy_README_autotoc_md1}{}\doxysection{Overview}\label{md_src_teleop_twist_joy_README_autotoc_md1}
+The purpose of this package is to provide a generic facility for tele-\/operating Twist-\/based ROS2 robots with a standard joystick. It converts joy messages to velocity commands.
+
+This node provides no rate limiting or autorepeat functionality. It is expected that you take advantage of the features built into \href{https://index.ros.org/p/joy/github-ros-drivers-joystick_drivers/\#foxy}{\texttt{ joy}} for this.\hypertarget{md_src_teleop_twist_joy_README_autotoc_md2}{}\doxysubsection{Executables}\label{md_src_teleop_twist_joy_README_autotoc_md2}
+The package comes with the {\ttfamily teleop\+\_\+node} that republishes {\ttfamily sensor\+\_\+msgs/msg/\+Joy} messages as scaled {\ttfamily geometry\+\_\+msgs/msg/\+Twist} messages.\hypertarget{md_src_teleop_twist_joy_README_autotoc_md3}{}\doxysubsection{Subscribed Topics}\label{md_src_teleop_twist_joy_README_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\ttfamily joy (sensor\+\_\+msgs/msg/\+Joy)}
+\begin{DoxyItemize}
+\item Joystick messages to be translated to velocity commands.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_src_teleop_twist_joy_README_autotoc_md4}{}\doxysubsection{Published Topics}\label{md_src_teleop_twist_joy_README_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\ttfamily cmd\+\_\+vel (geometry\+\_\+msgs/msg/\+Twist)}
+\begin{DoxyItemize}
+\item Command velocity messages arising from Joystick commands.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_src_teleop_twist_joy_README_autotoc_md5}{}\doxysubsection{Parameters}\label{md_src_teleop_twist_joy_README_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\ttfamily require\+\_\+enable\+\_\+button (bool, default\+: true)}
+\begin{DoxyItemize}
+\item Whether to require the enable button for enabling movement.
+\end{DoxyItemize}
+\item {\ttfamily enable\+\_\+button (int, default\+: 0)}
+\begin{DoxyItemize}
+\item Joystick button to enable regular-\/speed movement.
+\end{DoxyItemize}
+\item {\ttfamily enable\+\_\+turbo\+\_\+button (int, default\+: -\/1)}
+\begin{DoxyItemize}
+\item Joystick button to enable high-\/speed movement (disabled when -\/1).
+\end{DoxyItemize}
+\item {\ttfamily axis\+\_\+linear.\texorpdfstring{$<$}{<}axis\texorpdfstring{$>$}{>}}
+\begin{DoxyItemize}
+\item Joystick axis to use for linear movement control.
+\item {\ttfamily axis\+\_\+linear.\+x (int, default\+: 5)}
+\item {\ttfamily axis\+\_\+linear.\+y (int, default\+: -\/1)}
+\item {\ttfamily axis\+\_\+linear.\+z (int, default\+: -\/1)}
+\end{DoxyItemize}
+\item {\ttfamily scale\+\_\+linear.\texorpdfstring{$<$}{<}axis\texorpdfstring{$>$}{>}}
+\begin{DoxyItemize}
+\item Scale to apply to joystick linear axis for regular-\/speed movement.
+\item {\ttfamily scale\+\_\+linear.\+x (double, default\+: 0.\+5)}
+\item {\ttfamily scale\+\_\+linear.\+y (double, default\+: 0.\+0)}
+\item {\ttfamily scale\+\_\+linear.\+z (double, default\+: 0.\+0)}
+\end{DoxyItemize}
+\item {\ttfamily scale\+\_\+linear\+\_\+turbo.\texorpdfstring{$<$}{<}axis\texorpdfstring{$>$}{>}}
+\begin{DoxyItemize}
+\item Scale to apply to joystick linear axis for high-\/speed movement.
+\item {\ttfamily scale\+\_\+linear\+\_\+turbo.\+x (double, default\+: 1.\+0)}
+\item {\ttfamily scale\+\_\+linear\+\_\+turbo.\+y (double, default\+: 0.\+0)}
+\item {\ttfamily scale\+\_\+linear\+\_\+turbo.\+z (double, default\+: 0.\+0)}
+\end{DoxyItemize}
+\item {\ttfamily axis\+\_\+angular.\texorpdfstring{$<$}{<}axis\texorpdfstring{$>$}{>}}
+\begin{DoxyItemize}
+\item Joystick axis to use for angular movement control.
+\item {\ttfamily axis\+\_\+angular.\+yaw (int, default\+: 2)}
+\item {\ttfamily axis\+\_\+angular.\+pitch (int, default\+: -\/1)}
+\item {\ttfamily axis\+\_\+angular.\+roll (int, default\+: -\/1)}
+\end{DoxyItemize}
+\item {\ttfamily scale\+\_\+angular.\texorpdfstring{$<$}{<}axis\texorpdfstring{$>$}{>}}
+\begin{DoxyItemize}
+\item Scale to apply to joystick angular axis.
+\item {\ttfamily scale\+\_\+angular.\+yaw (double, default\+: 0.\+5)}
+\item {\ttfamily scale\+\_\+angular.\+pitch (double, default\+: 0.\+0)}
+\item {\ttfamily scale\+\_\+angular.\+roll (double, default\+: 0.\+0)}
+\end{DoxyItemize}
+\item {\ttfamily scale\+\_\+angular\+\_\+turbo.\texorpdfstring{$<$}{<}axis\texorpdfstring{$>$}{>}}
+\begin{DoxyItemize}
+\item Scale to apply to joystick angular axis for high-\/speed movement.
+\item {\ttfamily scale\+\_\+angular\+\_\+turbo.\+yaw (double, default\+: 1.\+0)}
+\item {\ttfamily scale\+\_\+angular\+\_\+turbo.\+pitch (double, default\+: 0.\+0)}
+\item {\ttfamily scale\+\_\+angular\+\_\+turbo.\+roll (double, default\+: 0.\+0)}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_src_teleop_twist_joy_README_autotoc_md6}{}\doxysection{Usage}\label{md_src_teleop_twist_joy_README_autotoc_md6}
+\hypertarget{md_src_teleop_twist_joy_README_autotoc_md7}{}\doxysubsection{Install}\label{md_src_teleop_twist_joy_README_autotoc_md7}
+For most users building from source will not be required, execute {\ttfamily apt-\/get install ros-\/\texorpdfstring{$<$}{<}rosdistro\texorpdfstring{$>$}{>}-\/teleop-\/twist-\/joy} to install.\hypertarget{md_src_teleop_twist_joy_README_autotoc_md8}{}\doxysubsection{Run}\label{md_src_teleop_twist_joy_README_autotoc_md8}
+A launch file has been provided which has three arguments which can be changed in the terminal or via your own launch file. To configure the node to match your joystick a config file can be used. There are several common ones provided in this package (atk3, ps3-\/holonomic, ps3, xbox, xd3), located here\+: \href{https://github.com/ros2/teleop_twist_joy/tree/eloquent/config}{\texttt{ https\+://github.\+com/ros2/teleop\+\_\+twist\+\_\+joy/tree/eloquent/config}}.
+
+PS3 is default, to run for another config (e.\+g. xbox) use this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 launch teleop\_twist\_joy teleop-\/launch.py joy\_config:='xbox'}
+
+\end{DoxyCode}
+
+
+{\bfseries{Note\+:}} this launch file also launches the {\ttfamily joy} node so do not run it separately.\hypertarget{md_src_teleop_twist_joy_README_autotoc_md9}{}\doxysubsection{Arguments}\label{md_src_teleop_twist_joy_README_autotoc_md9}
+
+\begin{DoxyItemize}
+\item `joy\+\_\+config (string, default\+: \textquotesingle{}ps3')\`{}
+\begin{DoxyItemize}
+\item Config file to use
+\end{DoxyItemize}
+\item `joy\+\_\+dev (string, default\+: \textquotesingle{}dev/input/js0')\`{}
+\begin{DoxyItemize}
+\item Joystick device to use
+\end{DoxyItemize}
+\item `config\+\_\+filepath (string, default\+: '/opt/ros/$<$rosdistro$>$/share/teleop\+\_\+twist\+\_\+joy/config/\textquotesingle{} + Launch\+Config(\textquotesingle{}joy\+\_\+config\textquotesingle{}) + \textquotesingle{}.config.\+yaml\textquotesingle{})\`{}
+\begin{DoxyItemize}
+\item Path to config files 
+\end{DoxyItemize}
+\end{DoxyItemize}

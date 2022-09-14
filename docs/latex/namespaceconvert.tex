@@ -1,0 +1,123 @@
+\hypertarget{namespaceconvert}{}\doxysection{convert Namespace Reference}
+\label{namespaceconvert}\index{convert@{convert}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconvert_a9992969e06c48b92677c85aee46f22cf}{translation}} = np.\+array(\mbox{[}6.\+8210, 8.\+7180, 0\mbox{]})
+\item 
+int \mbox{\hyperlink{namespaceconvert_a63b74ea1174ec23a5fb0b814d2e1c6ef}{rotation\+\_\+z}} = 135 $\ast$ np.\+pi / 180
+\item 
+float \mbox{\hyperlink{namespaceconvert_a8a1cea0c58b7205c56cbaf4a5f50b389}{scale\+\_\+y}} = 1.\+0925
+\item 
+\mbox{\hyperlink{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}{current\+\_\+folder}} = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+string \mbox{\hyperlink{namespaceconvert_ac2159264258e8eb06678267d83c46700}{original\+\_\+name}} = \mbox{\hyperlink{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}{current\+\_\+folder}} + \char`\"{}/waypoints\+\_\+original.\+json\char`\"{}
+\item 
+string \mbox{\hyperlink{namespaceconvert_a72741c81f2e2e3d37924fe3882d1e2b0}{dict\+\_\+name}} = \mbox{\hyperlink{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}{current\+\_\+folder}} + \char`\"{}/waypoints.\+json\char`\"{}
+\item 
+\mbox{\hyperlink{namespaceconvert_a8d8fed3d28983654825f4f8b23e9c209}{original\+\_\+data}} = json.\+load(\mbox{\hyperlink{namespaceconvert_ab9f27aac61dae64641a274f3c9824c2b}{f}})
+\item 
+\mbox{\hyperlink{namespaceconvert_abe6fefab0fe10baa7ad26add02f60577}{rot\+\_\+matrix}}
+\item 
+\mbox{\hyperlink{namespaceconvert_af18bfea2fefd457ed8e76f99e23eadbd}{scale\+\_\+matrix}} = np.\+array(\mbox{[}\mbox{[}1, 0, 0\mbox{]}, \mbox{[}0, \mbox{\hyperlink{namespaceconvert_a8a1cea0c58b7205c56cbaf4a5f50b389}{scale\+\_\+y}}, 0\mbox{]}, \mbox{[}0, 0, 1\mbox{]}\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceconvert_a4a973dd5cf18803502608032aa04d643}{roto\+\_\+scaling}} = np.\+dot(\mbox{\hyperlink{namespaceconvert_abe6fefab0fe10baa7ad26add02f60577}{rot\+\_\+matrix}}, \mbox{\hyperlink{namespaceconvert_af18bfea2fefd457ed8e76f99e23eadbd}{scale\+\_\+matrix}})
+\item 
+\mbox{\hyperlink{namespaceconvert_a90cec634e4aee2857eb68d75fdde5405}{dict\+\_\+data}} = dict()
+\item 
+\mbox{\hyperlink{namespaceconvert_ab9f27aac61dae64641a274f3c9824c2b}{f}}
+\item 
+\mbox{\hyperlink{namespaceconvert_a7254fb4f174937c7afb3b593cd420419}{indent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}\label{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}} 
+\index{convert@{convert}!current\_folder@{current\_folder}}
+\index{current\_folder@{current\_folder}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{current\_folder}{current\_folder}}
+{\footnotesize\ttfamily convert.\+current\+\_\+folder = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+\mbox{\Hypertarget{namespaceconvert_a90cec634e4aee2857eb68d75fdde5405}\label{namespaceconvert_a90cec634e4aee2857eb68d75fdde5405}} 
+\index{convert@{convert}!dict\_data@{dict\_data}}
+\index{dict\_data@{dict\_data}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{dict\_data}{dict\_data}}
+{\footnotesize\ttfamily convert.\+dict\+\_\+data = dict()}
+
+\mbox{\Hypertarget{namespaceconvert_a72741c81f2e2e3d37924fe3882d1e2b0}\label{namespaceconvert_a72741c81f2e2e3d37924fe3882d1e2b0}} 
+\index{convert@{convert}!dict\_name@{dict\_name}}
+\index{dict\_name@{dict\_name}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{dict\_name}{dict\_name}}
+{\footnotesize\ttfamily string convert.\+dict\+\_\+name = \mbox{\hyperlink{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}{current\+\_\+folder}} + \char`\"{}/waypoints.\+json\char`\"{}}
+
+\mbox{\Hypertarget{namespaceconvert_ab9f27aac61dae64641a274f3c9824c2b}\label{namespaceconvert_ab9f27aac61dae64641a274f3c9824c2b}} 
+\index{convert@{convert}!f@{f}}
+\index{f@{f}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily convert.\+f}
+
+\mbox{\Hypertarget{namespaceconvert_a7254fb4f174937c7afb3b593cd420419}\label{namespaceconvert_a7254fb4f174937c7afb3b593cd420419}} 
+\index{convert@{convert}!indent@{indent}}
+\index{indent@{indent}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{indent}{indent}}
+{\footnotesize\ttfamily convert.\+indent}
+
+\mbox{\Hypertarget{namespaceconvert_a8d8fed3d28983654825f4f8b23e9c209}\label{namespaceconvert_a8d8fed3d28983654825f4f8b23e9c209}} 
+\index{convert@{convert}!original\_data@{original\_data}}
+\index{original\_data@{original\_data}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{original\_data}{original\_data}}
+{\footnotesize\ttfamily convert.\+original\+\_\+data = json.\+load(\mbox{\hyperlink{namespaceconvert_ab9f27aac61dae64641a274f3c9824c2b}{f}})}
+
+\mbox{\Hypertarget{namespaceconvert_ac2159264258e8eb06678267d83c46700}\label{namespaceconvert_ac2159264258e8eb06678267d83c46700}} 
+\index{convert@{convert}!original\_name@{original\_name}}
+\index{original\_name@{original\_name}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{original\_name}{original\_name}}
+{\footnotesize\ttfamily string convert.\+original\+\_\+name = \mbox{\hyperlink{namespaceconvert_aa675419f25f22e9a7ed5c19595a8ac3b}{current\+\_\+folder}} + \char`\"{}/waypoints\+\_\+original.\+json\char`\"{}}
+
+\mbox{\Hypertarget{namespaceconvert_abe6fefab0fe10baa7ad26add02f60577}\label{namespaceconvert_abe6fefab0fe10baa7ad26add02f60577}} 
+\index{convert@{convert}!rot\_matrix@{rot\_matrix}}
+\index{rot\_matrix@{rot\_matrix}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{rot\_matrix}{rot\_matrix}}
+{\footnotesize\ttfamily convert.\+rot\+\_\+matrix}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  np.array(}
+\DoxyCodeLine{2     [}
+\DoxyCodeLine{3         [np.cos(rotation\_z), -\/np.sin(rotation\_z), 0],}
+\DoxyCodeLine{4         [np.sin(rotation\_z), np.cos(rotation\_z), 0],}
+\DoxyCodeLine{5         [0, 0, 1],}
+\DoxyCodeLine{6     ]}
+\DoxyCodeLine{7 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconvert_a63b74ea1174ec23a5fb0b814d2e1c6ef}\label{namespaceconvert_a63b74ea1174ec23a5fb0b814d2e1c6ef}} 
+\index{convert@{convert}!rotation\_z@{rotation\_z}}
+\index{rotation\_z@{rotation\_z}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{rotation\_z}{rotation\_z}}
+{\footnotesize\ttfamily int convert.\+rotation\+\_\+z = 135 $\ast$ np.\+pi / 180}
+
+\mbox{\Hypertarget{namespaceconvert_a4a973dd5cf18803502608032aa04d643}\label{namespaceconvert_a4a973dd5cf18803502608032aa04d643}} 
+\index{convert@{convert}!roto\_scaling@{roto\_scaling}}
+\index{roto\_scaling@{roto\_scaling}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{roto\_scaling}{roto\_scaling}}
+{\footnotesize\ttfamily convert.\+roto\+\_\+scaling = np.\+dot(\mbox{\hyperlink{namespaceconvert_abe6fefab0fe10baa7ad26add02f60577}{rot\+\_\+matrix}}, \mbox{\hyperlink{namespaceconvert_af18bfea2fefd457ed8e76f99e23eadbd}{scale\+\_\+matrix}})}
+
+\mbox{\Hypertarget{namespaceconvert_af18bfea2fefd457ed8e76f99e23eadbd}\label{namespaceconvert_af18bfea2fefd457ed8e76f99e23eadbd}} 
+\index{convert@{convert}!scale\_matrix@{scale\_matrix}}
+\index{scale\_matrix@{scale\_matrix}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{scale\_matrix}{scale\_matrix}}
+{\footnotesize\ttfamily convert.\+scale\+\_\+matrix = np.\+array(\mbox{[}\mbox{[}1, 0, 0\mbox{]}, \mbox{[}0, \mbox{\hyperlink{namespaceconvert_a8a1cea0c58b7205c56cbaf4a5f50b389}{scale\+\_\+y}}, 0\mbox{]}, \mbox{[}0, 0, 1\mbox{]}\mbox{]})}
+
+\mbox{\Hypertarget{namespaceconvert_a8a1cea0c58b7205c56cbaf4a5f50b389}\label{namespaceconvert_a8a1cea0c58b7205c56cbaf4a5f50b389}} 
+\index{convert@{convert}!scale\_y@{scale\_y}}
+\index{scale\_y@{scale\_y}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{scale\_y}{scale\_y}}
+{\footnotesize\ttfamily float convert.\+scale\+\_\+y = 1.\+0925}
+
+\mbox{\Hypertarget{namespaceconvert_a9992969e06c48b92677c85aee46f22cf}\label{namespaceconvert_a9992969e06c48b92677c85aee46f22cf}} 
+\index{convert@{convert}!translation@{translation}}
+\index{translation@{translation}!convert@{convert}}
+\doxysubsubsection{\texorpdfstring{translation}{translation}}
+{\footnotesize\ttfamily convert.\+translation = np.\+array(\mbox{[}6.\+8210, 8.\+7180, 0\mbox{]})}
+

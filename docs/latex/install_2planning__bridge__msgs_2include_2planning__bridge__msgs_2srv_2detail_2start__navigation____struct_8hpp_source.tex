@@ -1,0 +1,280 @@
+\hypertarget{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp_source}{}\doxysection{start\+\_\+navigation\+\_\+\+\_\+struct.\+hpp}
+\label{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp_source}\index{install/planning\_bridge\_msgs/include/planning\_bridge\_msgs/srv/detail/start\_navigation\_\_struct.hpp@{install/planning\_bridge\_msgs/include/planning\_bridge\_msgs/srv/detail/start\_navigation\_\_struct.hpp}}
+\mbox{\hyperlink{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// generated from rosidl\_generator\_cpp/resource/idl\_\_struct.hpp.em}}
+\DoxyCodeLine{2 \textcolor{comment}{// with input from planning\_bridge\_msgs:srv/StartNavigation.idl}}
+\DoxyCodeLine{3 \textcolor{comment}{// generated code does not contain a copyright notice}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef PLANNING\_BRIDGE\_MSGS\_\_SRV\_\_DETAIL\_\_START\_NAVIGATION\_\_STRUCT\_HPP\_}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define PLANNING\_BRIDGE\_MSGS\_\_SRV\_\_DETAIL\_\_START\_NAVIGATION\_\_STRUCT\_HPP\_}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <rosidl\_runtime\_cpp/bounded\_vector.hpp>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <rosidl\_runtime\_cpp/message\_initialization.hpp>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Request \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Request \_\_declspec(deprecated)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceplanning__bridge__msgs}{planning\_bridge\_msgs}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }srv}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{// message struct}}
+\DoxyCodeLine{30 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerAllocator>}
+\DoxyCodeLine{31 \textcolor{keyword}{struct }StartNavigation\_Request\_}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{Type}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{StartNavigation\_Request\_<ContainerAllocator>}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___aab9c1f9381d17ab8b4a7e113cdff07c7}{StartNavigation\_Request\_}}(rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{36   \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{38       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a29f191bad5bd8b442d8cc0c0d053b6d2}{x}} = 0.0f;}
+\DoxyCodeLine{41       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a2ffa54257aec24cde311b65f7cde5257}{y}} = 0.0f;}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43   \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a63af7d0c73e955b2f3931c55fee3deb4}{StartNavigation\_Request\_}}(\textcolor{keyword}{const} ContainerAllocator \& \_alloc, rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{46   \{}
+\DoxyCodeLine{47     (void)\_alloc;}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{49       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{50     \{}
+\DoxyCodeLine{51       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a29f191bad5bd8b442d8cc0c0d053b6d2}{x}} = 0.0f;}
+\DoxyCodeLine{52       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a2ffa54257aec24cde311b65f7cde5257}{y}} = 0.0f;}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{comment}{// field types and members}}
+\DoxyCodeLine{57   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a3b76adc3ea8ce6f5210d0d3fc4608f48}{\_x\_type}} =}
+\DoxyCodeLine{58     float;}
+\DoxyCodeLine{59   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a3b76adc3ea8ce6f5210d0d3fc4608f48}{\_x\_type}} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a29f191bad5bd8b442d8cc0c0d053b6d2}{x}};}
+\DoxyCodeLine{60   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a34da75ac204d31cb4ed77eeca993de85}{\_y\_type}} =}
+\DoxyCodeLine{61     float;}
+\DoxyCodeLine{62   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a34da75ac204d31cb4ed77eeca993de85}{\_y\_type}} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a2ffa54257aec24cde311b65f7cde5257}{y}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{comment}{// setters for named parameter idiom}}
+\DoxyCodeLine{65   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{Type}} \& \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a22390915dc3226e8c7e8d992339412d4}{set\_\_x}}(}
+\DoxyCodeLine{66     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& \_arg)}
+\DoxyCodeLine{67   \{}
+\DoxyCodeLine{68     this-\/>x = \_arg;}
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{70   \}}
+\DoxyCodeLine{71   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{Type}} \& \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___ae3001bf0787c2eb35bb68b0817a0cdb4}{set\_\_y}}(}
+\DoxyCodeLine{72     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& \_arg)}
+\DoxyCodeLine{73   \{}
+\DoxyCodeLine{74     this-\/>y = \_arg;}
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{76   \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{comment}{// constant declarations}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{comment}{// pointer types}}
+\DoxyCodeLine{81   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{RawPtr}} =}
+\DoxyCodeLine{82     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{83   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{ConstRawPtr}} =}
+\DoxyCodeLine{84     \textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{85   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___aa8a0eeb71b189aab7a2b6da30df2db6e}{SharedPtr}} =}
+\DoxyCodeLine{86     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>>;}
+\DoxyCodeLine{87   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___adbfc938fda250a5b3a5f7b553975ef57}{ConstSharedPtr}} =}
+\DoxyCodeLine{88     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{91       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{92   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___adca85af28c0d6cf1800c0a4e0ec43f42}{UniquePtrWithDeleter}} =}
+\DoxyCodeLine{93     std::unique\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>, Deleter>;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a904c2b3b61ef3f0c01c024e1797c0d91}{UniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___adca85af28c0d6cf1800c0a4e0ec43f42}{UniquePtrWithDeleter<>}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{98       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{99   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a35dac0f6194193c1025daa20935c077c}{ConstUniquePtrWithDeleter}} =}
+\DoxyCodeLine{100     std::unique\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator> \textcolor{keyword}{const}, Deleter>;}
+\DoxyCodeLine{101   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a336e5063d29d144871ea81b188739b06}{ConstUniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a35dac0f6194193c1025daa20935c077c}{ConstUniquePtrWithDeleter<>}};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___aad5f095a72a0b2805583bf695d060751}{WeakPtr}} =}
+\DoxyCodeLine{104     std::weak\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>>;}
+\DoxyCodeLine{105   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a6a04a3792765d384558d88defd3c2011}{ConstWeakPtr}} =}
+\DoxyCodeLine{106     std::weak\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{comment}{// pointer types similar to ROS 1, use SharedPtr / ConstSharedPtr instead}}
+\DoxyCodeLine{109   \textcolor{comment}{// NOTE: Can't use 'using' here because GNU C++ can't parse attributes properly}}
+\DoxyCodeLine{110   \textcolor{keyword}{typedef} \mbox{\hyperlink{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp_ab02c2c1fb3281e7e40f6ac34a86ecc7d}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Request}}}
+\DoxyCodeLine{111     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator>>}
+\DoxyCodeLine{112     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a8bdf0a520dd4a02c0161e1153cce0a27}{Ptr}};}
+\DoxyCodeLine{113   \textcolor{keyword}{typedef} \mbox{\hyperlink{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp_ab02c2c1fb3281e7e40f6ac34a86ecc7d}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Request}}}
+\DoxyCodeLine{114     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Request\_<ContainerAllocator> \textcolor{keyword}{const}>}
+\DoxyCodeLine{115     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a1006dfcb1a6b0b9e972506e23a8f9f2d}{ConstPtr}};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   \textcolor{comment}{// comparison operators}}
+\DoxyCodeLine{118   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___aee0f21e8722455e25115cac4458728d2}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{StartNavigation\_Request\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{119 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} (this-\/>x != other.x) \{}
+\DoxyCodeLine{121       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123     \textcolor{keywordflow}{if} (this-\/>y != other.y) \{}
+\DoxyCodeLine{124       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{125     \}}
+\DoxyCodeLine{126     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{127   \}}
+\DoxyCodeLine{128   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___a4f5237f66d84cd86d14a6dc60dc82c2f}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{StartNavigation\_Request\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{129 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{130     \textcolor{keywordflow}{return} !this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request___aee0f21e8722455e25115cac4458728d2}{operator==}}(other);}
+\DoxyCodeLine{131   \}}
+\DoxyCodeLine{132 \};  \textcolor{comment}{// struct StartNavigation\_Request\_}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{comment}{// alias to use template instance with default allocator}}
+\DoxyCodeLine{135 \textcolor{keyword}{using} \mbox{\hyperlink{namespaceplanning__bridge__msgs_1_1srv_a38f599c3c3cdf079ab37eb75e10b29a2}{StartNavigation\_Request}} =}
+\DoxyCodeLine{136   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request__}{planning\_bridge\_msgs::srv::StartNavigation\_Request\_<std::allocator<void>}}>;}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{comment}{// constant definitions}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \}  \textcolor{comment}{// namespace srv}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \}  \textcolor{comment}{// namespace planning\_bridge\_msgs}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Response \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\# define DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Response \_\_declspec(deprecated)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceplanning__bridge__msgs}{planning\_bridge\_msgs}}}
+\DoxyCodeLine{152 \{}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{keyword}{namespace }srv}
+\DoxyCodeLine{155 \{}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{comment}{// message struct}}
+\DoxyCodeLine{158 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerAllocator>}
+\DoxyCodeLine{159 \textcolor{keyword}{struct }StartNavigation\_Response\_}
+\DoxyCodeLine{160 \{}
+\DoxyCodeLine{161   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{Type}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{StartNavigation\_Response\_<ContainerAllocator>}};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a11804495e99a0bd21313d2b4285eaf10}{StartNavigation\_Response\_}}(rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{164   \{}
+\DoxyCodeLine{165     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{166       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{167     \{}
+\DoxyCodeLine{168       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a147c2dcf280b671e141a3360cf2b581f}{success}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{169     \}}
+\DoxyCodeLine{170   \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   \textcolor{keyword}{explicit} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a43e80ef33c445c6313d60584f3651923}{StartNavigation\_Response\_}}(\textcolor{keyword}{const} ContainerAllocator \& \_alloc, rosidl\_runtime\_cpp::MessageInitialization \_init = rosidl\_runtime\_cpp::MessageInitialization::ALL)}
+\DoxyCodeLine{173   \{}
+\DoxyCodeLine{174     (void)\_alloc;}
+\DoxyCodeLine{175     \textcolor{keywordflow}{if} (rosidl\_runtime\_cpp::MessageInitialization::ALL == \_init ||}
+\DoxyCodeLine{176       rosidl\_runtime\_cpp::MessageInitialization::ZERO == \_init)}
+\DoxyCodeLine{177     \{}
+\DoxyCodeLine{178       this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a147c2dcf280b671e141a3360cf2b581f}{success}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180   \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182   \textcolor{comment}{// field types and members}}
+\DoxyCodeLine{183   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a1e1459b1b3e1ecef2c409ffcbbb5f8f9}{\_success\_type}} =}
+\DoxyCodeLine{184     bool;}
+\DoxyCodeLine{185   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a1e1459b1b3e1ecef2c409ffcbbb5f8f9}{\_success\_type}} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a147c2dcf280b671e141a3360cf2b581f}{success}};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{comment}{// setters for named parameter idiom}}
+\DoxyCodeLine{188   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{Type}} \& \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___ac012a72b99d00b32ad5e41e81d044ca8}{set\_\_success}}(}
+\DoxyCodeLine{189     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \& \_arg)}
+\DoxyCodeLine{190   \{}
+\DoxyCodeLine{191     this-\/>success = \_arg;}
+\DoxyCodeLine{192     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{193   \}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195   \textcolor{comment}{// constant declarations}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197   \textcolor{comment}{// pointer types}}
+\DoxyCodeLine{198   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{RawPtr}} =}
+\DoxyCodeLine{199     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{200   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{ConstRawPtr}} =}
+\DoxyCodeLine{201     \textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>}} *;}
+\DoxyCodeLine{202   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___abe989d004aa9474329539554b4eaeb27}{SharedPtr}} =}
+\DoxyCodeLine{203     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>>;}
+\DoxyCodeLine{204   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a1de00dba109fdbae854eaac74f86b0fe}{ConstSharedPtr}} =}
+\DoxyCodeLine{205     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{208       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{209   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a7643711acc7973ba9c8f3eb8c191ce1d}{UniquePtrWithDeleter}} =}
+\DoxyCodeLine{210     std::unique\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>, Deleter>;}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___aa4f600028acea63e2ab6b80ca187281a}{UniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a7643711acc7973ba9c8f3eb8c191ce1d}{UniquePtrWithDeleter<>}};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214   \textcolor{keyword}{template}<\textcolor{keyword}{typename} Deleter = std::default\_delete<}
+\DoxyCodeLine{215       \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>}}>>}
+\DoxyCodeLine{216   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a4e2a10f981f9781f45283473ff490d18}{ConstUniquePtrWithDeleter}} =}
+\DoxyCodeLine{217     std::unique\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator> \textcolor{keyword}{const}, Deleter>;}
+\DoxyCodeLine{218   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a21b645f7680e43909ad07c08e356c1dc}{ConstUniquePtr}} = \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a4e2a10f981f9781f45283473ff490d18}{ConstUniquePtrWithDeleter<>}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___ad0accd84f5c4f584b56e625c8f6ca423}{WeakPtr}} =}
+\DoxyCodeLine{221     std::weak\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>>;}
+\DoxyCodeLine{222   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a3d8dbc8e13c81aea73241368d37a6e0f}{ConstWeakPtr}} =}
+\DoxyCodeLine{223     std::weak\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator> \textcolor{keyword}{const}>;}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225   \textcolor{comment}{// pointer types similar to ROS 1, use SharedPtr / ConstSharedPtr instead}}
+\DoxyCodeLine{226   \textcolor{comment}{// NOTE: Can't use 'using' here because GNU C++ can't parse attributes properly}}
+\DoxyCodeLine{227   \textcolor{keyword}{typedef} \mbox{\hyperlink{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp_a9200562b1362d0e91daccf3a98167372}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Response}}}
+\DoxyCodeLine{228     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator>>}
+\DoxyCodeLine{229     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a9f962411b409c50b8c65b68d2e51ea24}{Ptr}};}
+\DoxyCodeLine{230   \textcolor{keyword}{typedef} \mbox{\hyperlink{install_2planning__bridge__msgs_2include_2planning__bridge__msgs_2srv_2detail_2start__navigation____struct_8hpp_a9200562b1362d0e91daccf3a98167372}{DEPRECATED\_\_planning\_bridge\_msgs\_\_srv\_\_StartNavigation\_Response}}}
+\DoxyCodeLine{231     std::shared\_ptr<planning\_bridge\_msgs::srv::StartNavigation\_Response\_<ContainerAllocator> \textcolor{keyword}{const}>}
+\DoxyCodeLine{232     \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a3974cc5236c7f83b754c645f0c48a982}{ConstPtr}};}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234   \textcolor{comment}{// comparison operators}}
+\DoxyCodeLine{235   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a4db86ed5a489ed6b1da52403aa1c34ee}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{StartNavigation\_Response\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{236 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{237     \textcolor{keywordflow}{if} (this-\/>success != other.success) \{}
+\DoxyCodeLine{238       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{239     \}}
+\DoxyCodeLine{240     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{241   \}}
+\DoxyCodeLine{242   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a95336224963dbdd5475fc9ae96561f96}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{StartNavigation\_Response\_}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{243 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{244     \textcolor{keywordflow}{return} !this-\/>\mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response___a4db86ed5a489ed6b1da52403aa1c34ee}{operator==}}(other);}
+\DoxyCodeLine{245   \}}
+\DoxyCodeLine{246 \};  \textcolor{comment}{// struct StartNavigation\_Response\_}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{comment}{// alias to use template instance with default allocator}}
+\DoxyCodeLine{249 \textcolor{keyword}{using} \mbox{\hyperlink{namespaceplanning__bridge__msgs_1_1srv_a74fd751ac55bca1f0deb2fa8cd1e636a}{StartNavigation\_Response}} =}
+\DoxyCodeLine{250   \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response__}{planning\_bridge\_msgs::srv::StartNavigation\_Response\_<std::allocator<void>}}>;}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{comment}{// constant definitions}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \}  \textcolor{comment}{// namespace srv}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \}  \textcolor{comment}{// namespace planning\_bridge\_msgs}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceplanning__bridge__msgs}{planning\_bridge\_msgs}}}
+\DoxyCodeLine{259 \{}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{keyword}{namespace }srv}
+\DoxyCodeLine{262 \{}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{keyword}{struct }StartNavigation}
+\DoxyCodeLine{265 \{}
+\DoxyCodeLine{266   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Request}{Request}} = \mbox{\hyperlink{namespaceplanning__bridge__msgs_1_1srv_a38f599c3c3cdf079ab37eb75e10b29a2}{planning\_bridge\_msgs::srv::StartNavigation\_Request}};}
+\DoxyCodeLine{267   \textcolor{keyword}{using} \mbox{\hyperlink{structplanning__bridge__msgs_1_1srv_1_1StartNavigation__Response}{Response}} = \mbox{\hyperlink{namespaceplanning__bridge__msgs_1_1srv_a74fd751ac55bca1f0deb2fa8cd1e636a}{planning\_bridge\_msgs::srv::StartNavigation\_Response}};}
+\DoxyCodeLine{268 \};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \}  \textcolor{comment}{// namespace srv}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \}  \textcolor{comment}{// namespace planning\_bridge\_msgs}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// PLANNING\_BRIDGE\_MSGS\_\_SRV\_\_DETAIL\_\_START\_NAVIGATION\_\_STRUCT\_HPP\_}}
+
+\end{DoxyCode}

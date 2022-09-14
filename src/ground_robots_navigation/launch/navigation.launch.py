@@ -14,8 +14,7 @@ from launch_ros.substitutions import FindPackageShare
  
 def generate_launch_description():
  
-  # Set the path to different files and folders.
-  pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
+  # Set the path to different files and folders.  
   pkg_navigation = FindPackageShare(package='ground_robots_navigation').find('ground_robots_navigation')
   pkg_models = FindPackageShare(package='ground_robots_models').find('ground_robots_models')
   pkg_nav2 = FindPackageShare(package='nav2_bringup').find('nav2_bringup')
@@ -25,7 +24,8 @@ def generate_launch_description():
 
   behavior_tree_xml_path = os.path.join(pkg_bt, 'behavior_trees', 'navigate_w_replanning_and_recovery.xml')
 
-  rviz_config_path = os.path.join(pkg_navigation, 'rviz/nav2_config.rviz')
+  navigation_config_path = os.path.join(pkg_navigation, 'rviz/navigation.rviz')
+  slam_config_path = os.path.join(pkg_navigation, 'rviz/slam.rviz')
   static_map_path = os.path.join(pkg_navigation, 'maps', 'povo.yaml')
   nav2_params_path = os.path.join(pkg_navigation, 'params', 'nav2_params.yaml')
 
@@ -35,26 +35,16 @@ def generate_launch_description():
   # Launch configuration variables specific to simulation
   autostart = LaunchConfiguration('autostart')
   default_bt_xml_filename = LaunchConfiguration('default_bt_xml_filename')
-  headless = LaunchConfiguration('headless')
   map_yaml_file = LaunchConfiguration('map')
   model = LaunchConfiguration('model')
   namespace = LaunchConfiguration('namespace')
   params_file = LaunchConfiguration('params_file')
-  rviz_config_file = LaunchConfiguration('rviz_config_file')
   slam = LaunchConfiguration('slam')
   use_namespace = LaunchConfiguration('use_namespace')
   use_robot_state_pub = LaunchConfiguration('use_robot_state_pub')
   use_rviz = LaunchConfiguration('use_rviz')
   use_sim_time = LaunchConfiguration('use_sim_time')
-  use_simulator = LaunchConfiguration('use_simulator')
-  world = LaunchConfiguration('world')
-   
-  # Map fully qualified names to relative ones so the node's namespace can be prepended.
-  # In case of the transforms (tf), currently, there doesn't seem to be a better alternative
-  # https://github.com/ros/geometry2/issues/32
-  # https://github.com/ros/robot_state_publisher/pull/30
-  # TODO(orduno) Substitute with `PushNodeRemapping`
-  #              https://github.com/ros2/launch_ros/issues/56
+
   remappings = [('/tf', 'tf'),
                 ('/tf_static', 'tf_static')]
    
@@ -93,16 +83,6 @@ def generate_launch_description():
     name='params_file',
     default_value=nav2_params_path,
     description='Full path to the ROS2 parameters file to use for all launched nodes')
-     
-  declare_rviz_config_file_cmd = DeclareLaunchArgument(
-    name='rviz_config_file',
-    default_value=rviz_config_path,
-    description='Full path to the RVIZ config file to use')
- 
-  declare_simulator_cmd = DeclareLaunchArgument(
-    name='headless',
-    default_value='False',
-    description='Whether to execute gzclient')
  
   declare_slam_cmd = DeclareLaunchArgument(
     name='slam',
@@ -111,7 +91,7 @@ def generate_launch_description():
      
   declare_use_robot_state_pub_cmd = DeclareLaunchArgument(
     name='use_robot_state_pub',
-    default_value='True ',
+    default_value='True',
     description='Whether to start the robot state publisher')
  
   declare_use_rviz_cmd = DeclareLaunchArgument(
@@ -123,30 +103,8 @@ def generate_launch_description():
     name='use_sim_time',
     default_value='False',
     description='Use simulation (Gazebo) clock if true')
- 
-  declare_use_simulator_cmd = DeclareLaunchArgument(
-    name='use_simulator',
-    default_value='False',
-    description='Whether to start the simulator')
- 
-  declare_world_cmd = DeclareLaunchArgument(
-    name='world',
-    default_value=world_path,
-    description='Full path to the world model file to load')
-    
+
   # Specify the actions
- 
-  # Start Gazebo server
-  start_gazebo_server_cmd = IncludeLaunchDescription(
-    PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')),
-    condition=IfCondition(use_simulator),
-    launch_arguments={'world': world, 'verbose': 'true'}.items())
- 
-  # Start Gazebo client    
-  start_gazebo_client_cmd = IncludeLaunchDescription(
-    PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')),
-    condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless])),
-    launch_arguments={'verbose': 'true'}.items())
  
   # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
   start_robot_state_publisher_cmd = Node(
@@ -160,13 +118,28 @@ def generate_launch_description():
     arguments=[model_path])
  
   # Launch RViz
-  start_rviz_cmd = Node(
-    condition=IfCondition(use_rviz),
+  start_rviz_navigation_cmd = Node(
+    condition=IfCondition(PythonExpression([use_rviz, ' and not ', slam])),
     package='rviz2',
     executable='rviz2',
     name='rviz2',
     output='screen',
-    arguments=['-d', rviz_config_file] )  
+    arguments=['-d', navigation_config_path] )
+
+  start_rviz_slam_cmd = Node(
+    condition=IfCondition(PythonExpression([use_rviz, ' and ', slam])),
+    package='rviz2',
+    executable='rviz2',
+    name='rviz2',
+    output='screen',
+    arguments=['-d', slam_config_path] )  
+
+  start_lidar_cmd = Node(
+    package='tf2_ros',
+    executable='static_transform_publisher',
+    name='lidar_static_transform_publisher',
+    output='screen',
+    arguments=['0.0', '0.0', '0.43', '0.0', '0.0', '0.0', 'base_link', 'base_laser'] )
  
   # Launch the ROS 2 Navigation Stack
   start_ros2_navigation_cmd = IncludeLaunchDescription(
@@ -191,20 +164,16 @@ def generate_launch_description():
   ld.add_action(declare_map_yaml_cmd)
   ld.add_action(declare_model_path_cmd)
   ld.add_action(declare_params_file_cmd)
-  ld.add_action(declare_rviz_config_file_cmd)
-  ld.add_action(declare_simulator_cmd)
   ld.add_action(declare_slam_cmd)
   ld.add_action(declare_use_robot_state_pub_cmd)  
   ld.add_action(declare_use_rviz_cmd) 
   ld.add_action(declare_use_sim_time_cmd)
-  ld.add_action(declare_use_simulator_cmd)
-  ld.add_action(declare_world_cmd)
  
   # Add any actions
-  ld.add_action(start_gazebo_server_cmd)
-  ld.add_action(start_gazebo_client_cmd)
   ld.add_action(start_robot_state_publisher_cmd)
-  ld.add_action(start_rviz_cmd)
+  ld.add_action(start_rviz_navigation_cmd)
+  ld.add_action(start_rviz_slam_cmd)
   ld.add_action(start_ros2_navigation_cmd)
+  ld.add_action(start_lidar_cmd)
  
   return ld
