@@ -1,8 +1,3 @@
-# Author: Addison Sears-Collins
-# Date: September 2, 2021
-# Description: Launch a basic mobile robot using the ROS 2 Navigation Stack
-# https://automaticaddison.com
- 
 import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
@@ -11,7 +6,9 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
- 
+
+##
+# This launch file is used to launch the navigation nodes 
 def generate_launch_description():
  
   # Set the path to different files and folders.  

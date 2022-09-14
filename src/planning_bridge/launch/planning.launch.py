@@ -1,7 +1,9 @@
 import os
 from launch import LaunchDescription
 from launch_ros.actions import Node
- 
+
+##
+# This launch file is used to launch the planning bridge nodes 
 def generate_launch_description():
 
     start_navigation_client = Node(

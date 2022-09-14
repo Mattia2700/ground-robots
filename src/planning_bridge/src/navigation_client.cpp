@@ -139,6 +139,13 @@ private:
   }
 }; // class Nav2Pose
 
+/**
+ * @brief Starts the node
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<Nav2Pose>();

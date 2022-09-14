@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['original_5fdata_0',['original_data',['../namespaceconvert.html#a8d8fed3d28983654825f4f8b23e9c209',1,'convert']]],
-  ['original_5fname_1',['original_name',['../namespaceconvert.html#ac2159264258e8eb06678267d83c46700',1,'convert']]]
+  ['tfl_5f_0',['tfl_',['../classechoListener.html#a2fd5aaed4b82f7a6434f54ca4b34e343',1,'echoListener']]],
+  ['translation_1',['translation',['../namespaceconvert.html#a9992969e06c48b92677c85aee46f22cf',1,'convert']]]
 ];

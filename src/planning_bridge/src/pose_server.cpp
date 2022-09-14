@@ -51,6 +51,13 @@ public:
   ~echoListener(){}
 };
 
+/**
+ * @brief Starts the node
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char ** argv){
   rclcpp::init(argc, argv);
   rclcpp::Rate rate(1.0);

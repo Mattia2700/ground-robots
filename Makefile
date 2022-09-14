@@ -31,6 +31,10 @@ simulation:
 		use_simulator:=True \
 		headless:=True
 
+map:
+	@echo "Saving map"
+	@source $(current_dir)/install/setup.bash && ros2 run nav2_map_server map_saver_cli -f current_map --ros-args -p save_map_timeout:=10000
+
 slam:
 	@echo "Running SLAM"
 	@make models
@@ -47,7 +51,7 @@ footprint:
 	@source $(current_dir)/install/setup.bash && ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link base_footprint
 
 msgs:
-	@source /opt/ros/foxy/setup.bash && colcon build --packages-select planning_bridge_msgs
+	@source /opt/ros/foxy/setup.bash && colcon build --packages-select planning_bridge_msgs --parallel-workers $(shell nproc)
 
 planning:
 	@echo "Running planning"

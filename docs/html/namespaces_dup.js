@@ -15,26 +15,13 @@ var namespaces_dup =
       [ "scale_y", "namespaceconvert.html#a8a1cea0c58b7205c56cbaf4a5f50b389", null ],
       [ "translation", "namespaceconvert.html#a9992969e06c48b92677c85aee46f22cf", null ]
     ] ],
-    [ "differential_joy_launch_test", "namespacedifferential__joy__launch__test.html", "namespacedifferential__joy__launch__test" ],
-    [ "holonomic_joy_launch_test", "namespaceholonomic__joy__launch__test.html", "namespaceholonomic__joy__launch__test" ],
     [ "navigation", "namespacenavigation.html", [
       [ "generate_launch_description", "namespacenavigation.html#a005de08a55a56935bee03eb424b00997", null ]
     ] ],
-    [ "no_enable_joy_launch_test", "namespaceno__enable__joy__launch__test.html", "namespaceno__enable__joy__launch__test" ],
-    [ "no_require_enable_joy_launch_test", "namespaceno__require__enable__joy__launch__test.html", "namespaceno__require__enable__joy__launch__test" ],
-    [ "only_turbo_joy_launch_test", "namespaceonly__turbo__joy__launch__test.html", "namespaceonly__turbo__joy__launch__test" ],
     [ "planning", "namespaceplanning.html", [
       [ "generate_launch_description", "namespaceplanning.html#a308e7ac25fb8d6385a6e8ad747ef0c72", null ]
     ] ],
     [ "simulation", "namespacesimulation.html", [
       [ "generate_launch_description", "namespacesimulation.html#a99749bce90a3fe4360c41abc42881b92", null ]
-    ] ],
-    [ "six_dof_joy_launch_test", "namespacesix__dof__joy__launch__test.html", "namespacesix__dof__joy__launch__test" ],
-    [ "teleop-launch", "namespaceteleop-launch.html", [
-      [ "generate_launch_description", "namespaceteleop-launch.html#a36bb0734d159c4918c67a816c55d9025", null ]
-    ] ],
-    [ "teleop_twist_joy", "namespaceteleop__twist__joy.html", "namespaceteleop__twist__joy" ],
-    [ "test_joy_twist", "namespacetest__joy__twist.html", "namespacetest__joy__twist" ],
-    [ "turbo_angular_enable_joy_launch_test", "namespaceturbo__angular__enable__joy__launch__test.html", "namespaceturbo__angular__enable__joy__launch__test" ],
-    [ "turbo_enable_joy_launch_test", "namespaceturbo__enable__joy__launch__test.html", "namespaceturbo__enable__joy__launch__test" ]
+    ] ]
 ];

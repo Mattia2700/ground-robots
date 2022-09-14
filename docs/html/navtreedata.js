@@ -25,19 +25,9 @@
 var NAVTREE =
 [
   [ "Internship", "index.html", [
-    [ "ROS PACKAGES FOR GROUND ROBOTS CONTROL", "md_README.html", null ],
-    [ "ros2/teleop_twist_joy", "md_src_teleop_twist_joy_README.html", [
-      [ "Overview", "md_src_teleop_twist_joy_README.html#autotoc_md1", [
-        [ "Executables", "md_src_teleop_twist_joy_README.html#autotoc_md2", null ],
-        [ "Subscribed Topics", "md_src_teleop_twist_joy_README.html#autotoc_md3", null ],
-        [ "Published Topics", "md_src_teleop_twist_joy_README.html#autotoc_md4", null ],
-        [ "Parameters", "md_src_teleop_twist_joy_README.html#autotoc_md5", null ]
-      ] ],
-      [ "Usage", "md_src_teleop_twist_joy_README.html#autotoc_md6", [
-        [ "Install", "md_src_teleop_twist_joy_README.html#autotoc_md7", null ],
-        [ "Run", "md_src_teleop_twist_joy_README.html#autotoc_md8", null ],
-        [ "Arguments", "md_src_teleop_twist_joy_README.html#autotoc_md9", null ]
-      ] ]
+    [ "Navigation package for ground robots", "index.html", [
+      [ "Custom packages", "index.html#autotoc_md1", null ],
+      [ "Documentation", "index.html#autotoc_md2", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -72,8 +62,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"teleop-launch_8py.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -11,7 +11,9 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
- 
+
+##
+# This launch file is used to launch the simulation nodes
 def generate_launch_description():
  
   # Set the path to different files and folders.

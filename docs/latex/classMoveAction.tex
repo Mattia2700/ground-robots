@@ -1,5 +1,10 @@
 \hypertarget{classMoveAction}{}\doxysection{Move\+Action Class Reference}
 \label{classMoveAction}\index{MoveAction@{MoveAction}}
+
+
+A class implementing robot movement to a given goal.  
+
+
 Inheritance diagram for Move\+Action\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,52 +15,55 @@ Inheritance diagram for Move\+Action\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classMoveAction_a04a4183b6baec1f717bcfde480c976bd}{Move\+Action}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Reads waypoints from a json file containing the coordinates of each room. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classMoveAction_a04a4183b6baec1f717bcfde480c976bd}{Move\+Action}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reads waypoints from a json file containing the coordinates of each room. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classMoveAction_ae10d261a27ad34e71dc237508faa0b42}{do\+\_\+work}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called when an action needs to be executed, it sends a request to the navigation client, requesting the robot to move to the specified goal coordinates. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMoveAction_aa2941e97d282137a202d4be3b37cf616}{continue\+\_\+work}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em When the goal has been set, and a new pose has been received, it will calculate a new percentage of completion and send it to the planner. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMoveAction_a6c4e95c117b9ead0936dd6c92db7aeca}{get\+\_\+pose}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em After a goal has been set, it will request the current pose of the robot, in order to calculate the remaining distance to the goal. If it is the first time, it will also set the initial distance, later used to calculate the progress. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMoveAction_ae10d261a27ad34e71dc237508faa0b42}{do\+\_\+work}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called when an action needs to be executed, it sends a request to the navigation client, requesting the robot to move to the specified goal coordinates. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMoveAction_aa2941e97d282137a202d4be3b37cf616}{continue\+\_\+work}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em When the goal has been set, and a new pose has been received, it will calculate a new percentage of completion and send it to the planner. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMoveAction_a6c4e95c117b9ead0936dd6c92db7aeca}{get\+\_\+pose}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em After a goal has been set, it will request the current pose of the robot, in order to calculate the remaining distance to the goal. If it is the first time, it will also set the initial distance, later used to calculate the progress. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{classMoveAction_a96754d70d188a226ce8ccabb1ee8e7ce}{progress\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Percentage of completion of the action. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{ugv__move_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \mbox{\hyperlink{classMoveAction_a49c902618fb23e49c87f0880aed85e82}{labels\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Json file containing the coordinates of each room. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classMoveAction_a664fb7801442743f853b9903198aeddb}{room\+\_\+goal\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Room name of the goal. \end{DoxyCompactList}\item 
 std\+::vector$<$ double $>$ \mbox{\hyperlink{classMoveAction_ae734dc47d91ecc0a81f1e77f1b48a6ca}{goal\+\_\+position\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Coordinates of the goal. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classMoveAction_a9b8b0c9e189c835b2a3fb2af34399a53}{initial\+\_\+distance\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Initial distance to the goal. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classMoveAction_a2772363f00569192c3c0b7a111aa6e74}{is\+\_\+initial\+\_\+distance\+\_\+set\+\_\+}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em Whether the initial distance has been set. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classMoveAction_a4aac9c7ba6bfbd9271ed0ef87a04406b}{current\+\_\+distance\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Current distance to the goal. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classMoveAction_aa6f22b96be2e65e3ad7af1c9add7006b}{current\+\_\+file\+\_\+path\+\_\+}} = \+\_\+\+\_\+\+FILE\+\_\+\+\_\+
-\item 
+\begin{DoxyCompactList}\small\item\em Current file path. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classMoveAction_a5c5156d8ec52440711a0850544f8164e}{waypoints\+\_\+file\+\_\+path\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Json file path. \end{DoxyCompactList}\item 
 std\+::ifstream \mbox{\hyperlink{classMoveAction_a2ba38d867f6c5bbc3da8ecc7333e73b5}{waypoints\+\_\+file\+\_\+}}
-\item 
-rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classMoveAction_ab751c342d4135f63895d63bdefb9babb}{start\+\_\+navigation\+\_\+client\+\_\+}}
-\item 
-rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classMoveAction_a0c8d580f7532d9d8e75f484ae9213deb}{current\+\_\+pose\+\_\+client\+\_\+ptr\+\_\+}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Json file input stream. \end{DoxyCompactList}\item 
+rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classMoveAction_ab751c342d4135f63895d63bdefb9babb}{start\+\_\+navigation\+\_\+client\+\_\+}} = create\+\_\+client$<$planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation$>$(\char`\"{}start\+\_\+navigation\char`\"{})
+\begin{DoxyCompactList}\small\item\em Service clients used to start the navigation to the desired goal. \end{DoxyCompactList}\item 
+rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classMoveAction_a0c8d580f7532d9d8e75f484ae9213deb}{current\+\_\+pose\+\_\+client\+\_\+ptr\+\_\+}} = create\+\_\+client$<$planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose$>$(\char`\"{}get\+\_\+current\+\_\+pose\char`\"{})
+\begin{DoxyCompactList}\small\item\em Service client used to get the current pose of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class implementing robot movement to a given goal. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMoveAction_a04a4183b6baec1f717bcfde480c976bd}\label{classMoveAction_a04a4183b6baec1f717bcfde480c976bd}} 
@@ -64,11 +72,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{MoveAction()}{MoveAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Move\+Action\+::\+Move\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Reads waypoints from a json file containing the coordinates of each room. 
+
 \mbox{\Hypertarget{classMoveAction_a04a4183b6baec1f717bcfde480c976bd}\label{classMoveAction_a04a4183b6baec1f717bcfde480c976bd}} 
 \index{MoveAction@{MoveAction}!MoveAction@{MoveAction}}
 \index{MoveAction@{MoveAction}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{MoveAction()}{MoveAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Move\+Action\+::\+Move\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads waypoints from a json file containing the coordinates of each room. 
 
 
 
@@ -79,11 +95,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{continue\_work()}{continue\_work()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Move\+Action\+::continue\+\_\+work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+When the goal has been set, and a new pose has been received, it will calculate a new percentage of completion and send it to the planner. 
+
 \mbox{\Hypertarget{classMoveAction_aa2941e97d282137a202d4be3b37cf616}\label{classMoveAction_aa2941e97d282137a202d4be3b37cf616}} 
 \index{MoveAction@{MoveAction}!continue\_work@{continue\_work}}
 \index{continue\_work@{continue\_work}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{continue\_work()}{continue\_work()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Move\+Action\+::continue\+\_\+work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+When the goal has been set, and a new pose has been received, it will calculate a new percentage of completion and send it to the planner. 
 
 \mbox{\Hypertarget{classMoveAction_ae10d261a27ad34e71dc237508faa0b42}\label{classMoveAction_ae10d261a27ad34e71dc237508faa0b42}} 
 \index{MoveAction@{MoveAction}!do\_work@{do\_work}}
@@ -91,11 +115,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{do\_work()}{do\_work()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Move\+Action\+::do\+\_\+work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Called when an action needs to be executed, it sends a request to the navigation client, requesting the robot to move to the specified goal coordinates. 
+
 \mbox{\Hypertarget{classMoveAction_ae10d261a27ad34e71dc237508faa0b42}\label{classMoveAction_ae10d261a27ad34e71dc237508faa0b42}} 
 \index{MoveAction@{MoveAction}!do\_work@{do\_work}}
 \index{do\_work@{do\_work}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{do\_work()}{do\_work()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Move\+Action\+::do\+\_\+work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Called when an action needs to be executed, it sends a request to the navigation client, requesting the robot to move to the specified goal coordinates. 
 
 \mbox{\Hypertarget{classMoveAction_a6c4e95c117b9ead0936dd6c92db7aeca}\label{classMoveAction_a6c4e95c117b9ead0936dd6c92db7aeca}} 
 \index{MoveAction@{MoveAction}!get\_pose@{get\_pose}}
@@ -103,11 +135,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{get\_pose()}{get\_pose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Move\+Action\+::get\+\_\+pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+After a goal has been set, it will request the current pose of the robot, in order to calculate the remaining distance to the goal. If it is the first time, it will also set the initial distance, later used to calculate the progress. 
+
 \mbox{\Hypertarget{classMoveAction_a6c4e95c117b9ead0936dd6c92db7aeca}\label{classMoveAction_a6c4e95c117b9ead0936dd6c92db7aeca}} 
 \index{MoveAction@{MoveAction}!get\_pose@{get\_pose}}
 \index{get\_pose@{get\_pose}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{get\_pose()}{get\_pose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Move\+Action\+::get\+\_\+pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+After a goal has been set, it will request the current pose of the robot, in order to calculate the remaining distance to the goal. If it is the first time, it will also set the initial distance, later used to calculate the progress. 
 
 
 
@@ -118,17 +158,29 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{current\_distance\_}{current\_distance\_}}
 {\footnotesize\ttfamily float Move\+Action\+::current\+\_\+distance\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Current distance to the goal. 
+
 \mbox{\Hypertarget{classMoveAction_aa6f22b96be2e65e3ad7af1c9add7006b}\label{classMoveAction_aa6f22b96be2e65e3ad7af1c9add7006b}} 
 \index{MoveAction@{MoveAction}!current\_file\_path\_@{current\_file\_path\_}}
 \index{current\_file\_path\_@{current\_file\_path\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{current\_file\_path\_}{current\_file\_path\_}}
 {\footnotesize\ttfamily std\+::string Move\+Action\+::current\+\_\+file\+\_\+path\+\_\+ = \+\_\+\+\_\+\+FILE\+\_\+\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Current file path. 
+
 \mbox{\Hypertarget{classMoveAction_a0c8d580f7532d9d8e75f484ae9213deb}\label{classMoveAction_a0c8d580f7532d9d8e75f484ae9213deb}} 
 \index{MoveAction@{MoveAction}!current\_pose\_client\_ptr\_@{current\_pose\_client\_ptr\_}}
 \index{current\_pose\_client\_ptr\_@{current\_pose\_client\_ptr\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{current\_pose\_client\_ptr\_}{current\_pose\_client\_ptr\_}}
-{\footnotesize\ttfamily rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $>$\+::\+Shared\+Ptr Move\+Action\+::current\+\_\+pose\+\_\+client\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $>$\+::\+Shared\+Ptr Move\+Action\+::current\+\_\+pose\+\_\+client\+\_\+ptr\+\_\+ = create\+\_\+client$<$planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose$>$(\char`\"{}get\+\_\+current\+\_\+pose\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Service client used to get the current pose of the robot. 
 
 \mbox{\Hypertarget{classMoveAction_ae734dc47d91ecc0a81f1e77f1b48a6ca}\label{classMoveAction_ae734dc47d91ecc0a81f1e77f1b48a6ca}} 
 \index{MoveAction@{MoveAction}!goal\_position\_@{goal\_position\_}}
@@ -136,11 +188,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{goal\_position\_}{goal\_position\_}}
 {\footnotesize\ttfamily std\+::vector$<$ double $>$ Move\+Action\+::goal\+\_\+position\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Coordinates of the goal. 
+
 \mbox{\Hypertarget{classMoveAction_a9b8b0c9e189c835b2a3fb2af34399a53}\label{classMoveAction_a9b8b0c9e189c835b2a3fb2af34399a53}} 
 \index{MoveAction@{MoveAction}!initial\_distance\_@{initial\_distance\_}}
 \index{initial\_distance\_@{initial\_distance\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{initial\_distance\_}{initial\_distance\_}}
 {\footnotesize\ttfamily float Move\+Action\+::initial\+\_\+distance\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial distance to the goal. 
 
 \mbox{\Hypertarget{classMoveAction_a2772363f00569192c3c0b7a111aa6e74}\label{classMoveAction_a2772363f00569192c3c0b7a111aa6e74}} 
 \index{MoveAction@{MoveAction}!is\_initial\_distance\_set\_@{is\_initial\_distance\_set\_}}
@@ -148,11 +208,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{is\_initial\_distance\_set\_}{is\_initial\_distance\_set\_}}
 {\footnotesize\ttfamily bool Move\+Action\+::is\+\_\+initial\+\_\+distance\+\_\+set\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Whether the initial distance has been set. 
+
 \mbox{\Hypertarget{classMoveAction_a49c902618fb23e49c87f0880aed85e82}\label{classMoveAction_a49c902618fb23e49c87f0880aed85e82}} 
 \index{MoveAction@{MoveAction}!labels\_@{labels\_}}
 \index{labels\_@{labels\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{labels\_}{labels\_}}
 {\footnotesize\ttfamily \mbox{\hyperlink{ugv__move_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} Move\+Action\+::labels\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Json file containing the coordinates of each room. 
 
 \mbox{\Hypertarget{classMoveAction_a96754d70d188a226ce8ccabb1ee8e7ce}\label{classMoveAction_a96754d70d188a226ce8ccabb1ee8e7ce}} 
 \index{MoveAction@{MoveAction}!progress\_@{progress\_}}
@@ -160,17 +228,29 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{progress\_}{progress\_}}
 {\footnotesize\ttfamily float Move\+Action\+::progress\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Percentage of completion of the action. 
+
 \mbox{\Hypertarget{classMoveAction_a664fb7801442743f853b9903198aeddb}\label{classMoveAction_a664fb7801442743f853b9903198aeddb}} 
 \index{MoveAction@{MoveAction}!room\_goal\_@{room\_goal\_}}
 \index{room\_goal\_@{room\_goal\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{room\_goal\_}{room\_goal\_}}
 {\footnotesize\ttfamily std\+::string Move\+Action\+::room\+\_\+goal\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Room name of the goal. 
+
 \mbox{\Hypertarget{classMoveAction_ab751c342d4135f63895d63bdefb9babb}\label{classMoveAction_ab751c342d4135f63895d63bdefb9babb}} 
 \index{MoveAction@{MoveAction}!start\_navigation\_client\_@{start\_navigation\_client\_}}
 \index{start\_navigation\_client\_@{start\_navigation\_client\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{start\_navigation\_client\_}{start\_navigation\_client\_}}
-{\footnotesize\ttfamily rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation $>$\+::\+Shared\+Ptr Move\+Action\+::start\+\_\+navigation\+\_\+client\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation $>$\+::\+Shared\+Ptr Move\+Action\+::start\+\_\+navigation\+\_\+client\+\_\+ = create\+\_\+client$<$planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Start\+Navigation$>$(\char`\"{}start\+\_\+navigation\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Service clients used to start the navigation to the desired goal. 
 
 \mbox{\Hypertarget{classMoveAction_a2ba38d867f6c5bbc3da8ecc7333e73b5}\label{classMoveAction_a2ba38d867f6c5bbc3da8ecc7333e73b5}} 
 \index{MoveAction@{MoveAction}!waypoints\_file\_@{waypoints\_file\_}}
@@ -178,11 +258,19 @@ rclcpp\+::\+Client$<$ planning\+\_\+bridge\+\_\+msgs\+::srv\+::\+Current\+Pose $
 \doxysubsubsection{\texorpdfstring{waypoints\_file\_}{waypoints\_file\_}}
 {\footnotesize\ttfamily std\+::ifstream Move\+Action\+::waypoints\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Json file input stream. 
+
 \mbox{\Hypertarget{classMoveAction_a5c5156d8ec52440711a0850544f8164e}\label{classMoveAction_a5c5156d8ec52440711a0850544f8164e}} 
 \index{MoveAction@{MoveAction}!waypoints\_file\_path\_@{waypoints\_file\_path\_}}
 \index{waypoints\_file\_path\_@{waypoints\_file\_path\_}!MoveAction@{MoveAction}}
 \doxysubsubsection{\texorpdfstring{waypoints\_file\_path\_}{waypoints\_file\_path\_}}
 {\footnotesize\ttfamily std\+::string Move\+Action\+::waypoints\+\_\+file\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Json file path. 
 
 
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Internship: Main Page</title>
+<title>Internship: Navigation package for ground robots</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,10 +81,28 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Internship Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Navigation package for ground robots </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> Here there is all the code and the setup related to the navigation of the robot.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Custom packages</h1>
+<ul>
+<li><b>ground_robots_models</b>: contains the models used both in simulation and with the real robot</li>
+<li><b>ground_robots_navigation</b>: contains launch files, maps, navigation stack parameters, and rviz configurations to perform navigation related tasks</li>
+</ul>
+<blockquote class="doxtable">
+<p >&zwj;**_Note:_** when using SLAM, you may use the <code>teleop_twist_joy</code> package to control and move the robot around with a bluetooth joystick. To be able to use bluetooth inside a container <code>dbus</code> must be started as the first process, and also you have to run the bluetooth daemon. To this end, you have to modify the <code>Dockerfile</code> entrypoint from <code>["bash"]</code> to <code>sh docker_entrypoint.sh</code> </p>
+</blockquote>
+<ul>
+<li><b>planning_bridge</b>: contains the interface between the planning and the ground robot navigation package</li>
+<li><b>planning_bridge_msgs</b>: contains custom msg and services used by the planning bridge package</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Documentation</h1>
+<p >Documentation for this package can be found on <code>docs</code> folder, both in html and latex format, or more easily, you can just open <code>documentation.html</code> file (pointing to the index page of the documentation) in your browser. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

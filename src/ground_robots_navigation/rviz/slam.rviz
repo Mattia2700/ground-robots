@@ -63,8 +63,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
-          Value: true
         base_laser:
           Value: true
         base_link:
@@ -84,8 +82,6 @@ Visualization Manager:
         map:
           odom:
             base_link:
-              base_footprint:
-                {}
               base_laser:
                 {}
               front_caster:

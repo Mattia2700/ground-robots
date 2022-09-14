@@ -168,13 +168,22 @@ private:
    */
   std::ifstream waypoints_file_;
   /**
-   * @brief Service clients used to start the navigation to the desired goal   * 
+   * @brief Service clients used to start the navigation to the desired goal
    */
   rclcpp::Client<planning_bridge_msgs::srv::StartNavigation>::SharedPtr start_navigation_client_ = create_client<planning_bridge_msgs::srv::StartNavigation>("start_navigation");
-
+  /**
+   * @brief Service client used to get the current pose of the robot 
+   */
   rclcpp::Client<planning_bridge_msgs::srv::CurrentPose>::SharedPtr current_pose_client_ptr_ = create_client<planning_bridge_msgs::srv::CurrentPose>("get_current_pose");
 };  
 
+/**
+ * @brief Starts the node
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<MoveAction>();

@@ -20,14 +20,18 @@
 using json = nlohmann::json;
 using namespace std::chrono_literals;
 
-class MoveActionUAV : public plansys2::ActionExecutorClient {
+/**
+ * @brief A class implementing robot movement to a given goal 
+ * 
+ */
+class MoveAction : public plansys2::ActionExecutorClient {
 public:
-  MoveActionUAV() : plansys2::ActionExecutorClient("ugv_transporting_uav_move", 250ms) {
+  /**
+   * @brief Reads waypoints from a json file containing the coordinates of each room
+   * 
+   */
+  MoveAction() : plansys2::ActionExecutorClient("ugv_transporting_uav_move", 250ms) {
     progress_ = 0.0;
-
-    start_navigation_client_ = create_client<planning_bridge_msgs::srv::StartNavigation>("start_navigation");
-
-    current_pose_client_ptr_ = create_client<planning_bridge_msgs::srv::CurrentPose>("get_current_pose");
 
     waypoints_file_path_ = current_file_path_.substr(0,
     current_file_path_.find_last_of("/")); waypoints_file_path_ =
@@ -47,6 +51,10 @@ public:
   }
 
 private:
+  /**
+   * @brief Called when an action needs to be executed, it sends a request to the navigation client, requesting the robot to move to the specified goal coordinates
+   * 
+   */
   void do_work() {
     if(!is_initial_distance_set_){
       room_goal_ = current_arguments_[GOAL_INDEX];
@@ -71,7 +79,10 @@ private:
       get_pose();
     }
   }
-
+  /**
+   * @brief When the goal has been set, and a new pose has been received, it will calculate a new percentage of completion and send it to the planner
+   * 
+   */
   void continue_work(){
     progress_ = 1.0 - (current_distance_ /
     initial_distance_);
@@ -90,6 +101,10 @@ private:
     std::cout << "Moving ... [" << std::min(100.0, progress_ * 100.0) << "%]" << std::flush;
   }
 
+  /**
+   * @brief After a goal has been set, it will request the current pose of the robot, in order to calculate the remaining distance to the goal. If it is the first time, it will also set the initial distance, later used to calculate the progress
+   * 
+   */
   void get_pose() {
     current_pose_client_ptr_->async_send_request(
         std::make_unique<planning_bridge_msgs::srv::CurrentPose::Request>(),
@@ -112,24 +127,66 @@ private:
           continue_work();
         });
   }
-
+  /**
+   * @brief Percentage of completion of the action
+   */
   float progress_;
+  /**
+   * @brief Json file containing the coordinates of each room
+   */
   json labels_;
+  /**
+   * @brief Room name of the goal 
+   */
   std::string room_goal_;
+  /**
+   * @brief Coordinates of the goal
+   */
   std::vector<double> goal_position_;
+  /**
+   * @brief Initial distance to the goal
+   */
   float initial_distance_;
+  /**
+   * @brief Whether the initial distance has been set
+   */
   bool is_initial_distance_set_ = false;
+  /**
+   * @brief Current distance to the goal
+   */
   float current_distance_;
+  /**
+   * @brief Current file path
+   */
   std::string current_file_path_ = __FILE__;
+  /**
+   * @brief Json file path
+   */
   std::string waypoints_file_path_;
+  /**
+   * @brief Json file input stream
+   */
   std::ifstream waypoints_file_;
-  rclcpp::Client<planning_bridge_msgs::srv::StartNavigation>::SharedPtr start_navigation_client_;
-  rclcpp::Client<planning_bridge_msgs::srv::CurrentPose>::SharedPtr current_pose_client_ptr_;
+  /**
+   * @brief Service clients used to start the navigation to the desired goal
+   */
+  rclcpp::Client<planning_bridge_msgs::srv::StartNavigation>::SharedPtr start_navigation_client_ = create_client<planning_bridge_msgs::srv::StartNavigation>("start_navigation");
+  /**
+   * @brief Service client used to get the current pose of the robot 
+   */
+  rclcpp::Client<planning_bridge_msgs::srv::CurrentPose>::SharedPtr current_pose_client_ptr_ = create_client<planning_bridge_msgs::srv::CurrentPose>("get_current_pose");
 };  
 
+/**
+ * @brief Starts the node
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<MoveActionUAV>();
+  auto node = std::make_shared<MoveAction>();
 
   node->set_parameter(rclcpp::Parameter("action_name", "ugv_transporting_uav_move"));
   node->trigger_transition(
